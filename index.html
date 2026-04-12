@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Millwood Kitchens â Designer Kitchens at Trade Prices</title>
+<title>Millwood Kitchens &#8211; Designer Kitchens at Trade Prices</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
@@ -138,7 +138,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--dark);border-bottom:1px s
 .testi-section{background:var(--dark2);padding:88px 28px}
 .testi-section .section-title{color:#fff}
 .testi-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-lg);padding:30px}
-.stars{color:#F5C518;font-size:.95rem;letter-spacing:2px;margin-bottom:14py}
+.stars{color:#F5C518;font-size:.95rem;letter-spacing:2px;margin-bottom:14px}
 .testi-text{color:rgba(255,255,255,.75);font-size:.88rem;line-height:1.75;font-style:italic;margin-bottom:22px}
 .testi-author{display:flex;align-items:center;gap:12px}
 .avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82rem;color:#fff;flex-shrink:0}
@@ -217,7 +217,7 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
 .upload-zone strong{font-size:.9rem;color:var(--dark);display:block;margin-bottom:6px}
 .file-list{list-style:none;margin-top:10px;text-align:left}
 .file-list li{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--mid);padding:6px 10px;background:var(--white);border-radius:6px;margin-bottom:4px;border:1px solid var(--border)}
-.file-list li::before{content:'ð'}
+.file-list li::before{content:'&#128206;'}
 
 /* WIZARD */
 .wizard-wrap{max-width:680px;margin:0 auto}
@@ -261,7 +261,7 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
 .tier-credit{font-size:.76rem;color:var(--green);font-weight:700;margin-bottom:18px}
 .tier-feats{list-style:none;margin-bottom:28px}
 .tier-feats li{display:flex;gap:9px;font-size:.84rem;color:var(--mid);margin-bottom:10px;align-items:flex-start;line-height:1.5}
-.tier-feats li::before{content:'â';color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px}
+.tier-feats li::before{content:'&#10003;';color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px}
 
 /* DDS */
 .dds-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:60px}
@@ -338,6 +338,49 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
   .dds-steps{grid-template-columns:1fr}
   .hero-stats{grid-template-columns:1fr 1fr}
 }
+
+/* HERO IMAGE */
+.hero-img-wrap{position:relative;width:100%;height:520px;border-radius:20px;overflow:hidden;box-shadow:0 32px 64px rgba(0,0,0,.5)}
+.hero-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-img-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.65) 100%)}
+.hero-img-badge{position:absolute;bottom:20px;left:20px;right:20px;background:rgba(255,255,255,.1);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
+.hero-img-badge-main{font-family:'Playfair Display',serif;font-size:1.1rem;color:#fff;font-weight:600}
+.hero-img-badge-sub{font-size:.75rem;color:rgba(255,255,255,.65);margin-top:2px}
+.hero-img-badge-price{text-align:right}
+.hero-img-badge-num{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold3);font-weight:700}
+.hero-img-badge-label{font-size:.68rem;color:rgba(255,255,255,.5)}
+.hero-img-dots{position:absolute;top:16px;right:16px;display:flex;gap:6px}
+.hero-img-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:background .2s}
+.hero-img-dot.active{background:var(--gold3)}
+/* GALLERY SECTION */
+.gallery-section{padding:80px 28px;background:var(--dark2)}
+.gallery-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:12px;max-width:1280px;margin:0 auto}
+.gal-item{overflow:hidden;border-radius:14px;position:relative;cursor:pointer}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;display:block}
+.gal-item:hover img{transform:scale(1.06)}
+.gal-item.tall{grid-row:span 2}
+.gal-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55) 0%,transparent 60%);opacity:0;transition:opacity .3s}
+.gal-item:hover .gal-overlay{opacity:1}
+.gal-label{position:absolute;bottom:14px;left:14px;color:#fff;font-size:.82rem;font-weight:600;opacity:0;transform:translateY(6px);transition:all .3s}
+.gal-item:hover .gal-label{opacity:1;transform:translateY(0)}
+/* FEATURED KITCHEN */
+.featured-section{padding:80px 28px;background:var(--cream2)}
+.featured-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.featured-img-stack{position:relative;height:480px}
+.feat-img-main{width:75%;height:380px;border-radius:16px;overflow:hidden;position:absolute;top:0;left:0;box-shadow:var(--shadow-lg)}
+.feat-img-main img{width:100%;height:100%;object-fit:cover}
+.feat-img-inset{width:55%;height:240px;border-radius:14px;overflow:hidden;position:absolute;bottom:0;right:0;box-shadow:var(--shadow-lg);border:4px solid var(--cream2)}
+.feat-img-inset img{width:100%;height:100%;object-fit:cover}
+.feat-badge{position:absolute;top:20px;right:0;background:var(--gold);color:#fff;padding:8px 16px;border-radius:8px 0 0 8px;font-size:.8rem;font-weight:700}
+.feat-content .eyebrow{color:var(--gold)}
+.feat-content h2{font-size:clamp(1.7rem,2.8vw,2.4rem);color:var(--dark);margin-bottom:16px}
+.feat-content p{color:var(--mid);font-size:.95rem;line-height:1.75;margin-bottom:24px}
+.feat-list{list-style:none;margin-bottom:32px}
+.feat-list li{display:flex;align-items:center;gap:10px;font-size:.88rem;color:var(--dark);padding:8px 0;border-bottom:1px solid var(--border)}
+.feat-list li:last-child{border:none}
+.feat-check{width:20px;height:20px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.65rem;flex-shrink:0}
+@media(max-width:900px){.hero-img-wrap{display:none}.hero-inner{grid-template-columns:1fr!important}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}.gal-item.tall{grid-row:span 1}.featured-inner{grid-template-columns:1fr}.featured-img-stack{height:300px;margin-bottom:32px}}
+
 </style>
 </head>
 <body>
@@ -358,22 +401,22 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
   <div class="mobile-menu" id="mobile-menu">
     <a href="#" onclick="go('home')">Home</a>
     <a href="#" onclick="go('catalogue')">Catalogue</a>
-    <a href="#" onclick="go('design')">Digital Design â Â£150</a>
+    <a href="#" onclick="go('design')">Digital Design &#8212; &#163;150</a>
     <a href="#" onclick="go('estimate')">Get Estimate</a>
     <a href="#" onclick="go('plans')">Upload Plans</a>
     <a href="#" onclick="go('book')">Book a Visit</a>
   </div>
 </nav>
 
-<!-- âââââââ HOME âââââââ -->
+<!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; HOME &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
 <div id="page-home" class="page active">
   <section class="hero">
     <div class="hero-bg"></div><div class="hero-grid"></div>
     <div class="hero-inner">
       <div>
-        <div class="hero-eyebrow">Factory Direct Â· Northern Ireland</div>
+        <div class="hero-eyebrow">Factory Direct &#183; Northern Ireland</div>
         <h1>Designer Kitchens at<br><em>Trade Prices</em></h1>
-        <p class="hero-lead">We manufacture every kitchen ourselves and sell direct to you â the same quality you'd pay Â£30,000+ for elsewhere, available from a fraction of the cost.</p>
+        <p class="hero-lead">We manufacture every kitchen ourselves and sell direct to you &#8212; the same quality you'd pay &#163;30,000+ for elsewhere, available from a fraction of the cost.</p>
         <div class="hero-btns">
           <button class="btn btn-gold btn-lg" onclick="go('catalogue')">Browse Catalogue</button>
           <button class="btn btn-ghost btn-lg" onclick="go('estimate')">Free Estimate</button>
@@ -381,7 +424,29 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
         <div class="hero-stats">
           <div class="stat-box"><span class="stat-num">24</span><div class="stat-label">Door Ranges</div></div>
           <div class="stat-box"><span class="stat-num">50%</span><div class="stat-label">Average Saving</div></div>
-          <div class="stat-box"><span class="stat-num">â 4.9</span><div class="stat-label">Rated</div></div>
+          <div class="stat-box"><span class="stat-num">&#9733; 4.9</span><div class="stat-label">Rated</div></div>
+        </div>
+      </div>
+      <!-- Hero Kitchen Image -->
+      <div>
+        <div class="hero-img-wrap" id="hero-slider">
+          <img id="hero-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&h=560&fit=crop&crop=center&q=85&auto=format" alt="Luxury designer kitchen by Millwood Kitchens" loading="eager" onerror="this.src='https://images.unsplash.com/photo-1556040220-4096d522378d?w=700&h=560&fit=crop&q=80'"/>
+          <div class="hero-img-overlay"></div>
+          <div class="hero-img-badge">
+            <div>
+              <div class="hero-img-badge-main">Hartfield Ivory</div>
+              <div class="hero-img-badge-sub">Shaker &middot; 3.4m &times; 2.8m kitchen</div>
+            </div>
+            <div class="hero-img-badge-price">
+              <div class="hero-img-badge-num">&pound;8,400</div>
+              <div class="hero-img-badge-label">inc. delivery</div>
+            </div>
+          </div>
+          <div class="hero-img-dots">
+            <div class="hero-img-dot active" onclick="heroSlide(0)"></div>
+            <div class="hero-img-dot" onclick="heroSlide(1)"></div>
+            <div class="hero-img-dot" onclick="heroSlide(2)"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -389,12 +454,12 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
 
   <div class="trust-bar">
     <div class="trust-inner">
-      <div class="trust-item">ð UK-wide delivery</div>
-      <div class="trust-item">ð§ Free design service</div>
-      <div class="trust-item">ð° Kitchens from Â£2,500</div>
-      <div class="trust-item">ð¡ï¸ 10-year guarantee</div>
-      <div class="trust-item">ð­ Factory direct</div>
-      <div class="trust-item">ð Survey included</div>
+      <div class="trust-item">&#128666; UK-wide delivery</div>
+      <div class="trust-item">&#128295; Free design service</div>
+      <div class="trust-item">&#128176; Kitchens from &#163;2,500</div>
+      <div class="trust-item">&#128737;&#65039; 10-year guarantee</div>
+      <div class="trust-item">&#127981; Factory direct</div>
+      <div class="trust-item">&#128208; Survey included</div>
     </div>
   </div>
 
@@ -407,24 +472,24 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
       </div>
       <div class="g3">
         <div class="svc-card">
-          <div class="svc-icon">ð»</div>
+          <div class="svc-icon">&#128187;</div>
           <h3>Digital Design Service</h3>
-          <p>Submit photos and measurements of your kitchen from home. Our designers create a full 3D design and detailed quote â no visit needed.</p>
-          <div class="svc-price">Â£150 Â· credited back on order</div>
+          <p>Submit photos and measurements of your kitchen from home. Our designers create a full 3D design and detailed quote &#8212; no visit needed.</p>
+          <div class="svc-price">&#163;150 &#183; credited back on order</div>
           <button class="btn btn-gold btn-sm" style="margin-top:18px" onclick="go('design')">Start Design</button>
         </div>
         <div class="svc-card" style="border-color:rgba(184,146,42,.3)">
-          <div class="svc-icon">ð </div>
+          <div class="svc-icon">&#127968;</div>
           <h3>Call Out &amp; Design</h3>
           <p>A designer visits your home, measures every wall, window and door, then creates a complete 3D design and itemised quote on the same day.</p>
-          <div class="svc-price">Â£200 Â· credited back on order</div>
+          <div class="svc-price">&#163;200 &#183; credited back on order</div>
           <button class="btn btn-gold btn-sm" style="margin-top:18px" onclick="go('book')">Book a Visit</button>
         </div>
         <div class="svc-card">
-          <div class="svc-icon">ð</div>
+          <div class="svc-icon">&#128203;</div>
           <h3>Upload Your Plans</h3>
           <p>Already have architect or builder drawings? Upload them and we'll price your kitchen straight from the plans within 48 hours.</p>
-          <div class="svc-price">From Â£30 Â· credited back on order</div>
+          <div class="svc-price">From &#163;30 &#183; credited back on order</div>
           <button class="btn btn-gold btn-sm" style="margin-top:18px" onclick="go('plans')">Upload Plans</button>
         </div>
       </div>
@@ -435,13 +500,50 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
     <div class="section-inner">
       <div class="section-hdr"><span class="eyebrow">Why Millwood</span><h2 class="section-title">What sets us apart</h2></div>
       <div class="g3">
-        <div class="why-card"><div class="why-icon">ð­</div><h3>Our Own Factory</h3><p>Every kitchen is manufactured at our Northern Ireland facility. No suppliers, no markups â direct from us to you.</p></div>
-        <div class="why-card"><div class="why-icon">ð·</div><h3>Genuine Trade Pricing</h3><p>What you pay is what the trade pays. Not a "sale price", not a gimmick â a fundamentally different cost base.</p></div>
-        <div class="why-card"><div class="why-icon">ð</div><h3>Cut to Your Dimensions</h3><p>Every unit is made to the exact measurements of your room. No filler panels, no awkward gaps â a seamless fit.</p></div>
-        <div class="why-card"><div class="why-icon">ð¨</div><h3>Enormous Choice</h3><p>24 door ranges, hundreds of colours, 25 handle styles and 10 worktop finishes. More choice than most showrooms.</p></div>
-        <div class="why-card"><div class="why-icon">ð</div><h3>UK-wide Delivery</h3><p>Flat-packed and delivered anywhere in the UK. Engineered packaging protects every panel during transit.</p></div>
-        <div class="why-card"><div class="why-icon">ð¡ï¸</div><h3>10-Year Guarantee</h3><p>Every kitchen comes with a 10-year structural guarantee. Something fails â we replace it, no questions asked.</p></div>
+        <div class="why-card"><div class="why-icon">&#127981;</div><h3>Our Own Factory</h3><p>Every kitchen is manufactured at our Northern Ireland facility. No suppliers, no markups &#8212; direct from us to you.</p></div>
+        <div class="why-card"><div class="why-icon">&#128183;</div><h3>Genuine Trade Pricing</h3><p>What you pay is what the trade pays. Not a "sale price", not a gimmick &#8212; a fundamentally different cost base.</p></div>
+        <div class="why-card"><div class="why-icon">&#128208;</div><h3>Cut to Your Dimensions</h3><p>Every unit is made to the exact measurements of your room. No filler panels, no awkward gaps &#8212; a seamless fit.</p></div>
+        <div class="why-card"><div class="why-icon">&#127912;</div><h3>Enormous Choice</h3><p>24 door ranges, hundreds of colours, 25 handle styles and 10 worktop finishes. More choice than most showrooms.</p></div>
+        <div class="why-card"><div class="why-icon">&#128666;</div><h3>UK-wide Delivery</h3><p>Flat-packed and delivered anywhere in the UK. Engineered packaging protects every panel during transit.</p></div>
+        <div class="why-card"><div class="why-icon">&#128737;&#65039;</div><h3>10-Year Guarantee</h3><p>Every kitchen comes with a 10-year structural guarantee. Something fails &#8212; we replace it, no questions asked.</p></div>
       </div>
+    </div>
+  </section>
+
+
+  <!-- KITCHEN GALLERY -->
+  <section class="gallery-section">
+    <div class="section-inner" style="max-width:1280px;margin:0 auto">
+      <div class="section-hdr" style="text-align:center;margin-bottom:36px">
+        <span class="eyebrow" style="color:var(--gold3)">Real Millwood kitchens</span>
+        <h2 class="section-title" style="color:#fff">From our customers&rsquo; homes</h2>
+        <p class="section-sub" style="color:rgba(255,255,255,.5)">Every kitchen is unique &ndash; designed and manufactured specifically for your space.</p>
+      </div>
+    </div>
+    <div class="gallery-grid" style="max-width:1280px;margin:0 auto;padding:0 28px">
+      <div class="gal-item tall">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=500&fit=crop&crop=center&q=80&auto=format" alt="White shaker kitchen with island" loading="lazy" onerror="this.parentElement.style.background='#2a2a24'"/>
+        <div class="gal-overlay"></div><div class="gal-label">Alabaster Shaker &mdash; Bangor</div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1556040220-4096d522378d?w=400&h=240&fit=crop&crop=center&q=80&auto=format" alt="Modern grey kitchen" loading="lazy" onerror="this.parentElement.style.background='#2a2a24'"/>
+        <div class="gal-overlay"></div><div class="gal-label">Lincoln Graphite &mdash; Belfast</div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=400&h=240&fit=crop&crop=center&q=80&auto=format" alt="Luxury open plan kitchen" loading="lazy" onerror="this.parentElement.style.background='#2a2a24'"/>
+        <div class="gal-overlay"></div><div class="gal-label">Hartfield Classic &mdash; Lisburn</div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=400&h=240&fit=crop&crop=center&q=80&auto=format" alt="Kitchen island with seating" loading="lazy" onerror="this.parentElement.style.background='#2a2a24'"/>
+        <div class="gal-overlay"></div><div class="gal-label">Cashmere Shaker &mdash; Derry</div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1570545843370-1c9e6e2e6ced?w=400&h=240&fit=crop&crop=center&q=80&auto=format" alt="Grey handleless kitchen" loading="lazy" onerror="this.parentElement.style.background='#2a2a24'"/>
+        <div class="gal-overlay"></div><div class="gal-label">Dust Grey Shaker &mdash; Newry</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:32px">
+      <button class="btn btn-ghost" onclick="go(&#39;catalogue&#39;)" style="border-color:rgba(255,255,255,.3);color:#fff">View All Kitchen Ranges</button>
     </div>
   </section>
 
@@ -450,9 +552,41 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
       <div class="section-hdr"><span class="eyebrow">The process</span><h2 class="section-title">From enquiry to fitted kitchen</h2></div>
       <div class="g4">
         <div class="step"><div class="step-num">1</div><h3>Browse &amp; Estimate</h3><p>Explore 24 door ranges and get a ballpark price with our free online estimator.</p></div>
-        <div class="step"><div class="step-num">2</div><h3>Design &amp; Measure</h3><p>Submit photos online or book a home visit â we produce a precise 3D design and full quote.</p></div>
-        <div class="step"><div class="step-num">3</div><h3>Approve &amp; Order</h3><p>Confirm your design, choose handles and worktops, and place your order. Lead time 4â6 weeks.</p></div>
+        <div class="step"><div class="step-num">2</div><h3>Design &amp; Measure</h3><p>Submit photos online or book a home visit &#8212; we produce a precise 3D design and full quote.</p></div>
+        <div class="step"><div class="step-num">3</div><h3>Approve &amp; Order</h3><p>Confirm your design, choose handles and worktops, and place your order. Lead time 4&#8211;6 weeks.</p></div>
         <div class="step"><div class="step-num">4</div><h3>Deliver &amp; Install</h3><p>Delivered flat-packed to your door. Our team installs to a show-kitchen finish.</p></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FEATURED KITCHEN -->
+  <section class="featured-section">
+    <div class="featured-inner">
+      <div class="featured-img-stack">
+        <div class="feat-img-main">
+          <img src="https://images.unsplash.com/photo-1556909276-1ab58ead832e?w=600&h=400&fit=crop&crop=center&q=80&auto=format" alt="Shaker kitchen detail" loading="lazy" onerror="this.parentElement.style.background='#e8e0cc'"/>
+        </div>
+        <div class="feat-img-inset">
+          <img src="https://images.unsplash.com/photo-1556040220-4096d522378d?w=400&h=260&fit=crop&crop=center&q=80&auto=format" alt="Kitchen worktop detail" loading="lazy" onerror="this.parentElement.style.background='#d4c8b2'"/>
+        </div>
+        <div class="feat-badge">New for 2026</div>
+      </div>
+      <div class="feat-content">
+        <span class="eyebrow">Featured range</span>
+        <h2>The Hartfield Collection</h2>
+        <p>Our best-selling shaker range, now available in 12 colours. Hand-finished cabinet doors, dovetail drawer boxes and full-extension soft-close runners &mdash; built to last a lifetime.</p>
+        <ul class="feat-list">
+          <li><div class="feat-check">&#10003;</div>Solid MDF shaker doors with vinyl wrap finish</li>
+          <li><div class="feat-check">&#10003;</div>Birch-ply dovetail drawer boxes</li>
+          <li><div class="feat-check">&#10003;</div>Full-extension soft-close runners included</li>
+          <li><div class="feat-check">&#10003;</div>Available in 12 colours from cream to navy</li>
+          <li><div class="feat-check">&#10003;</div>10-year structural guarantee</li>
+        </ul>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <button class="btn btn-gold" onclick="go(&#39;catalogue&#39;)">Browse the Hartfield Range</button>
+          <button class="btn btn-outline-gold" onclick="go(&#39;estimate&#39;)">Get a Price</button>
+        </div>
       </div>
     </div>
   </section>
@@ -461,16 +595,16 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
     <div class="section-inner">
       <div class="section-hdr"><span class="eyebrow" style="color:var(--gold3)">Customer reviews</span><h2 class="section-title">What our customers say</h2></div>
       <div class="g3">
-        <div class="testi-card"><div class="stars">âââââ</div><p class="testi-text">"I was quoted Â£28,000 by a well-known showroom for the same spec. Millwood came in at Â£9,400 all in. The quality is genuinely indistinguishable."</p><div class="testi-author"><div class="avatar" style="background:var(--gold)">SK</div><div><div class="testi-name">Sarah K.</div><div class="testi-loc">Belfast</div></div></div></div>
-        <div class="testi-card"><div class="stars">âââââ</div><p class="testi-text">"Used the digital design service â sent photos on Tuesday, had a full 3D design by Thursday. The kitchen looks exactly like the render. Brilliant."</p><div class="testi-author"><div class="avatar" style="background:var(--blue)">DM</div><div><div class="testi-name">Darren M.</div><div class="testi-loc">Lisburn</div></div></div></div>
-        <div class="testi-card"><div class="stars">âââââ</div><p class="testi-text">"Third kitchen I've ordered from Millwood. The Hartfield Ivory range is stunning. Designer-level finish at a price that actually makes sense."</p><div class="testi-author"><div class="avatar" style="background:#7C3AED">CR</div><div><div class="testi-name">Claire R.</div><div class="testi-loc">Derry</div></div></div></div>
+        <div class="testi-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-text">"I was quoted &#163;28,000 by a well-known showroom for the same spec. Millwood came in at &#163;9,400 all in. The quality is genuinely indistinguishable."</p><div class="testi-author"><div class="avatar" style="background:var(--gold)">SK</div><div><div class="testi-name">Sarah K.</div><div class="testi-loc">Belfast</div></div></div></div>
+        <div class="testi-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-text">"Used the digital design service &#8212; sent photos on Tuesday, had a full 3D design by Thursday. The kitchen looks exactly like the render. Brilliant."</p><div class="testi-author"><div class="avatar" style="background:var(--blue)">DM</div><div><div class="testi-name">Darren M.</div><div class="testi-loc">Lisburn</div></div></div></div>
+        <div class="testi-card"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testi-text">"Third kitchen I've ordered from Millwood. The Hartfield Ivory range is stunning. Designer-level finish at a price that actually makes sense."</p><div class="testi-author"><div class="avatar" style="background:#7C3AED">CR</div><div><div class="testi-name">Claire R.</div><div class="testi-loc">Derry</div></div></div></div>
       </div>
     </div>
   </section>
 
   <div class="cta-band">
     <h2>Ready to see what you could save?</h2>
-    <p>Most customers save 40â60% vs. high-street showroom prices. Get your estimate in minutes, completely free.</p>
+    <p>Most customers save 40&#8211;60% vs. high-street showroom prices. Get your estimate in minutes, completely free.</p>
     <button class="btn btn-cream btn-lg" onclick="go('estimate')">Get My Free Estimate</button>
   </div>
 
@@ -480,23 +614,23 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
         <div>
           <div class="footer-logo">Millwood<span>Kitchens</span></div>
           <p class="footer-tagline">Factory-direct kitchens manufactured by P&amp;A Contracts in Northern Ireland. Designer quality at genuine trade prices, delivered across the UK.</p>
-          <p style="font-size:.78rem;color:rgba(255,255,255,.25)">ð 028 9000 0000 &nbsp;Â·&nbsp; hello@millwoodkitchens.com</p>
+          <p style="font-size:.78rem;color:rgba(255,255,255,.25)">&#128222; 028 9000 0000 &nbsp;&#183;&nbsp; hello@millwoodkitchens.com</p>
         </div>
         <div class="footer-col"><h4>Browse</h4><a onclick="go('catalogue')">Door Ranges</a><a onclick="go('catalogue')">Handles</a><a onclick="go('catalogue')">Worktops</a></div>
-        <div class="footer-col"><h4>Order</h4><a onclick="go('design')">Digital Design â Â£150</a><a onclick="go('book')">Call Out &amp; Design â Â£200</a><a onclick="go('plans')">Upload Plans</a><a onclick="go('estimate')">Free Estimate</a></div>
+        <div class="footer-col"><h4>Order</h4><a onclick="go('design')">Digital Design &#8212; &#163;150</a><a onclick="go('book')">Call Out &amp; Design &#8212; &#163;200</a><a onclick="go('plans')">Upload Plans</a><a onclick="go('estimate')">Free Estimate</a></div>
         <div class="footer-col"><h4>Info</h4><a>About Us</a><a>Our Factory</a><a>Gallery</a><a>FAQ</a></div>
       </div>
       <div class="footer-bottom">
-        <span>Â© 2026 Millwood Kitchens. Manufactured by P&amp;A Contracts Ltd, Northern Ireland.</span>
+        <span>&#169; 2026 Millwood Kitchens. Manufactured by P&amp;A Contracts Ltd, Northern Ireland.</span>
         <div><a>Privacy</a><a>Terms</a></div>
       </div>
     </div>
   </footer>
 </div>
 
-<!-- âââââââ CATALOGUE âââââââ -->
+<!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; CATALOGUE &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
 <div id="page-catalogue" class="page">
-  <div class="page-hdr"><div class="page-hdr-bg"></div><div class="page-hdr-inner"><h1>Kitchen Catalogue</h1><p>24 door ranges Â· 25 handle styles Â· 10 worktop finishes</p></div></div>
+  <div class="page-hdr"><div class="page-hdr-bg"></div><div class="page-hdr-inner"><h1>Kitchen Catalogue</h1><p>24 door ranges &#183; 25 handle styles &#183; 10 worktop finishes</p></div></div>
   <section class="section">
     <div class="section-inner">
       <div class="cat-tabs">
@@ -511,13 +645,13 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
   </section>
 </div>
 
-<!-- âââââââ DIGITAL DESIGN âââââââ -->
+<!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; DIGITAL DESIGN &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
 <div id="page-design" class="page">
   <div class="page-hdr"><div class="page-hdr-bg"></div>
     <div class="page-hdr-inner">
-      <div style="margin-bottom:12px"><span class="tag tag-gold">Â£150 Â· Credited back on order</span></div>
+      <div style="margin-bottom:12px"><span class="tag tag-gold">&#163;150 &#183; Credited back on order</span></div>
       <h1>Digital Design Service</h1>
-      <p>Submit photos and measurements from home â receive a full 3D design and quote within 48 hours.</p>
+      <p>Submit photos and measurements from home &#8212; receive a full 3D design and quote within 48 hours.</p>
     </div>
   </div>
   <section class="section">
@@ -525,21 +659,21 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
       <div class="dds-steps">
         <div class="dds-step"><div class="dds-step-num">1</div><h4>Sketch &amp; Measure</h4><p>Follow our guide to sketch your kitchen layout with wall measurements, windows and doors marked.</p></div>
         <div class="dds-step"><div class="dds-step-num">2</div><h4>Take Photos</h4><p>Photograph each wall, the ceiling, existing appliances, and any fixed features you want us to work around.</p></div>
-        <div class="dds-step"><div class="dds-step-num">3</div><h4>Choose Your Style</h4><p>Pick preferred door ranges, handles and worktops below â or leave it blank and we'll suggest options.</p></div>
+        <div class="dds-step"><div class="dds-step-num">3</div><h4>Choose Your Style</h4><p>Pick preferred door ranges, handles and worktops below &#8212; or leave it blank and we'll suggest options.</p></div>
         <div class="dds-step"><div class="dds-step-num">4</div><h4>Receive Your Design</h4><p>Within 48 hours: a full 3D render, itemised quote and recommended layout delivered to your inbox.</p></div>
       </div>
 
       <!-- SKETCH GUIDE -->
       <div class="sketch-guide">
-        <div class="sketch-hdr"><h3>ð How to sketch your kitchen measurements</h3><p>You don't need to be an architect â a clear hand-drawn sketch is all we need. Follow the steps on the right.</p></div>
+        <div class="sketch-hdr"><h3>&#128208; How to sketch your kitchen measurements</h3><p>You don't need to be an architect &#8212; a clear hand-drawn sketch is all we need. Follow the steps on the right.</p></div>
         <div class="sketch-body">
           <div>
             <svg viewBox="0 0 380 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:420px;border-radius:10px;border:1px solid var(--border);background:#FAFAF8">
               <rect x="40" y="30" width="300" height="220" fill="#F0EBE1" stroke="#8B6B0A" stroke-width="2.5" rx="2"/>
-              <text x="190" y="22" text-anchor="middle" font-size="11" fill="#8B6B0A" font-family="Inter,sans-serif" font-weight="700">WALL A â 4200mm</text>
-              <text x="190" y="272" text-anchor="middle" font-size="11" fill="#8B6B0A" font-family="Inter,sans-serif" font-weight="700">WALL C â 4200mm</text>
-              <text x="16" y="145" text-anchor="middle" font-size="11" fill="#8B6B0A" font-family="Inter,sans-serif" font-weight="700" transform="rotate(-90,16,145)">WALL D â 3200mm</text>
-              <text x="366" y="145" text-anchor="middle" font-size="11" fill="#8B6B0A" font-family="Inter,sans-serif" font-weight="700" transform="rotate(90,366,145)">WALL B â 3200mm</text>
+              <text x="190" y="22" text-anchor="middle" font-size="11" fill="#8B6B0A" font-family="Inter,sans-serif" font-weight="700">WALL A &#8212; 4200mm</text>
+              <text x="190" y="272" text-anchor="middle" font-size="11" fill="#8B6B0A" font-family="Inter,sans-serif" font-weight="700">WALL C &#8212; 4200mm</text>
+              <text x="16" y="145" text-anchor="middle" font-size="11" fill="#8B6B0A" font-family="Inter,sans-serif" font-weight="700" transform="rotate(-90,16,145)">WALL D &#8212; 3200mm</text>
+              <text x="366" y="145" text-anchor="middle" font-size="11" fill="#8B6B0A" font-family="Inter,sans-serif" font-weight="700" transform="rotate(90,366,145)">WALL B &#8212; 3200mm</text>
               <rect x="120" y="30" width="80" height="8" fill="#A8D4F5" stroke="#4A90C4" stroke-width="1.5"/>
               <text x="160" y="54" text-anchor="middle" font-size="9" fill="#4A90C4" font-family="Inter,sans-serif">Window 900mm</text>
               <line x1="120" y1="42" x2="120" y2="58" stroke="#4A90C4" stroke-width="1" stroke-dasharray="3,2"/>
@@ -564,17 +698,17 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
               <rect x="258" y="195" width="11" height="8" fill="#FFE4B5" stroke="#CC8800" stroke-width="1"/>
               <text x="275" y="203" font-size="9" fill="#666" font-family="Inter,sans-serif">Socket</text>
             </svg>
-            <p style="font-size:.74rem;color:var(--light);margin-top:8px;text-align:center">Example sketch â draw yours on plain paper and photograph it</p>
+            <p style="font-size:.74rem;color:var(--light);margin-top:8px;text-align:center">Example sketch &#8212; draw yours on plain paper and photograph it</p>
           </div>
           <div>
             <p style="font-size:.85rem;font-weight:700;color:var(--dark);margin-bottom:14px">Follow these steps when drawing your sketch:</p>
             <ol class="sketch-steps">
-              <li><div class="sdot">1</div><div><strong>Draw the floor plan outline</strong> â a simple rectangle or L-shape viewed from above.</div></li>
+              <li><div class="sdot">1</div><div><strong>Draw the floor plan outline</strong> &#8212; a simple rectangle or L-shape viewed from above.</div></li>
               <li><div class="sdot">2</div><div><strong>Label walls A, B, C, D</strong> going clockwise from the main kitchen wall.</div></li>
               <li><div class="sdot">3</div><div><strong>Measure each wall</strong> in millimetres at worktop height (~900mm from floor).</div></li>
               <li><div class="sdot">4</div><div><strong>Mark every window</strong> with its width and sill height from the floor.</div></li>
-              <li><div class="sdot">5</div><div><strong>Mark every door</strong> â which wall, hinge side, and swing direction.</div></li>
-              <li><div class="sdot">6</div><div><strong>Note radiators, boiler, soil pipes, sockets and switches</strong> â anything fixed that can't be moved.</div></li>
+              <li><div class="sdot">5</div><div><strong>Mark every door</strong> &#8212; which wall, hinge side, and swing direction.</div></li>
+              <li><div class="sdot">6</div><div><strong>Note radiators, boiler, soil pipes, sockets and switches</strong> &#8212; anything fixed that can't be moved.</div></li>
               <li><div class="sdot">7</div><div><strong>Measure ceiling height</strong> and write it clearly on the sketch.</div></li>
               <li><div class="sdot">8</div><div><strong>Photograph the sketch</strong> in good light and upload it below with your room photos.</div></li>
             </ol>
@@ -585,10 +719,10 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
       <!-- FORM -->
       <div class="form-card" id="dds-form">
         <h2 style="font-size:1.4rem;margin-bottom:6px">Submit Your Kitchen Details</h2>
-        <p style="font-size:.85rem;color:var(--mid);margin-bottom:32px">Fill in as much detail as possible â the more you give us, the more accurate your design will be.</p>
+        <p style="font-size:.85rem;color:var(--mid);margin-bottom:32px">Fill in as much detail as possible &#8212; the more you give us, the more accurate your design will be.</p>
 
         <div class="measure-box">
-          <div class="measure-box-title">ð Room Measurements</div>
+          <div class="measure-box-title">&#128207; Room Measurements</div>
           <div class="measure-grid">
             <div class="mf"><label>Wall A length (mm)</label><input type="number" placeholder="e.g. 4200" id="dWA"></div>
             <div class="mf"><label>Wall B length (mm)</label><input type="number" placeholder="e.g. 3200" id="dWB"></div>
@@ -600,7 +734,7 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
         </div>
 
         <div class="measure-box">
-          <div class="measure-box-title">ðª Windows &amp; Doors</div>
+          <div class="measure-box-title">&#129695; Windows &amp; Doors</div>
           <div class="measure-grid">
             <div class="mf"><label>Number of windows</label><input type="number" placeholder="e.g. 2" min="0"></div>
             <div class="mf"><label>Window sill height from floor (mm)</label><input type="number" placeholder="e.g. 1050"></div>
@@ -610,18 +744,18 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
         </div>
 
         <div class="fg">
-          <label>ð· Upload Room Photos <span style="font-weight:400;color:var(--light)">(each wall, ceiling, existing appliances â min. 4 photos)</span></label>
+          <label>&#128247; Upload Room Photos <span style="font-weight:400;color:var(--light)">(each wall, ceiling, existing appliances &#8212; min. 4 photos)</span></label>
           <div class="upload-zone" onclick="document.getElementById('dPhotos').click()">
-            <div class="uz-icon">ð¸</div><strong>Click to add photos</strong><p>JPG or PNG Â· up to 10MB each</p>
+            <div class="uz-icon">&#128248;</div><strong>Click to add photos</strong><p>JPG or PNG &#183; up to 10MB each</p>
           </div>
           <input type="file" id="dPhotos" accept="image/*" multiple style="display:none" onchange="showFiles(this,'dPhotoList')">
           <ul class="file-list" id="dPhotoList"></ul>
         </div>
 
         <div class="fg">
-          <label>âï¸ Upload Your Measurement Sketch <span style="font-weight:400;color:var(--light)">(photo of your hand-drawn floor plan)</span></label>
+          <label>&#9999;&#65039; Upload Your Measurement Sketch <span style="font-weight:400;color:var(--light)">(photo of your hand-drawn floor plan)</span></label>
           <div class="upload-zone" onclick="document.getElementById('dSketch').click()">
-            <div class="uz-icon">ð</div><strong>Click to upload sketch</strong><p>JPG, PNG or PDF</p>
+            <div class="uz-icon">&#128203;</div><strong>Click to upload sketch</strong><p>JPG, PNG or PDF</p>
           </div>
           <input type="file" id="dSketch" accept="image/*,.pdf" style="display:none" onchange="showFiles(this,'dSketchList')">
           <ul class="file-list" id="dSketchList"></ul>
@@ -630,19 +764,19 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
         <div style="height:1px;background:var(--border);margin:28px 0"></div>
 
         <div style="margin-bottom:28px">
-          <div class="sel-title">ðª Preferred Door Range</div>
-          <div class="sel-sub">Select up to 3 that appeal â or leave blank and we'll suggest options to suit your style.</div>
+          <div class="sel-title">&#128682; Preferred Door Range</div>
+          <div class="sel-sub">Select up to 3 that appeal &#8212; or leave blank and we'll suggest options to suit your style.</div>
           <div class="mini-grid" id="dds-doors"></div>
         </div>
 
         <div style="margin-bottom:28px">
-          <div class="sel-title">ð© Preferred Handle Style</div>
+          <div class="sel-title">&#128297; Preferred Handle Style</div>
           <div class="sel-sub">Select any that you like, or leave blank.</div>
           <div class="mini-grid" id="dds-handles"></div>
         </div>
 
         <div style="margin-bottom:28px">
-          <div class="sel-title">ðªµ Preferred Worktop Finish</div>
+          <div class="sel-title">&#129717; Preferred Worktop Finish</div>
           <div class="sel-sub">Select any that appeal, or leave blank.</div>
           <div class="mini-grid" id="dds-worktops"></div>
         </div>
@@ -650,26 +784,26 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
         <div style="height:1px;background:var(--border);margin:28px 0"></div>
 
         <div class="fg">
-          <label>ð³ Appliances to Include</label>
+          <label>&#127859; Appliances to Include</label>
           <p class="hint" style="margin-bottom:6px">List any appliances needing housing (hob, oven, fridge, dishwasher, wine fridge, extractor, etc.)</p>
-          <textarea placeholder="e.g. 900mm range cooker on Wall A, integrated dishwasher, American fridge-freezer, ceiling-mounted extractorâ¦" rows="3"></textarea>
+          <textarea placeholder="e.g. 900mm range cooker on Wall A, integrated dishwasher, American fridge-freezer, ceiling-mounted extractor&#8230;" rows="3"></textarea>
         </div>
 
         <div class="fg">
-          <label>âï¸ Additional Items &amp; Special Requests</label>
-          <p class="hint" style="margin-bottom:6px">Anything else you'd like that isn't listed above â larder units, pantry, island, open shelving, glass doors, specific colours, internal drawer inserts, soft-close, etc.</p>
-          <textarea id="dExtras" placeholder="e.g. Tall larder unit either side of the range, open shelving above the breakfast bar, wine rack in the island, pan-drawer inserts on base units, soft-close on everythingâ¦" rows="5"></textarea>
+          <label>&#9999;&#65039; Additional Items &amp; Special Requests</label>
+          <p class="hint" style="margin-bottom:6px">Anything else you'd like that isn't listed above &#8212; larder units, pantry, island, open shelving, glass doors, specific colours, internal drawer inserts, soft-close, etc.</p>
+          <textarea id="dExtras" placeholder="e.g. Tall larder unit either side of the range, open shelving above the breakfast bar, wine rack in the island, pan-drawer inserts on base units, soft-close on everything&#8230;" rows="5"></textarea>
         </div>
 
         <div class="fg">
-          <label>ð° Budget (optional)</label>
+          <label>&#128176; Budget (optional)</label>
           <select id="dBudget" style="max-width:260px">
             <option value="">Prefer not to say</option>
-            <option>Under Â£5,000</option>
-            <option>Â£5,000 â Â£10,000</option>
-            <option>Â£10,000 â Â£20,000</option>
-            <option>Â£20,000 â Â£35,000</option>
-            <option>Â£35,000+</option>
+            <option>Under &#163;5,000</option>
+            <option>&#163;5,000 &#8211; &#163;10,000</option>
+            <option>&#163;10,000 &#8211; &#163;20,000</option>
+            <option>&#163;20,000 &#8211; &#163;35,000</option>
+            <option>&#163;35,000+</option>
           </select>
         </div>
 
@@ -685,14 +819,14 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
         </div>
         <div class="fg"><label>Postcode *</label><input type="text" id="dPC" placeholder="BT1 1AA" style="max-width:200px"></div>
         <div style="background:var(--cream);border-radius:10px;padding:14px 18px;margin-bottom:24px;font-size:.82rem;color:var(--mid)">
-          ð³ Payment of <strong>Â£150</strong> is taken on submission and fully credited back against your kitchen order. We'll contact you within 24 hours to arrange payment and confirm the brief.
+          &#128179; Payment of <strong>&#163;150</strong> is taken on submission and fully credited back against your kitchen order. We'll contact you within 24 hours to arrange payment and confirm the brief.
         </div>
-        <button class="btn btn-gold btn-lg btn-block" onclick="submitDDS()">Submit My Kitchen Details â</button>
+        <button class="btn btn-gold btn-lg btn-block" onclick="submitDDS()">Submit My Kitchen Details &#8594;</button>
       </div>
 
       <div id="dds-ok" style="display:none">
         <div class="success-screen form-card" style="max-width:560px;margin:0 auto">
-          <span class="si">ð</span>
+          <span class="si">&#127881;</span>
           <h2 style="font-size:1.6rem;margin-bottom:10px">Design Request Received!</h2>
           <p style="color:var(--mid);max-width:440px;margin:0 auto 28px">We'll be in touch within 24 hours to arrange payment and confirm your brief. Your full 3D design and quote will follow within 48 hours of that.</p>
           <button class="btn btn-gold" onclick="go('catalogue')">Browse the Catalogue</button>
@@ -702,9 +836,9 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
   </section>
 </div>
 
-<!-- âââââââ ESTIMATE âââââââ -->
+<!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; ESTIMATE &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
 <div id="page-estimate" class="page">
-  <div class="page-hdr"><div class="page-hdr-bg"></div><div class="page-hdr-inner"><h1>Get a Free Estimate</h1><p>5 quick questions â personalised ballpark quote by email within 24 hours</p></div></div>
+  <div class="page-hdr"><div class="page-hdr-bg"></div><div class="page-hdr-inner"><h1>Get a Free Estimate</h1><p>5 quick questions &#8212; personalised ballpark quote by email within 24 hours</p></div></div>
   <section class="section">
     <div class="wizard-wrap">
       <div class="wiz-prog" id="wiz-prog"></div>
@@ -712,43 +846,43 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
       <div class="wiz-panel active" id="wiz-1">
         <h2 class="wiz-title">What type of room?</h2><p class="wiz-sub">Select the option that best describes your project.</p>
         <div class="opt-grid">
-          <button class="opt-btn" onclick="selOpt(this,'rT','kitchen')"><span class="oi">ð³</span>Kitchen Only</button>
-          <button class="opt-btn" onclick="selOpt(this,'rT','utility')"><span class="oi">ð§º</span>Kitchen + Utility</button>
-          <button class="opt-btn" onclick="selOpt(this,'rT','island')"><span class="oi">ðï¸</span>Kitchen + Island</button>
-          <button class="opt-btn" onclick="selOpt(this,'rT','full')"><span class="oi">ð </span>Full Suite</button>
+          <button class="opt-btn" onclick="selOpt(this,'rT','kitchen')"><span class="oi">&#127859;</span>Kitchen Only</button>
+          <button class="opt-btn" onclick="selOpt(this,'rT','utility')"><span class="oi">&#129530;</span>Kitchen + Utility</button>
+          <button class="opt-btn" onclick="selOpt(this,'rT','island')"><span class="oi">&#127965;&#65039;</span>Kitchen + Island</button>
+          <button class="opt-btn" onclick="selOpt(this,'rT','full')"><span class="oi">&#127968;</span>Full Suite</button>
         </div>
-        <div class="wiz-nav"><span></span><button class="btn btn-gold" onclick="wN()">Next â</button></div>
+        <div class="wiz-nav"><span></span><button class="btn btn-gold" onclick="wN()">Next &#8594;</button></div>
       </div>
       <div class="wiz-panel" id="wiz-2">
-        <h2 class="wiz-title">How big is the room?</h2><p class="wiz-sub">Approximate is fine â we'll refine at the design stage.</p>
+        <h2 class="wiz-title">How big is the room?</h2><p class="wiz-sub">Approximate is fine &#8212; we'll refine at the design stage.</p>
         <div class="opt-grid">
-          <button class="opt-btn" onclick="selOpt(this,'sz','small')"><span class="oi">ð¦</span>Small<br><small style="font-weight:400;color:var(--mid)">Under 8mÂ²</small></button>
-          <button class="opt-btn" onclick="selOpt(this,'sz','med')"><span class="oi">ð </span>Medium<br><small style="font-weight:400;color:var(--mid)">8â14mÂ²</small></button>
-          <button class="opt-btn" onclick="selOpt(this,'sz','large')"><span class="oi">ð¡</span>Large<br><small style="font-weight:400;color:var(--mid)">14â22mÂ²</small></button>
-          <button class="opt-btn" onclick="selOpt(this,'sz','xl')"><span class="oi">ð°</span>Extra Large<br><small style="font-weight:400;color:var(--mid)">22mÂ²+</small></button>
+          <button class="opt-btn" onclick="selOpt(this,'sz','small')"><span class="oi">&#128230;</span>Small<br><small style="font-weight:400;color:var(--mid)">Under 8m&#178;</small></button>
+          <button class="opt-btn" onclick="selOpt(this,'sz','med')"><span class="oi">&#127968;</span>Medium<br><small style="font-weight:400;color:var(--mid)">8&#8211;14m&#178;</small></button>
+          <button class="opt-btn" onclick="selOpt(this,'sz','large')"><span class="oi">&#127969;</span>Large<br><small style="font-weight:400;color:var(--mid)">14&#8211;22m&#178;</small></button>
+          <button class="opt-btn" onclick="selOpt(this,'sz','xl')"><span class="oi">&#127984;</span>Extra Large<br><small style="font-weight:400;color:var(--mid)">22m&#178;+</small></button>
         </div>
-        <div class="wiz-nav"><button class="btn-back" onclick="wB()">â Back</button><button class="btn btn-gold" onclick="wN()">Next â</button></div>
+        <div class="wiz-nav"><button class="btn-back" onclick="wB()">&#8592; Back</button><button class="btn btn-gold" onclick="wN()">Next &#8594;</button></div>
       </div>
       <div class="wiz-panel" id="wiz-3">
         <h2 class="wiz-title">Upload photos (optional)</h2><p class="wiz-sub">Photos of your existing kitchen help us give a more accurate estimate.</p>
         <div class="upload-zone" onclick="document.getElementById('eP').click()" style="margin-bottom:14px">
-          <div class="uz-icon">ð·</div><strong>Click to add photos</strong><p>JPG or PNG â optional but helpful</p>
+          <div class="uz-icon">&#128247;</div><strong>Click to add photos</strong><p>JPG or PNG &#8212; optional but helpful</p>
         </div>
         <input type="file" id="eP" accept="image/*" multiple style="display:none" onchange="showFiles(this,'ePL')">
         <ul class="file-list" id="ePL"></ul>
-        <div class="wiz-nav"><button class="btn-back" onclick="wB()">â Back</button><button class="btn btn-gold" onclick="wN()">Next â</button></div>
+        <div class="wiz-nav"><button class="btn-back" onclick="wB()">&#8592; Back</button><button class="btn btn-gold" onclick="wN()">Next &#8594;</button></div>
       </div>
       <div class="wiz-panel" id="wiz-4">
         <h2 class="wiz-title">What style appeals?</h2><p class="wiz-sub">We'll highlight matching door ranges in your quote.</p>
         <div class="opt-grid" style="grid-template-columns:repeat(3,1fr)">
-          <button class="opt-btn" onclick="selOpt(this,'st','modern')"><span class="oi">â¬</span>Modern / Handleless</button>
-          <button class="opt-btn" onclick="selOpt(this,'st','shaker')"><span class="oi">ðª</span>Classic Shaker</button>
-          <button class="opt-btn" onclick="selOpt(this,'st','gloss')"><span class="oi">â¨</span>High Gloss</button>
-          <button class="opt-btn" onclick="selOpt(this,'st','wood')"><span class="oi">ð²</span>Wood / Natural</button>
-          <button class="opt-btn" onclick="selOpt(this,'st','painted')"><span class="oi">ð¨</span>Painted</button>
-          <button class="opt-btn" onclick="selOpt(this,'st','unsure')"><span class="oi">ð¤·</span>Not Sure Yet</button>
+          <button class="opt-btn" onclick="selOpt(this,'st','modern')"><span class="oi">&#11035;</span>Modern / Handleless</button>
+          <button class="opt-btn" onclick="selOpt(this,'st','shaker')"><span class="oi">&#129695;</span>Classic Shaker</button>
+          <button class="opt-btn" onclick="selOpt(this,'st','gloss')"><span class="oi">&#10024;</span>High Gloss</button>
+          <button class="opt-btn" onclick="selOpt(this,'st','wood')"><span class="oi">&#127794;</span>Wood / Natural</button>
+          <button class="opt-btn" onclick="selOpt(this,'st','painted')"><span class="oi">&#127912;</span>Painted</button>
+          <button class="opt-btn" onclick="selOpt(this,'st','unsure')"><span class="oi">&#129335;</span>Not Sure Yet</button>
         </div>
-        <div class="wiz-nav"><button class="btn-back" onclick="wB()">â Back</button><button class="btn btn-gold" onclick="wN()">Next â</button></div>
+        <div class="wiz-nav"><button class="btn-back" onclick="wB()">&#8592; Back</button><button class="btn btn-gold" onclick="wN()">Next &#8594;</button></div>
       </div>
       <div class="wiz-panel" id="wiz-5">
         <h2 class="wiz-title">Your contact details</h2><p class="wiz-sub">We'll send your personalised estimate within 24 hours.</p>
@@ -756,12 +890,12 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
         <div class="fg"><label>Email *</label><input type="email" id="wEM" placeholder="sarah@example.com"></div>
         <div class="fg"><label>Phone</label><input type="tel" id="wPH" placeholder="07700 000000"></div>
         <div class="fg"><label>Postcode</label><input type="text" id="wPC" placeholder="BT1 1AA" style="max-width:200px"></div>
-        <div class="fg"><label>Anything else to mention?</label><textarea rows="3" id="wNO" placeholder="e.g. angled ceiling, chimney breast, specific appliancesâ¦"></textarea></div>
-        <div class="wiz-nav"><button class="btn-back" onclick="wB()">â Back</button><button class="btn btn-gold" onclick="wS()">Send My Estimate â</button></div>
+        <div class="fg"><label>Anything else to mention?</label><textarea rows="3" id="wNO" placeholder="e.g. angled ceiling, chimney breast, specific appliances&#8230;"></textarea></div>
+        <div class="wiz-nav"><button class="btn-back" onclick="wB()">&#8592; Back</button><button class="btn btn-gold" onclick="wS()">Send My Estimate &#10003;</button></div>
       </div>
       <div class="wiz-panel" id="wiz-ok">
         <div class="success-screen">
-          <span class="si">ð</span>
+          <span class="si">&#127881;</span>
           <h2 style="font-size:1.6rem;margin-bottom:10px">Estimate Request Sent!</h2>
           <p style="color:var(--mid);max-width:420px;margin:0 auto 28px">You'll hear from us within 24 hours with a personalised quote. Browse the catalogue in the meantime to narrow down your style.</p>
           <button class="btn btn-gold" onclick="go('catalogue')">Browse Catalogue</button>
@@ -771,50 +905,50 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
   </section>
 </div>
 
-<!-- âââââââ BOOK âââââââ -->
+<!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; BOOK &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
 <div id="page-book" class="page">
-  <div class="page-hdr"><div class="page-hdr-bg"></div><div class="page-hdr-inner"><h1>Book a Visit</h1><p>One package, one price â a designer comes to you and handles everything</p></div></div>
+  <div class="page-hdr"><div class="page-hdr-bg"></div><div class="page-hdr-inner"><h1>Book a Visit</h1><p>One package, one price &#8212; a designer comes to you and handles everything</p></div></div>
   <section class="section">
     <div class="section-inner">
       <div class="book-options">
         <div class="book-card featured">
-          <div class="book-icon">ð </div>
+          <div class="book-icon">&#127968;</div>
           <h3>Call Out &amp; Design</h3>
-          <p>A Millwood designer visits your home, measures every wall, window and door, photographs the space, then creates a full 3D design and itemised quote â all in a single visit.</p>
+          <p>A Millwood designer visits your home, measures every wall, window and door, photographs the space, then creates a full 3D design and itemised quote &#8212; all in a single visit.</p>
           <p style="font-size:.82rem;color:var(--mid);margin-bottom:20px">Everything included: survey, measurement, design and quote.</p>
-          <div class="book-price">Â£200</div>
-          <span class="book-credit">â Fully credited back against your kitchen order</span>
+          <div class="book-price">&#163;200</div>
+          <span class="book-credit">&#10003; Fully credited back against your kitchen order</span>
           <button class="btn btn-gold btn-block" onclick="showBookForm()">Book My Visit</button>
         </div>
         <div class="book-card">
-          <div class="book-icon">ð»</div>
+          <div class="book-icon">&#128187;</div>
           <h3>Prefer to do it from home?</h3>
-          <p>Our Digital Design Service lets you submit photos and measurements yourself and receive a full 3D design and quote within 48 hours â no home visit needed.</p>
+          <p>Our Digital Design Service lets you submit photos and measurements yourself and receive a full 3D design and quote within 48 hours &#8212; no home visit needed.</p>
           <p style="font-size:.82rem;color:var(--mid);margin-bottom:20px">Ideal if you're not ready for a visit, or you're outside our travel area.</p>
-          <div class="book-price">Â£150</div>
-          <span class="book-credit">â Fully credited back against your kitchen order</span>
+          <div class="book-price">&#163;150</div>
+          <span class="book-credit">&#10003; Fully credited back against your kitchen order</span>
           <button class="btn btn-outline-gold btn-block" onclick="go('design')">Start Digital Design</button>
         </div>
       </div>
       <div class="form-card" id="book-form" style="display:none;max-width:600px;margin:0 auto">
-        <h3 style="font-size:1.2rem;margin-bottom:6px">Book Your Call Out &amp; Design â Â£200</h3>
+        <h3 style="font-size:1.2rem;margin-bottom:6px">Book Your Call Out &amp; Design &#8212; &#163;200</h3>
         <p style="font-size:.84rem;color:var(--mid);margin-bottom:24px">We'll be in touch within one working day to confirm your appointment time.</p>
         <div class="frow"><div class="fg"><label>First Name *</label><input type="text" id="bFN"></div><div class="fg"><label>Last Name *</label><input type="text" id="bLN"></div></div>
         <div class="frow"><div class="fg"><label>Email *</label><input type="email" id="bEM"></div><div class="fg"><label>Phone *</label><input type="tel" id="bPH"></div></div>
         <div class="fg"><label>Full Address *</label><textarea rows="2" id="bAD" placeholder="Including postcode"></textarea></div>
         <div class="frow">
           <div class="fg"><label>Preferred Date</label><input type="date" id="bDT"></div>
-          <div class="fg"><label>Preferred Time</label><select id="bTI"><option>Morning (8amâ12pm)</option><option>Afternoon (12pmâ5pm)</option><option>Evening (5pmâ7pm)</option></select></div>
+          <div class="fg"><label>Preferred Time</label><select id="bTI"><option>Morning (8am&#8211;12pm)</option><option>Afternoon (12pm&#8211;5pm)</option><option>Evening (5pm&#8211;7pm)</option></select></div>
         </div>
-        <div class="fg"><label>Anything useful for us to know?</label><textarea rows="3" id="bNO" placeholder="Parking notes, access info, key features of the spaceâ¦"></textarea></div>
-        <div style="background:var(--cream);border-radius:9px;padding:14px 18px;margin-bottom:20px;font-size:.81rem;color:var(--mid)">ð³ The Â£200 fee is taken on the day of the visit and credited in full against your order.</div>
+        <div class="fg"><label>Anything useful for us to know?</label><textarea rows="3" id="bNO" placeholder="Parking notes, access info, key features of the space&#8230;"></textarea></div>
+        <div style="background:var(--cream);border-radius:9px;padding:14px 18px;margin-bottom:20px;font-size:.81rem;color:var(--mid)">&#128179; The &#163;200 fee is taken on the day of the visit and credited in full against your order.</div>
         <button class="btn btn-gold btn-lg btn-block" onclick="bookSubmit()">Request Appointment</button>
       </div>
     </div>
   </section>
 </div>
 
-<!-- âââââââ UPLOAD PLANS âââââââ -->
+<!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; UPLOAD PLANS &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
 <div id="page-plans" class="page">
   <div class="page-hdr"><div class="page-hdr-bg"></div><div class="page-hdr-inner"><h1>Upload Your Plans</h1><p>Have architect or builder drawings? We'll price your kitchen straight from them</p></div></div>
   <section class="section">
@@ -822,28 +956,28 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
       <div class="plans-tiers" style="margin-bottom:40px">
         <div class="tier-card">
           <div class="tier-badge">Standard</div>
-          <h3>Estimate from Plans</h3><div class="tier-price">Â£30</div><div class="tier-credit">â Credited back on order</div>
+          <h3>Estimate from Plans</h3><div class="tier-price">&#163;30</div><div class="tier-credit">&#10003; Credited back on order</div>
           <ul class="tier-feats"><li>Itemised quote from your drawings</li><li>Unit layout mapped to your plans</li><li>Response within 48 hours</li><li>PDF, CAD, or photo of drawing accepted</li></ul>
-          <button class="btn btn-outline-gold btn-block" onclick="showPlansForm('standard')">Choose Standard â Â£30</button>
+          <button class="btn btn-outline-gold btn-block" onclick="showPlansForm('standard')">Choose Standard &#8212; &#163;30</button>
         </div>
         <div class="tier-card featured">
           <div class="tier-badge">Full Service</div>
-          <h3>Full Design Service</h3><div class="tier-price">Â£150</div><div class="tier-credit">â Credited back on order</div>
+          <h3>Full Design Service</h3><div class="tier-price">&#163;150</div><div class="tier-credit">&#10003; Credited back on order</div>
           <ul class="tier-feats"><li>Everything in Standard, plus:</li><li>Full 3D photorealistic renders</li><li>Two design revisions included</li><li>Handle &amp; worktop recommendations</li><li>Dedicated designer throughout</li><li>Response within 24 hours</li></ul>
-          <button class="btn btn-gold btn-block" onclick="showPlansForm('full')">Choose Full Service â Â£150</button>
+          <button class="btn btn-gold btn-block" onclick="showPlansForm('full')">Choose Full Service &#8212; &#163;150</button>
         </div>
       </div>
       <div class="form-card" id="plans-form" style="display:none;max-width:600px;margin:0 auto">
         <h3 id="plans-form-title" style="font-size:1.15rem;margin-bottom:6px">Upload Your Plans</h3>
         <p style="font-size:.84rem;color:var(--mid);margin-bottom:24px">We accept PDF, DWG, JPG or PNG. Max 50MB per file.</p>
         <div class="upload-zone" onclick="document.getElementById('pFile').click()" style="margin-bottom:14px">
-          <div class="uz-icon">ð</div><strong>Click to upload your plans</strong><p>PDF Â· DWG Â· JPG Â· PNG</p>
+          <div class="uz-icon">&#128206;</div><strong>Click to upload your plans</strong><p>PDF &#183; DWG &#183; JPG &#183; PNG</p>
         </div>
         <input type="file" id="pFile" multiple accept=".pdf,.dwg,.jpg,.jpeg,.png" style="display:none" onchange="showFiles(this,'pFL')">
         <ul class="file-list" id="pFL"></ul>
         <div class="frow" style="margin-top:16px"><div class="fg"><label>First Name *</label><input type="text" id="pFN"></div><div class="fg"><label>Last Name *</label><input type="text" id="pLN"></div></div>
         <div class="frow"><div class="fg"><label>Email *</label><input type="email" id="pEM"></div><div class="fg"><label>Phone</label><input type="tel" id="pPH"></div></div>
-        <div class="fg"><label>Notes</label><textarea rows="3" id="pNO" placeholder="Style preferences, key dimensions, appliances, anything elseâ¦"></textarea></div>
+        <div class="fg"><label>Notes</label><textarea rows="3" id="pNO" placeholder="Style preferences, key dimensions, appliances, anything else&#8230;"></textarea></div>
         <input type="hidden" id="plans-form-type" value="">
         <button class="btn btn-gold btn-lg btn-block" style="margin-top:8px" onclick="plansSubmit()">Submit Plans</button>
       </div>
@@ -855,6 +989,19 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
 
 <script>
 // DATA
+
+// Kitchen photos for door ranges (Unsplash)
+const DOOR_PHOTOS={
+  "Alabaster Shaker":"https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&h=180&fit=crop&q=75&auto=format",
+  "Cashmere Shaker":"https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=300&h=180&fit=crop&q=75&auto=format",
+  "Dust Grey Shaker":"https://images.unsplash.com/photo-1570545843370-1c9e6e2e6ced?w=300&h=180&fit=crop&q=75&auto=format",
+  "Hartfield":"https://images.unsplash.com/photo-1556909276-1ab58ead832e?w=300&h=180&fit=crop&q=75&auto=format",
+  "Ivory Shaker":"https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=300&h=180&fit=crop&q=75&auto=format",
+  "Sage Green Shaker":"https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=300&h=180&fit=crop&crop=top&q=75&auto=format",
+  "Stanton":"https://images.unsplash.com/photo-1556040220-4096d522378d?w=300&h=180&fit=crop&q=75&auto=format",
+  "Woodbury":"https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=300&h=180&fit=crop&crop=bottom&q=75&auto=format"
+};
+
 const DOORS=[
   {name:"Acrylic Gloss",col:"Acrylic",style:"Modern",sw:["#FFFFFF","#1A1A18","#C0C0C0","#F5F0E8"],pto:false},
   {name:"Alabaster Shaker",col:"Shaker",style:"Traditional",sw:["#F0EAD6","#E8E0CC","#D4C9B0","#C8BFA8"],pto:false},
@@ -945,8 +1092,8 @@ function initCat(){
   const dl=dF==='All'?DOORS:DOORS.filter(d=>d.col===dF);
   document.getElementById('door-grid').innerHTML=dl.map(d=>`
     <div class="door-card">
-      <div class="door-swatches">${d.sw.map(c=>`<div class="swatch" style="background:${c}"></div>`).join('')}</div>
-      <div class="door-body"><div class="door-name">${d.name}</div><div class="door-meta">${d.col} Â· ${d.style}</div>${d.pto?'<span class="door-pto">Paint-to-Order</span>':''}</div>
+      <div class="door-swatches" style="padding:0;position:relative;overflow:hidden">${DOOR_PHOTOS[d.name]?`<img src="${DOOR_PHOTOS[d.name]}" alt="${d.name}" style="width:100%;height:130px;object-fit:cover;display:block" loading="lazy" onerror="this.style.display='none';this.nextSibling.style.display='flex'"/><div style="display:none;height:130px;gap:3px;padding:10px">${d.sw.map(c=>`<div class="swatch" style="background:${c}"></div>`).join('')}</div>`:`<div style="display:flex;height:130px;gap:3px;padding:10px">${d.sw.map(c=>`<div class="swatch" style="background:${c}"></div>`).join('')}</div>`}</div>
+      <div class="door-body"><div class="door-name">${d.name}</div><div class="door-meta">${d.col} &#183; ${d.style}</div>${d.pto?'<span class="door-pto">Paint-to-Order</span>':''}</div>
     </div>`).join('');
   const hFins=['All',...new Set(HANDLES.map(h=>h.finish))];
   document.getElementById('handle-filters').innerHTML=hFins.map(f=>`<button class="filter-pill ${f===hF?'active':''}" onclick="fH('${f}')">${f}</button>`).join('');
@@ -957,8 +1104,8 @@ function initCat(){
         <div style="width:26px;height:26px;border-radius:50%;background:${FC[h.finish]||'#999'};border:1px solid rgba(0,0,0,.1);flex-shrink:0"></div>
         <div class="handle-name">${h.name}</div>
       </div>
-      <div class="handle-meta">${h.style} Â· ${h.finish}${h.mm>0?' Â· '+h.mm+'mm':''}</div>
-      <div class="handle-price">Â£${(h.p/100).toFixed(2)} <span style="font-size:.72rem;font-weight:400;color:var(--light)">per unit</span></div>
+      <div class="handle-meta">${h.style} &#183; ${h.finish}${h.mm>0?' &#183; '+h.mm+'mm':''}</div>
+      <div class="handle-price">&#163;${(h.p/100).toFixed(2)} <span style="font-size:.72rem;font-weight:400;color:var(--light)">per unit</span></div>
     </div>`).join('');
   document.getElementById('worktop-grid').innerHTML=WORKTOPS.map(w=>`
     <div class="worktop-card">
@@ -989,7 +1136,7 @@ function initDDS(){
         <div class="mini-handle-name">${h.name}</div>
       </div>
       <div class="mini-handle-sub">${h.finish}</div>
-      <div class="mini-handle-price">Â£${(h.p/100).toFixed(2)}</div>
+      <div class="mini-handle-price">&#163;${(h.p/100).toFixed(2)}</div>
     </div>`).join('');
   document.getElementById('dds-worktops').innerHTML=WORKTOPS.map((w,i)=>`
     <div class="mini-wt" id="mw${i}" onclick="tW(${i})">
@@ -1073,13 +1220,13 @@ function bookSubmit(){
     'preferred-time':document.getElementById('bTI').value,
     'notes':document.getElementById('bNO').value.trim()
   });
-  document.getElementById('book-form').innerHTML=`<div class="success-screen"><span class="si">â</span><h3 style="font-size:1.3rem;margin-bottom:8px">Appointment Requested!</h3><p style="color:var(--mid)">We'll be in touch within one working day to confirm your visit.</p></div>`;
+  document.getElementById('book-form').innerHTML=`<div class="success-screen"><span class="si">&#9989;</span><h3 style="font-size:1.3rem;margin-bottom:8px">Appointment Requested!</h3><p style="color:var(--mid)">We'll be in touch within one working day to confirm your visit.</p></div>`;
 }
 
 // PLANS
 function showPlansForm(t){
-  document.getElementById('plans-form-title').textContent=t==='full'?'Full Design Service â Â£150':'Estimate from Plans â Â£30';
-  document.getElementById('plans-form-type').value=t==='full'?'Full Design Service â Â£150':'Estimate from Plans â Â£30';
+  document.getElementById('plans-form-title').textContent=t==='full'?'Full Design Service &#8212; &#163;150':'Estimate from Plans &#8212; &#163;30';
+  document.getElementById('plans-form-type').value=t==='full'?'Full Design Service &#8212; &#163;150':'Estimate from Plans &#8212; &#163;30';
   const f=document.getElementById('plans-form');f.style.display='block';
   setTimeout(()=>f.scrollIntoView({behavior:'smooth',block:'start'}),50);
 }
@@ -1092,13 +1239,32 @@ function plansSubmit(){
     'email':em,'phone':document.getElementById('pPH').value.trim(),
     'notes':document.getElementById('pNO').value.trim()
   });
-  document.getElementById('plans-form').innerHTML<`<div class="success-screen"><span class="si">ð¬</span><h3 style="font-size:1.3rem;margin-bottom:8px">Plans Received!</h3><p style="color:var(--mid)">We'll have your quote back within 48 hours.</p></div>`;
+  document.getElementById('plans-form').innerHTML=`<div class="success-screen"><span class="si">&#128236;</span><h3 style="font-size:1.3rem;margin-bottom:8px">Plans Received!</h3><p style="color:var(--mid)">We'll have your quote back within 48 hours.</p></div>`;
 }
 
 // TOAST
 function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000)}
 
 // INIT
+
+// Hero slider
+const HERO_SLIDES=[
+  {img:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&h=560&fit=crop&q=85&auto=format',name:'Hartfield Ivory',desc:'Shaker &middot; 3.4m kitchen',price:'&pound;8,400'},
+  {img:'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=700&h=560&fit=crop&q=85&auto=format',name:'Lincoln Graphite',desc:'Handleless &middot; 4.1m kitchen',price:'&pound;11,200'},
+  {img:'https://images.unsplash.com/photo-1570545843370-1c9e6e2e6ced?w=700&h=560&fit=crop&q=85&auto=format',name:'Dust Grey Shaker',desc:'Traditional &middot; 3.8m kitchen',price:'&pound;9,600'}
+];
+let heroIdx=0;
+function heroSlide(i){
+  heroIdx=i;
+  const s=HERO_SLIDES[i];
+  const img=document.getElementById('hero-img');
+  if(img){img.src=s.img;}
+  document.querySelectorAll('.hero-img-dot').forEach((d,j)=>d.classList.toggle('active',j===i));
+  const badge=document.querySelector('.hero-img-badge');
+  if(badge){badge.querySelector('.hero-img-badge-main').innerHTML=s.name;badge.querySelector('.hero-img-badge-sub').innerHTML=s.desc;badge.querySelector('.hero-img-badge-num').innerHTML=s.price;}
+}
+setInterval(()=>heroSlide((heroIdx+1)%HERO_SLIDES.length),5000);
+
 document.addEventListener('DOMContentLoaded',()=>{initCat();initWiz();initDDS()});
 </script>
 
