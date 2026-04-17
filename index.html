@@ -228,7 +228,8 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
 .fg{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
 .fg label{font-size:.82rem;font-weight:700;color:var(--dark)}
 .fg input,.fg select,.fg textarea{padding:10px 14px;border:1.5px solid var(--border);border-radius:9px;font-size:.9rem;background:var(--white);color:var(--dark);transition:border-color .2s}
-.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--gold)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(139,107,10,.18)}
+.fg input:focus-visible,.fg select:focus-visible,.fg textarea:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .fg textarea{resize:vertical;min-height:90px}
 .hint{font-size:.72rem;color:var(--light)}
 .upload-zone{border:2px dashed var(--border2);border-radius:var(--radius);padding:36px 24px;text-align:center;transition:all .2s;background:var(--cream);cursor:pointer}
@@ -305,7 +306,8 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
 .mf{display:flex;flex-direction:column;gap:5px}
 .mf label{font-size:.75rem;font-weight:700;color:var(--mid)}
 .mf input{padding:9px 12px;border:1.5px solid var(--border);border-radius:8px;font-size:.88rem;background:var(--white)}
-.mf input:focus{outline:none;border-color:var(--gold)}
+.mf input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(139,107,10,.18)}
+.mf input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .sel-title{font-weight:700;font-size:.92rem;margin-bottom:4px}
 .sel-sub{font-size:.78rem;color:var(--mid);margin-bottom:14px}
 .mini-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;max-height:280px;overflow-y:auto;padding-right:4px}
@@ -414,6 +416,8 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
 .unit-ctrl{display:flex;align-items:center;gap:10px}
 .unit-btn{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--border);background:var(--white);font-size:1.1rem;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;flex-shrink:0}
 .unit-btn:hover{border-color:var(--gold);color:var(--gold)}
+.unit-btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+button:focus-visible,a:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .unit-qty{font-weight:700;font-size:1rem;min-width:28px;text-align:center}
 .door-picker-est{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
 .dp-card{border:2px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;transition:all .18s}
@@ -850,27 +854,27 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
         <div class="measure-box">
           <div class="measure-box-title">&#128207; Room Measurements</div>
           <div class="measure-grid">
-            <div class="mf"><label>Wall A length (mm)</label><input type="number" placeholder="e.g. 4200" id="dWA"></div>
-            <div class="mf"><label>Wall B length (mm)</label><input type="number" placeholder="e.g. 3200" id="dWB"></div>
-            <div class="mf"><label>Wall C length (mm)</label><input type="number" placeholder="e.g. 4200" id="dWC"></div>
-            <div class="mf"><label>Wall D length (mm)</label><input type="number" placeholder="e.g. 3200" id="dWD"></div>
-            <div class="mf"><label>Ceiling height (mm)</label><input type="number" placeholder="e.g. 2400" id="dCH"></div>
-            <div class="mf"><label>Worktop height preference</label><select id="dWTH"><option value="">Standard (900mm)</option><option value="870">Lower (870mm)</option><option value="920">Higher (920mm)</option></select></div>
+            <div class="mf"><label for="dWA">Wall A length (mm)</label><input type="number" placeholder="e.g. 4200" id="dWA"></div>
+            <div class="mf"><label for="dWB">Wall B length (mm)</label><input type="number" placeholder="e.g. 3200" id="dWB"></div>
+            <div class="mf"><label for="dWC">Wall C length (mm)</label><input type="number" placeholder="e.g. 4200" id="dWC"></div>
+            <div class="mf"><label for="dWD">Wall D length (mm)</label><input type="number" placeholder="e.g. 3200" id="dWD"></div>
+            <div class="mf"><label for="dCH">Ceiling height (mm)</label><input type="number" placeholder="e.g. 2400" id="dCH"></div>
+            <div class="mf"><label for="dWTH">Worktop height preference</label><select id="dWTH"><option value="">Standard (900mm)</option><option value="870">Lower (870mm)</option><option value="920">Higher (920mm)</option></select></div>
           </div>
         </div>
 
         <div class="measure-box">
           <div class="measure-box-title">&#129695; Windows &amp; Doors</div>
           <div class="measure-grid">
-            <div class="mf"><label>Number of windows</label><input type="number" placeholder="e.g. 2" min="0"></div>
-            <div class="mf"><label>Window sill height from floor (mm)</label><input type="number" placeholder="e.g. 1050"></div>
-            <div class="mf"><label>Number of doors into room</label><input type="number" placeholder="e.g. 1" min="0"></div>
-            <div class="mf"><label>Boiler / soil pipe location</label><input type="text" placeholder="e.g. Wall B, 600mm from corner"></div>
+            <div class="mf"><label for="dWin">Number of windows</label><input type="number" placeholder="e.g. 2" min="0" id="dWin"></div>
+            <div class="mf"><label for="dSill">Window sill height from floor (mm)</label><input type="number" placeholder="e.g. 1050" id="dSill"></div>
+            <div class="mf"><label for="dDoors">Number of doors into room</label><input type="number" placeholder="e.g. 1" min="0" id="dDoors"></div>
+            <div class="mf"><label for="dPipe">Boiler / soil pipe location</label><input type="text" placeholder="e.g. Wall B, 600mm from corner" id="dPipe"></div>
           </div>
         </div>
 
         <div class="fg">
-          <label>&#128247; Upload Room Photos <span style="font-weight:400;color:var(--light)">(each wall, ceiling, existing appliances &#8212; min. 4 photos)</span></label>
+          <label for="dPhotos">&#128247; Upload Room Photos <span style="font-weight:400;color:var(--light)">(each wall, ceiling, existing appliances &#8212; min. 4 photos)</span></label>
           <div class="upload-zone" onclick="document.getElementById('dPhotos').click()">
             <div class="uz-icon">&#128248;</div><strong>Click to add photos</strong><p>JPG or PNG &#183; up to 10MB each</p>
           </div>
@@ -879,7 +883,7 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
         </div>
 
         <div class="fg">
-          <label>&#9999;&#65039; Upload Your Measurement Sketch <span style="font-weight:400;color:var(--light)">(photo of your hand-drawn floor plan)</span></label>
+          <label for="dSketch">&#9999;&#65039; Upload Your Measurement Sketch <span style="font-weight:400;color:var(--light)">(photo of your hand-drawn floor plan)</span></label>
           <div class="upload-zone" onclick="document.getElementById('dSketch').click()">
             <div class="uz-icon">&#128203;</div><strong>Click to upload sketch</strong><p>JPG, PNG or PDF</p>
           </div>
@@ -910,19 +914,19 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
         <div style="height:1px;background:var(--border);margin:28px 0"></div>
 
         <div class="fg">
-          <label>&#127859; Appliances to Include</label>
+          <label for="dAppliances">&#127859; Appliances to Include</label>
           <p class="hint" style="margin-bottom:6px">List any appliances needing housing (hob, oven, fridge, dishwasher, wine fridge, extractor, etc.)</p>
-          <textarea placeholder="e.g. 900mm range cooker on Wall A, integrated dishwasher, American fridge-freezer, ceiling-mounted extractor&#8230;" rows="3"></textarea>
+          <textarea id="dAppliances" placeholder="e.g. 900mm range cooker on Wall A, integrated dishwasher, American fridge-freezer, ceiling-mounted extractor&#8230;" rows="3"></textarea>
         </div>
 
         <div class="fg">
-          <label>&#9999;&#65039; Additional Items &amp; Special Requests</label>
+          <label for="dExtras">&#9999;&#65039; Additional Items &amp; Special Requests</label>
           <p class="hint" style="margin-bottom:6px">Anything else you'd like that isn't listed above &#8212; larder units, pantry, island, open shelving, glass doors, specific colours, internal drawer inserts, soft-close, etc.</p>
           <textarea id="dExtras" placeholder="e.g. Tall larder unit either side of the range, open shelving above the breakfast bar, wine rack in the island, pan-drawer inserts on base units, soft-close on everything&#8230;" rows="5"></textarea>
         </div>
 
         <div class="fg">
-          <label>&#128176; Budget (optional)</label>
+          <label for="dBudget">&#128176; Budget (optional)</label>
           <select id="dBudget" style="max-width:260px">
             <option value="">Prefer not to say</option>
             <option>Under &#163;5,000</option>
@@ -936,14 +940,14 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
         <div style="height:1px;background:var(--border);margin:28px 0"></div>
         <p style="font-weight:700;font-size:.92rem;margin-bottom:20px">Your Contact Details</p>
         <div class="frow">
-          <div class="fg"><label>First Name *</label><input type="text" id="dFN" placeholder="e.g. Sarah" required></div>
-          <div class="fg"><label>Last Name *</label><input type="text" id="dLN" placeholder="e.g. Murphy" required></div>
+          <div class="fg"><label for="dFN">First Name *</label><input type="text" id="dFN" placeholder="e.g. Sarah" required></div>
+          <div class="fg"><label for="dLN">Last Name *</label><input type="text" id="dLN" placeholder="e.g. Murphy" required></div>
         </div>
         <div class="frow">
-          <div class="fg"><label>Email Address *</label><input type="email" id="dEM" placeholder="sarah@example.com" required></div>
-          <div class="fg"><label>Phone Number *</label><input type="tel" id="dPH" placeholder="07700 000000" required></div>
+          <div class="fg"><label for="dEM">Email Address *</label><input type="email" id="dEM" placeholder="sarah@example.com" required></div>
+          <div class="fg"><label for="dPH">Phone Number *</label><input type="tel" id="dPH" placeholder="07700 000000" required></div>
         </div>
-        <div class="fg"><label>Postcode *</label><input type="text" id="dPC" placeholder="BT1 1AA" style="max-width:200px" required></div>
+        <div class="fg"><label for="dPC">Postcode *</label><input type="text" id="dPC" placeholder="BT1 1AA" style="max-width:200px" required></div>
         <div style="background:rgba(22,163,74,.07);border:1px solid rgba(22,163,74,.2);border-radius:10px;padding:14px 18px;margin-bottom:24px;font-size:.82rem;color:var(--mid)">
           &#10003; <strong style="color:var(--green)">No payment required.</strong> We&#8217;ll review your details and send a tailored, itemised estimate within 48 hours. Zero obligation &#8212; you decide what happens next.
         </div>
@@ -994,8 +998,8 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
               <div class="est-block-title">&#128207; Step 1 &#8212; Room Dimensions</div>
               <div class="est-block-sub">Give us approximate measurements &#8212; we&#8217;ll refine at design stage.</div>
               <div class="frow" style="margin-bottom:0">
-                <div class="fg"><label>Length (metres)</label><input type="number" id="eLen" min="1" max="20" step="0.1" placeholder="e.g. 4.2" oninput="calcEst()"></div>
-                <div class="fg"><label>Width (metres)</label><input type="number" id="eWid" min="1" max="20" step="0.1" placeholder="e.g. 3.0" oninput="calcEst()"></div>
+                <div class="fg"><label for="eLen">Length (metres)</label><input type="number" id="eLen" min="1" max="20" step="0.1" placeholder="e.g. 4.2" oninput="calcEst()"></div>
+                <div class="fg"><label for="eWid">Width (metres)</label><input type="number" id="eWid" min="1" max="20" step="0.1" placeholder="e.g. 3.0" oninput="calcEst()"></div>
               </div>
             </div>
 
@@ -1005,23 +1009,23 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
               <div class="est-block-sub">Add the units you think you&#8217;ll need. Tap +/&#8722; to adjust quantities. Prices are trade P&amp;A.</div>
 
               <p style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--mid);margin:16px 0 8px">Base Units</p>
-              <div class="unit-row" id="u-base300"><span class="unit-lbl">300mm Base Unit<span class="unit-price">&#163;58</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('base300',-1)">&#8722;</button><span class="unit-qty" id="q-base300">0</span><button type="button" class="unit-btn" onclick="adjUnit('base300',1)">+</button></div></div>
-              <div class="unit-row" id="u-base400"><span class="unit-lbl">400mm Base Unit<span class="unit-price">&#163;68</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('base400',-1)">&#8722;</button><span class="unit-qty" id="q-base400">0</span><button type="button" class="unit-btn" onclick="adjUnit('base400',1)">+</button></div></div>
-              <div class="unit-row" id="u-base500"><span class="unit-lbl">500mm Base Unit<span class="unit-price">&#163;75</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('base500',-1)">&#8722;</button><span class="unit-qty" id="q-base500">0</span><button type="button" class="unit-btn" onclick="adjUnit('base500',1)">+</button></div></div>
-              <div class="unit-row" id="u-base600"><span class="unit-lbl">600mm Base Unit<span class="unit-price">&#163;85</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('base600',-1)">&#8722;</button><span class="unit-qty" id="q-base600">0</span><button type="button" class="unit-btn" onclick="adjUnit('base600',1)">+</button></div></div>
-              <div class="unit-row" id="u-base800"><span class="unit-lbl">800mm Base Unit<span class="unit-price">&#163;110</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('base800',-1)">&#8722;</button><span class="unit-qty" id="q-base800">0</span><button type="button" class="unit-btn" onclick="adjUnit('base800',1)">+</button></div></div>
-              <div class="unit-row" id="u-base1000"><span class="unit-lbl">1000mm Base Unit<span class="unit-price">&#163;135</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('base1000',-1)">&#8722;</button><span class="unit-qty" id="q-base1000">0</span><button type="button" class="unit-btn" onclick="adjUnit('base1000',1)">+</button></div></div>
-              <div class="unit-row" id="u-corner"><span class="unit-lbl">Corner Base Unit<span class="unit-price">&#163;160</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('corner',-1)">&#8722;</button><span class="unit-qty" id="q-corner">0</span><button type="button" class="unit-btn" onclick="adjUnit('corner',1)">+</button></div></div>
+              <div class="unit-row" id="u-base300"><span class="unit-lbl">300mm Base Unit<span class="unit-price">&#163;58</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('base300',-1)" aria-label="Decrease 300mm base units">&#8722;</button><span class="unit-qty" id="q-base300">0</span><button type="button" class="unit-btn" onclick="adjUnit('base300',1)" aria-label="Increase 300mm base units">+</button></div></div>
+              <div class="unit-row" id="u-base400"><span class="unit-lbl">400mm Base Unit<span class="unit-price">&#163;68</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('base400',-1)" aria-label="Decrease 400mm base units">&#8722;</button><span class="unit-qty" id="q-base400">0</span><button type="button" class="unit-btn" onclick="adjUnit('base400',1)" aria-label="Increase 400mm base units">+</button></div></div>
+              <div class="unit-row" id="u-base500"><span class="unit-lbl">500mm Base Unit<span class="unit-price">&#163;75</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('base500',-1)" aria-label="Decrease 500mm base units">&#8722;</button><span class="unit-qty" id="q-base500">0</span><button type="button" class="unit-btn" onclick="adjUnit('base500',1)" aria-label="Increase 500mm base units">+</button></div></div>
+              <div class="unit-row" id="u-base600"><span class="unit-lbl">600mm Base Unit<span class="unit-price">&#163;85</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('base600',-1)" aria-label="Decrease 600mm base units">&#8722;</button><span class="unit-qty" id="q-base600">0</span><button type="button" class="unit-btn" onclick="adjUnit('base600',1)" aria-label="Increase 600mm base units">+</button></div></div>
+              <div class="unit-row" id="u-base800"><span class="unit-lbl">800mm Base Unit<span class="unit-price">&#163;110</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('base800',-1)" aria-label="Decrease 800mm base units">&#8722;</button><span class="unit-qty" id="q-base800">0</span><button type="button" class="unit-btn" onclick="adjUnit('base800',1)" aria-label="Increase 800mm base units">+</button></div></div>
+              <div class="unit-row" id="u-base1000"><span class="unit-lbl">1000mm Base Unit<span class="unit-price">&#163;135</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('base1000',-1)" aria-label="Decrease 1000mm base units">&#8722;</button><span class="unit-qty" id="q-base1000">0</span><button type="button" class="unit-btn" onclick="adjUnit('base1000',1)" aria-label="Increase 1000mm base units">+</button></div></div>
+              <div class="unit-row" id="u-corner"><span class="unit-lbl">Corner Base Unit<span class="unit-price">&#163;160</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('corner',-1)" aria-label="Decrease corner base units">&#8722;</button><span class="unit-qty" id="q-corner">0</span><button type="button" class="unit-btn" onclick="adjUnit('corner',1)" aria-label="Increase corner base units">+</button></div></div>
 
               <p style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--mid);margin:16px 0 8px">Wall Units</p>
-              <div class="unit-row" id="u-wall300"><span class="unit-lbl">300mm Wall Unit<span class="unit-price">&#163;38</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('wall300',-1)">&#8722;</button><span class="unit-qty" id="q-wall300">0</span><button type="button" class="unit-btn" onclick="adjUnit('wall300',1)">+</button></div></div>
-              <div class="unit-row" id="u-wall600"><span class="unit-lbl">600mm Wall Unit<span class="unit-price">&#163;58</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('wall600',-1)">&#8722;</button><span class="unit-qty" id="q-wall600">0</span><button type="button" class="unit-btn" onclick="adjUnit('wall600',1)">+</button></div></div>
-              <div class="unit-row" id="u-wall1000"><span class="unit-lbl">1000mm Wall Unit<span class="unit-price">&#163;92</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('wall1000',-1)">&#8722;</button><span class="unit-qty" id="q-wall1000">0</span><button type="button" class="unit-btn" onclick="adjUnit('wall1000',1)">+</button></div></div>
+              <div class="unit-row" id="u-wall300"><span class="unit-lbl">300mm Wall Unit<span class="unit-price">&#163;38</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('wall300',-1)" aria-label="Decrease 300mm wall units">&#8722;</button><span class="unit-qty" id="q-wall300">0</span><button type="button" class="unit-btn" onclick="adjUnit('wall300',1)" aria-label="Increase 300mm wall units">+</button></div></div>
+              <div class="unit-row" id="u-wall600"><span class="unit-lbl">600mm Wall Unit<span class="unit-price">&#163;58</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('wall600',-1)" aria-label="Decrease 600mm wall units">&#8722;</button><span class="unit-qty" id="q-wall600">0</span><button type="button" class="unit-btn" onclick="adjUnit('wall600',1)" aria-label="Increase 600mm wall units">+</button></div></div>
+              <div class="unit-row" id="u-wall1000"><span class="unit-lbl">1000mm Wall Unit<span class="unit-price">&#163;92</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('wall1000',-1)" aria-label="Decrease 1000mm wall units">&#8722;</button><span class="unit-qty" id="q-wall1000">0</span><button type="button" class="unit-btn" onclick="adjUnit('wall1000',1)" aria-label="Increase 1000mm wall units">+</button></div></div>
 
               <p style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--mid);margin:16px 0 8px">Tall &amp; Special Units</p>
-              <div class="unit-row" id="u-tall300"><span class="unit-lbl">300mm Tall / Larder Unit<span class="unit-price">&#163;145</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('tall300',-1)">&#8722;</button><span class="unit-qty" id="q-tall300">0</span><button type="button" class="unit-btn" onclick="adjUnit('tall300',1)">+</button></div></div>
-              <div class="unit-row" id="u-tall600"><span class="unit-lbl">600mm Tall / Larder Unit<span class="unit-price">&#163;185</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('tall600',-1)">&#8722;</button><span class="unit-qty" id="q-tall600">0</span><button type="button" class="unit-btn" onclick="adjUnit('tall600',1)">+</button></div></div>
-              <div class="unit-row" id="u-island"><span class="unit-lbl">Island Unit<span class="unit-price">&#163;280</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('island',-1)">&#8722;</button><span class="unit-qty" id="q-island">0</span><button type="button" class="unit-btn" onclick="adjUnit('island',1)">+</button></div></div>
+              <div class="unit-row" id="u-tall300"><span class="unit-lbl">300mm Tall / Larder Unit<span class="unit-price">&#163;145</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('tall300',-1)" aria-label="Decrease 300mm tall units">&#8722;</button><span class="unit-qty" id="q-tall300">0</span><button type="button" class="unit-btn" onclick="adjUnit('tall300',1)" aria-label="Increase 300mm tall units">+</button></div></div>
+              <div class="unit-row" id="u-tall600"><span class="unit-lbl">600mm Tall / Larder Unit<span class="unit-price">&#163;185</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('tall600',-1)" aria-label="Decrease 600mm tall units">&#8722;</button><span class="unit-qty" id="q-tall600">0</span><button type="button" class="unit-btn" onclick="adjUnit('tall600',1)" aria-label="Increase 600mm tall units">+</button></div></div>
+              <div class="unit-row" id="u-island"><span class="unit-lbl">Island Unit<span class="unit-price">&#163;280</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('island',-1)" aria-label="Decrease island units">&#8722;</button><span class="unit-qty" id="q-island">0</span><button type="button" class="unit-btn" onclick="adjUnit('island',1)" aria-label="Increase island units">+</button></div></div>
             </div>
 
             <!-- 3. Door range picker -->
@@ -1083,12 +1087,12 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
               <div class="est-block-title">&#128100; Step 8 &#8212; Your Details</div>
               <div class="est-block-sub">We&#8217;ll send your full cost breakdown by email within 48 hours. Completely free, no obligation.</div>
               <div class="frow" style="margin-top:16px">
-                <div class="fg"><label>First Name *</label><input type="text" id="eFN" placeholder="e.g. Sarah" required></div>
-                <div class="fg"><label>Last Name *</label><input type="text" id="eLN" placeholder="e.g. Murphy" required></div>
+                <div class="fg"><label for="eFN">First Name *</label><input type="text" id="eFN" placeholder="e.g. Sarah" required></div>
+                <div class="fg"><label for="eLN">Last Name *</label><input type="text" id="eLN" placeholder="e.g. Murphy" required></div>
               </div>
-              <div class="fg"><label>Email Address *</label><input type="email" id="eEM" placeholder="sarah@example.com" required></div>
-              <div class="fg"><label>Phone Number</label><input type="tel" id="ePH" placeholder="07700 000000"></div>
-              <div class="fg"><label>Postcode</label><input type="text" id="ePC" placeholder="BT1 1AA" style="max-width:200px"></div>
+              <div class="fg"><label for="eEM">Email Address *</label><input type="email" id="eEM" placeholder="sarah@example.com" required></div>
+              <div class="fg"><label for="ePH">Phone Number</label><input type="tel" id="ePH" placeholder="07700 000000"></div>
+              <div class="fg"><label for="ePC">Postcode</label><input type="text" id="ePC" placeholder="BT1 1AA" style="max-width:200px"></div>
               <div style="background:var(--cream);border-radius:9px;padding:14px 18px;margin:20px 0 8px;font-size:.82rem;color:var(--mid)">
                 &#127381; <strong>Completely free</strong> &#8212; this is a no-obligation estimate. We&#8217;ll email you a detailed breakdown within 48 hours and you can take it from there at your own pace.
               </div>
@@ -1155,14 +1159,14 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
       <div class="form-card" id="book-form" style="display:none;max-width:600px;margin:0 auto" aria-live="polite">
         <h3 style="font-size:1.2rem;margin-bottom:6px">Book Your Home Survey &amp; Full Design &#8212; &#163;200</h3>
         <p style="font-size:.84rem;color:var(--mid);margin-bottom:24px">We&#8217;ll be in touch within one working day to confirm your appointment time. The &#163;200 is taken on the day of the visit and credited in full against your order.</p>
-        <div class="frow"><div class="fg"><label>First Name *</label><input type="text" id="bFN" required></div><div class="fg"><label>Last Name *</label><input type="text" id="bLN" required></div></div>
-        <div class="frow"><div class="fg"><label>Email *</label><input type="email" id="bEM" required></div><div class="fg"><label>Phone *</label><input type="tel" id="bPH" required></div></div>
-        <div class="fg"><label>Full Address *</label><textarea rows="2" id="bAD" placeholder="Including postcode" required></textarea></div>
+        <div class="frow"><div class="fg"><label for="bFN">First Name *</label><input type="text" id="bFN" required></div><div class="fg"><label for="bLN">Last Name *</label><input type="text" id="bLN" required></div></div>
+        <div class="frow"><div class="fg"><label for="bEM">Email *</label><input type="email" id="bEM" required></div><div class="fg"><label for="bPH">Phone *</label><input type="tel" id="bPH" required></div></div>
+        <div class="fg"><label for="bAD">Full Address *</label><textarea rows="2" id="bAD" placeholder="Including postcode" required></textarea></div>
         <div class="frow">
-          <div class="fg"><label>Preferred Date</label><input type="date" id="bDT"></div>
-          <div class="fg"><label>Preferred Time</label><select id="bTI"><option>Morning (8am&#8211;12pm)</option><option>Afternoon (12pm&#8211;5pm)</option><option>Evening (5pm&#8211;7pm)</option></select></div>
+          <div class="fg"><label for="bDT">Preferred Date</label><input type="date" id="bDT"></div>
+          <div class="fg"><label for="bTI">Preferred Time</label><select id="bTI"><option>Morning (8am&#8211;12pm)</option><option>Afternoon (12pm&#8211;5pm)</option><option>Evening (5pm&#8211;7pm)</option></select></div>
         </div>
-        <div class="fg"><label>Anything useful for us to know?</label><textarea rows="3" id="bNO" placeholder="Parking notes, access info, key features of the space&#8230;"></textarea></div>
+        <div class="fg"><label for="bNO">Anything useful for us to know?</label><textarea rows="3" id="bNO" placeholder="Parking notes, access info, key features of the space&#8230;"></textarea></div>
         <div style="background:var(--cream);border-radius:9px;padding:14px 18px;margin-bottom:20px;font-size:.81rem;color:var(--mid)">&#128222; <strong>Not ready to book yet?</strong> You can get a free estimate online first &#8212; just <a onclick="go('design')" style="color:var(--gold);text-decoration:underline;cursor:pointer">fill in your details here</a>. No obligation either way.</div>
         <button type="button" class="btn btn-gold btn-lg btn-block" onclick="bookSubmit()">Request My Home Survey &#8594;</button>
       </div>
@@ -1220,9 +1224,9 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
         </div>
         <input type="file" id="pFile" multiple accept=".pdf,.dwg,.jpg,.jpeg,.png" style="display:none" onchange="showFiles(this,'pFL')">
         <ul class="file-list" id="pFL"></ul>
-        <div class="frow" style="margin-top:16px"><div class="fg"><label>First Name *</label><input type="text" id="pFN" required></div><div class="fg"><label>Last Name *</label><input type="text" id="pLN" required></div></div>
-        <div class="frow"><div class="fg"><label>Email *</label><input type="email" id="pEM" required></div><div class="fg"><label>Phone</label><input type="tel" id="pPH"></div></div>
-        <div class="fg"><label>Notes</label><textarea rows="3" id="pNO" placeholder="Style preferences, key dimensions, appliances, anything else&#8230;"></textarea></div>
+        <div class="frow" style="margin-top:16px"><div class="fg"><label for="pFN">First Name *</label><input type="text" id="pFN" required></div><div class="fg"><label for="pLN">Last Name *</label><input type="text" id="pLN" required></div></div>
+        <div class="frow"><div class="fg"><label for="pEM">Email *</label><input type="email" id="pEM" required></div><div class="fg"><label for="pPH">Phone</label><input type="tel" id="pPH"></div></div>
+        <div class="fg"><label for="pNO">Notes</label><textarea rows="3" id="pNO" placeholder="Style preferences, key dimensions, appliances, anything else&#8230;"></textarea></div>
         <div style="background:rgba(22,163,74,.07);border:1px solid rgba(22,163,74,.2);border-radius:9px;padding:12px 16px;margin:16px 0;font-size:.82rem;color:var(--mid)">
           &#10003; <strong style="color:var(--green)">No payment required for your estimate.</strong> We&#8217;ll review your plans and send an itemised estimate within 48 hours.
         </div>
