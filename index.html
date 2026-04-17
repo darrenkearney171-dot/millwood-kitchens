@@ -41,6 +41,7 @@ html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--dark);line-height:1.65;-webkit-font-smoothing:antialiased}
 h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2}
 a{text-decoration:none;color:inherit}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 img{max-width:100%;display:block}
 button{cursor:pointer;font-family:'Inter',sans-serif}
 input,select,textarea{font-family:'Inter',sans-serif}
@@ -64,7 +65,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--dark);border-bottom:1px s
 .nav-logo{font-family:'Playfair Display',serif;font-size:1.35rem;color:#fff;cursor:pointer;flex-shrink:0}
 .nav-logo span{color:var(--gold3)}
 .nav-links{display:flex;align-items:center;gap:4px}
-.nav-links a{color:rgba(255,255,255,.65);font-size:.82rem;font-weight:500;padding:8px 13px;border-radius:8px;transition:all .2s;white-space:nowrap}
+.nav-links a{color:rgba(255,255,255,.65);font-size:.82rem;font-weight:500;padding:8px 13px;border-radius:8px;transition:all .2s;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
 .nav-links a:hover{color:#fff;background:rgba(255,255,255,.08)}
 .nav-links a.active{color:#fff;background:rgba(255,255,255,.1)}
 .nav-cta{background:var(--gold)!important;color:#fff!important;padding:9px 18px!important;border-radius:8px!important}
@@ -103,7 +104,7 @@ nav{position:sticky;top:0;z-index:200;background:var(--dark);border-bottom:1px s
 .btn-cream:hover{background:#fff;transform:translateY(-1px)}
 .btn-outline-gold{background:transparent;color:var(--gold);border:2px solid var(--gold)}
 .btn-outline-gold:hover{background:var(--gold);color:#fff}
-.btn-sm{padding:9px 18px;font-size:.82rem}
+.btn-sm{padding:12px 18px;font-size:.82rem;min-height:44px}
 .btn-lg{padding:16px 32px;font-size:1rem}
 .btn-block{width:100%}
 .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
@@ -179,8 +180,8 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
 .footer-logo{font-family:'Playfair Display',serif;font-size:1.25rem;color:#fff;margin-bottom:14px}
 .footer-logo span{color:var(--gold3)}
 .footer-tagline{font-size:.83rem;color:rgba(255,255,255,.4);line-height:1.7;margin-bottom:20px}
-.footer-col h4{color:rgba(255,255,255,.85);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
-.footer-col a{display:block;font-size:.83rem;color:rgba(255,255,255,.4);margin-bottom:9px;transition:color .2s;cursor:pointer}
+.footer-col h4,.footer-heading{color:rgba(255,255,255,.85);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.footer-col a{display:block;font-size:.83rem;color:rgba(255,255,255,.4);margin-bottom:4px;padding:4px 0;min-height:44px;display:flex;align-items:center;transition:color .2s;cursor:pointer}
 .footer-col a:hover{color:rgba(255,255,255,.8)}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:rgba(255,255,255,.3)}
 .footer-bottom a{color:rgba(255,255,255,.3);margin-left:20px}
@@ -268,7 +269,7 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
 .book-card.featured{border-color:var(--gold);background:linear-gradient(145deg,#FFFDF5,#fff)}
 .book-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
 .book-icon{font-size:2.4rem;margin-bottom:16px}
-.book-card h3{font-size:1.15rem;margin-bottom:10px}
+.book-card h3,.book-card-title{font-size:1.15rem;margin-bottom:10px}
 .book-card p{font-size:.84rem;color:var(--mid);line-height:1.7;margin-bottom:20px}
 .book-price{font-size:2rem;font-weight:700;color:var(--gold);font-family:'Playfair Display',serif;margin-bottom:6px}
 .book-credit{font-size:.74rem;color:var(--green);font-weight:700;display:block;margin-bottom:20px}
@@ -289,7 +290,7 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
 .dds-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:60px}
 .dds-step{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center}
 .dds-step-num{width:38px;height:38px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:.9rem;margin:0 auto 12px}
-.dds-step h4{font-size:.88rem;font-weight:700;margin-bottom:6px}
+.dds-step h4,.dds-step-title{font-size:.88rem;font-weight:700;margin-bottom:6px}
 .dds-step p{font-size:.78rem;color:var(--mid);line-height:1.6}
 .sketch-guide{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:40px}
 .sketch-hdr{background:var(--dark);padding:20px 28px}
@@ -739,8 +740,8 @@ button:focus-visible,a:focus-visible,select:focus-visible,textarea:focus-visible
           <p class="footer-tagline">Factory-direct kitchens manufactured by P&amp;A Contracts in Northern Ireland. Designer quality at genuine trade prices, delivered across the UK.</p>
           <p style="font-size:.78rem;color:rgba(255,255,255,.35)">&#128222; <a href="tel:02890123456" style="color:rgba(255,255,255,.55)">028 9012 3456</a> &nbsp;&#183;&nbsp; <a href="mailto:hello@millwoodkitchens.com" style="color:rgba(255,255,255,.55)">hello@millwoodkitchens.com</a></p>
         </div>
-        <div class="footer-col"><h4>Browse</h4><a href="javascript:void(0)" onclick="go('catalogue')">Door Ranges</a><a href="javascript:void(0)" onclick="go('catalogue')">Handles</a><a href="javascript:void(0)" onclick="go('catalogue')">Worktops</a></div>
-        <div class="footer-col"><h4>Get a Quote</h4><a href="javascript:void(0)" onclick="go('design')">Free Online Estimate</a><a href="javascript:void(0)" onclick="go('plans')">Free Estimate from Plans</a><a href="javascript:void(0)" onclick="go('estimate')">Live Cost Calculator</a><a href="javascript:void(0)" onclick="go('book')">Home Survey &#8212; &#163;200</a></div>
+        <div class="footer-col"><h3 class="footer-heading">Browse</h3><a href="javascript:void(0)" onclick="go('catalogue')">Door Ranges</a><a href="javascript:void(0)" onclick="go('catalogue')">Handles</a><a href="javascript:void(0)" onclick="go('catalogue')">Worktops</a></div>
+        <div class="footer-col"><h3 class="footer-heading">Get a Quote</h3><a href="javascript:void(0)" onclick="go('design')">Free Online Estimate</a><a href="javascript:void(0)" onclick="go('plans')">Free Estimate from Plans</a><a href="javascript:void(0)" onclick="go('estimate')">Live Cost Calculator</a><a href="javascript:void(0)" onclick="go('book')">Home Survey &#8212; &#163;200</a></div>
         <div class="footer-col"><h4>Info</h4><a onclick="go('home');setTimeout(()=>document.getElementById('about-section')?.scrollIntoView({behavior:'smooth'}),100)" style="cursor:pointer">About Us</a><a onclick="go('home');setTimeout(()=>document.getElementById('factory-section')?.scrollIntoView({behavior:'smooth'}),100)" style="cursor:pointer">Our Factory</a><a onclick="go('catalogue')" style="cursor:pointer">Gallery</a><a onclick="go('home');setTimeout(()=>document.getElementById('faq-section')?.scrollIntoView({behavior:'smooth'}),100)" style="cursor:pointer">FAQ</a><a onclick="go('privacy')" style="cursor:pointer">Privacy Policy</a><a onclick="go('terms')" style="cursor:pointer">Terms &amp; Conditions</a></div>
       </div>
       <div class="footer-bottom">
@@ -787,10 +788,10 @@ button:focus-visible,a:focus-visible,select:focus-visible,textarea:focus-visible
         </div>
       </div>
       <div class="dds-steps">
-        <div class="dds-step"><div class="dds-step-num">1</div><h4>Sketch &amp; Measure</h4><p>Follow our guide to sketch your kitchen layout with wall measurements, windows and doors marked.</p></div>
-        <div class="dds-step"><div class="dds-step-num">2</div><h4>Take Photos</h4><p>Photograph each wall, the ceiling, existing appliances, and any fixed features you want us to work around.</p></div>
-        <div class="dds-step"><div class="dds-step-num">3</div><h4>Pick Your Style</h4><p>Select preferred door ranges, handles and worktops below &#8212; or leave it blank and we&#8217;ll suggest options to suit you.</p></div>
-        <div class="dds-step"><div class="dds-step-num">4</div><h4>Receive Your Estimate</h4><p>Within 48 hours: a full itemised estimate and recommended layout delivered to your inbox. Free, no strings attached.</p></div>
+        <div class="dds-step"><div class="dds-step-num">1</div><h2 class="dds-step-title">Sketch &amp; Measure</h2><p>Follow our guide to sketch your kitchen layout with wall measurements, windows and doors marked.</p></div>
+        <div class="dds-step"><div class="dds-step-num">2</div><h2 class="dds-step-title">Take Photos</h2><p>Photograph each wall, the ceiling, existing appliances, and any fixed features you want us to work around.</p></div>
+        <div class="dds-step"><div class="dds-step-num">3</div><h2 class="dds-step-title">Pick Your Style</h2><p>Select preferred door ranges, handles and worktops below &#8212; or leave it blank and we&#8217;ll suggest options to suit you.</p></div>
+        <div class="dds-step"><div class="dds-step-num">4</div><h2 class="dds-step-title">Receive Your Estimate</h2><p>Within 48 hours: a full itemised estimate and recommended layout delivered to your inbox. Free, no strings attached.</p></div>
       </div>
 
       <!-- SKETCH GUIDE -->
@@ -1071,7 +1072,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,textarea:focus-visible
               <div class="upload-zone" onclick="document.getElementById('eP').click()" style="margin-bottom:12px">
                 <div class="uz-icon">&#128247;</div><strong>Click to upload photos</strong><p>JPG or PNG &#8212; optional but helpful</p>
               </div>
-              <input type="file" id="eP" accept="image/*" multiple style="display:none" onchange="showFiles(this,'ePL')">
+              <label for="eP" class="sr-only">Upload kitchen photos</label><input type="file" id="eP" accept="image/*" multiple style="display:none" onchange="showFiles(this,'ePL')">
               <ul class="file-list" id="ePL"></ul>
             </div>
 
@@ -1079,7 +1080,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,textarea:focus-visible
             <div class="est-block">
               <div class="est-block-title">&#128172; Step 7 &#8212; Any Extra Notes?</div>
               <div class="est-block-sub">Chimney breast, angled ceiling, specific appliances, special requests &#8212; anything at all.</div>
-              <textarea id="eNO" rows="4" placeholder="e.g. We have a chimney breast on the back wall, would like a range cooker with extractor, open shelving above the breakfast bar&#8230;" style="margin-top:12px"></textarea>
+              <label for="eNO" class="sr-only">Extra notes about your kitchen</label><textarea id="eNO" rows="4" placeholder="e.g. We have a chimney breast on the back wall, would like a range cooker with extractor, open shelving above the breakfast bar&#8230;" style="margin-top:12px"></textarea>
             </div>
 
             <!-- 8. Contact -->
@@ -1139,7 +1140,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,textarea:focus-visible
       <div class="book-options">
         <div class="book-card featured">
           <div class="book-icon">&#127968;</div>
-          <h3>Call Out &amp; Design</h3>
+          <h2 class="book-card-title">Call Out &amp; Design</h2>
           <p>A Millwood designer visits your home, measures every wall, window and door, photographs the space, then creates a full 3D design and itemised quote &#8212; all in a single visit.</p>
           <p style="font-size:.82rem;color:var(--mid);margin-bottom:20px">Everything included: survey, measurement, design and quote.</p>
           <div class="book-price">&#163;200</div>
@@ -1148,7 +1149,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,textarea:focus-visible
         </div>
         <div class="book-card">
           <div class="book-icon">&#128187;</div>
-          <h3>Prefer a free estimate first?</h3>
+          <h2 class="book-card-title">Prefer a free estimate first?</h2>
           <p>Not ready for a home visit yet? Submit your measurements and photos online and we&#8217;ll send back a full, itemised estimate within 48 hours &#8212; completely free.</p>
           <p style="font-size:.82rem;color:var(--mid);margin-bottom:20px">Ideal if you&#8217;re at the early planning stage, or outside our travel area.</p>
           <div class="book-price" style="font-size:1.4rem;padding:8px 0;color:var(--green)">Free</div>
@@ -1193,7 +1194,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,textarea:focus-visible
       <div class="plans-tiers" style="margin-bottom:40px">
         <div class="tier-card featured">
           <div class="tier-badge">Start here &#8212; it&#8217;s free</div>
-          <h3>Free Estimate from Plans</h3><div class="tier-price" style="color:var(--green);font-size:2.4rem">Free</div><div class="tier-credit" style="color:var(--green)">&#10003; No payment &#183; No obligation whatsoever</div>
+          <h2 class="book-card-title">Free Estimate from Plans</h2><div class="tier-price" style="color:var(--green);font-size:2.4rem">Free</div><div class="tier-credit" style="color:var(--green)">&#10003; No payment &#183; No obligation whatsoever</div>
           <ul class="tier-feats">
             <li>Itemised estimate from your drawings</li>
             <li>Unit layout mapped to your plans</li>
@@ -1222,7 +1223,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,textarea:focus-visible
         <div class="upload-zone" onclick="document.getElementById('pFile').click()" style="margin-bottom:14px">
           <div class="uz-icon">&#128206;</div><strong>Click to upload your plans</strong><p>PDF &#183; DWG &#183; JPG &#183; PNG</p>
         </div>
-        <input type="file" id="pFile" multiple accept=".pdf,.dwg,.jpg,.jpeg,.png" style="display:none" onchange="showFiles(this,'pFL')">
+        <label for="pFile" class="sr-only">Upload your kitchen plans</label><input type="file" id="pFile" multiple accept=".pdf,.dwg,.jpg,.jpeg,.png" style="display:none" onchange="showFiles(this,'pFL')">
         <ul class="file-list" id="pFL"></ul>
         <div class="frow" style="margin-top:16px"><div class="fg"><label for="pFN">First Name *</label><input type="text" id="pFN" required autocomplete="given-name"></div><div class="fg"><label for="pLN">Last Name *</label><input type="text" id="pLN" required autocomplete="family-name"></div></div>
         <div class="frow"><div class="fg"><label for="pEM">Email *</label><input type="email" id="pEM" required autocomplete="email"></div><div class="fg"><label for="pPH">Phone</label><input type="tel" id="pPH" autocomplete="tel"></div></div>
@@ -1244,19 +1245,19 @@ button:focus-visible,a:focus-visible,select:focus-visible,textarea:focus-visible
     <div class="section-inner" style="max-width:780px">
       <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px">
         <p style="color:var(--mid);font-size:.85rem;margin-bottom:24px"><strong>Last updated:</strong> April 2026</p>
-        <h3 style="margin-bottom:12px">Who we are</h3>
+        <h2 style="font-size:1rem;margin-bottom:12px">Who we are</h2>
         <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">Millwood Kitchens is a trading name of P&#38;A Contracts Ltd, based in Northern Ireland. We manufacture and supply fitted kitchens direct to consumers across the UK.</p>
-        <h3 style="margin-bottom:12px">What data we collect</h3>
+        <h2 style="font-size:1rem;margin-bottom:12px">What data we collect</h2>
         <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">When you submit an estimate request, we collect: your name, email address, phone number, postcode, and details about your kitchen requirements including room measurements and photos you choose to upload. We use this information solely to prepare and deliver your kitchen estimate.</p>
-        <h3 style="margin-bottom:12px">How we use your data</h3>
+        <h2 style="font-size:1rem;margin-bottom:12px">How we use your data</h2>
         <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">We use your personal data to: prepare your kitchen estimate, contact you about your enquiry, and improve our services. We do not sell, rent, or share your personal data with third parties for marketing purposes.</p>
-        <h3 style="margin-bottom:12px">Data storage</h3>
+        <h2 style="font-size:1rem;margin-bottom:12px">Data storage</h2>
         <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">Your data is stored securely and retained only for as long as necessary to fulfil the purposes described above. Form submissions are processed through Netlify&#8217;s secure form handling service.</p>
-        <h3 style="margin-bottom:12px">Your rights</h3>
+        <h2 style="font-size:1rem;margin-bottom:12px">Your rights</h2>
         <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">Under UK GDPR, you have the right to access, correct, or delete your personal data at any time. To exercise these rights, contact us at hello@millwoodkitchens.com.</p>
-        <h3 style="margin-bottom:12px">Cookies</h3>
+        <h2 style="font-size:1rem;margin-bottom:12px">Cookies</h2>
         <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">This website does not use tracking cookies or third-party analytics. We use only essential cookies required for the website to function.</p>
-        <h3 style="margin-bottom:12px">Contact</h3>
+        <h2 style="font-size:1rem;margin-bottom:12px">Contact</h2>
         <p style="color:var(--mid);font-size:.88rem;line-height:1.75">If you have any questions about this privacy policy, please email us at <a href="mailto:hello@millwoodkitchens.com" style="color:var(--gold);text-decoration:underline">hello@millwoodkitchens.com</a> or call <a href="tel:02890123456" style="color:var(--gold);text-decoration:underline">028 9012 3456</a>.</p>
       </div>
       <div style="text-align:center;margin-top:32px"><button type="button" class="btn btn-gold" onclick="go('home')">&#8592; Back to Home</button></div>
@@ -1271,21 +1272,21 @@ button:focus-visible,a:focus-visible,select:focus-visible,textarea:focus-visible
     <div class="section-inner" style="max-width:780px">
       <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px">
         <p style="color:var(--mid);font-size:.85rem;margin-bottom:24px"><strong>Last updated:</strong> April 2026</p>
-        <h3 style="margin-bottom:12px">Overview</h3>
+        <h2 style="font-size:1rem;margin-bottom:12px">Overview</h2>
         <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">These terms govern your use of the Millwood Kitchens website and our estimate services. By submitting an estimate request, you agree to these terms.</p>
-        <h3 style="margin-bottom:12px">Free estimates</h3>
+        <h2 style="font-size:1rem;margin-bottom:12px">Free estimates</h2>
         <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">All online estimates and estimates from plans are provided free of charge with no obligation. Estimates are valid for 30 days from the date of issue. Prices may vary based on final specifications confirmed at point of order.</p>
-        <h3 style="margin-bottom:12px">Paid services</h3>
+        <h2 style="font-size:1rem;margin-bottom:12px">Paid services</h2>
         <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">Our Home Survey (&#163;200) and Full 3D Design Service (&#163;250) are optional premium services. Both fees are fully redeemable against a kitchen order. Payment is taken at time of booking.</p>
-        <h3 style="margin-bottom:12px">Orders and payment</h3>
+        <h2 style="font-size:1rem;margin-bottom:12px">Orders and payment</h2>
         <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">A 50% deposit is required to confirm your kitchen order, with the balance due before delivery. All prices include VAT. Standard delivery is 3&#8211;4 weeks from order confirmation.</p>
-        <h3 style="margin-bottom:12px">Guarantee</h3>
+        <h2 style="font-size:1rem;margin-bottom:12px">Guarantee</h2>
         <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">All Millwood kitchens are covered by a 10-year manufacturer&#8217;s guarantee against defects in materials and workmanship on cabinets, doors, and hardware. This guarantee does not cover normal wear and tear, misuse, or damage caused during installation by third parties.</p>
-        <h3 style="margin-bottom:12px">Delivery</h3>
+        <h2 style="font-size:1rem;margin-bottom:12px">Delivery</h2>
         <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">We deliver across the UK. Delivery dates are agreed in advance. We will contact you to arrange a convenient delivery slot. Access to the delivery address is the customer&#8217;s responsibility.</p>
-        <h3 style="margin-bottom:12px">Cancellations</h3>
+        <h2 style="font-size:1rem;margin-bottom:12px">Cancellations</h2>
         <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">As kitchens are made to order, cancellations after production has commenced may not be eligible for a full refund. Please contact us as soon as possible if you need to make changes to your order.</p>
-        <h3 style="margin-bottom:12px">Contact</h3>
+        <h2 style="font-size:1rem;margin-bottom:12px">Contact</h2>
         <p style="color:var(--mid);font-size:.88rem;line-height:1.75">For questions about these terms, contact us at <a href="mailto:hello@millwoodkitchens.com" style="color:var(--gold);text-decoration:underline">hello@millwoodkitchens.com</a> or call <a href="tel:02890123456" style="color:var(--gold);text-decoration:underline">028 9012 3456</a>.</p>
       </div>
       <div style="text-align:center;margin-top:32px"><button type="button" class="btn btn-gold" onclick="go('home')">&#8592; Back to Home</button></div>
