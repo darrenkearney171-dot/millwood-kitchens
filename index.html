@@ -469,24 +469,24 @@ button:focus-visible,a:focus-visible,select:focus-visible,textarea:focus-visible
   <div class="nav-inner">
     <div class="nav-logo" onclick="go('home')">Millwood<span>Kitchens</span></div>
     <div class="nav-links">
-      <a href="#" onclick="go('home')" id="nl-home" class="active">Home</a>
-      <a href="#" onclick="go('catalogue')" id="nl-catalogue">Catalogue</a>
-      <a href="#" onclick="go('design')" id="nl-design">Free Estimate</a>
-      <a href="#" onclick="go('estimate')" id="nl-estimate">Cost Calculator</a>
-      <a href="#" onclick="go('plans')" id="nl-plans">Upload Plans</a>
+      <a href="javascript:void(0)" onclick="go('home')" id="nl-home" class="active">Home</a>
+      <a href="javascript:void(0)" onclick="go('catalogue')" id="nl-catalogue">Catalogue</a>
+      <a href="javascript:void(0)" onclick="go('design')" id="nl-design">Free Estimate</a>
+      <a href="javascript:void(0)" onclick="go('estimate')" id="nl-estimate">Cost Calculator</a>
+      <a href="javascript:void(0)" onclick="go('plans')" id="nl-plans">Upload Plans</a>
       <a href="tel:02890123456" style="color:rgba(255,255,255,.65);font-size:.82rem;font-weight:500;padding:8px 13px;border-radius:8px;white-space:nowrap">&#128222; 028 9012 3456</a>
-      <a href="#" onclick="go('book')" id="nl-book" class="nav-cta">Book a Survey</a>
+      <a href="javascript:void(0)" onclick="go('book')" id="nl-book" class="nav-cta">Book a Survey</a>
     </div>
     <button type="button" class="nav-hamburger" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
   <div class="mobile-menu" id="mobile-menu">
-    <a href="#" onclick="go('home')">Home</a>
-    <a href="#" onclick="go('catalogue')">Catalogue</a>
-    <a href="#" onclick="go('design')">Free Online Estimate</a>
-    <a href="#" onclick="go('estimate')">Cost Calculator</a>
-    <a href="#" onclick="go('plans')">Upload Plans &#8212; Free</a>
+    <a href="javascript:void(0)" onclick="go('home')">Home</a>
+    <a href="javascript:void(0)" onclick="go('catalogue')">Catalogue</a>
+    <a href="javascript:void(0)" onclick="go('design')">Free Online Estimate</a>
+    <a href="javascript:void(0)" onclick="go('estimate')">Cost Calculator</a>
+    <a href="javascript:void(0)" onclick="go('plans')">Upload Plans &#8212; Free</a>
     <a href="tel:02890123456" style="display:flex;align-items:center;gap:8px">&#128222; 028 9012 3456</a>
-    <a href="#" onclick="go('book')">Book a Home Survey</a>
+    <a href="javascript:void(0)" onclick="go('book')">Book a Home Survey</a>
   </div>
 </nav>
 
@@ -513,7 +513,7 @@ button:focus-visible,a:focus-visible,select:focus-visible,textarea:focus-visible
       <!-- Hero Kitchen Image -->
       <div>
         <div class="hero-img-wrap" id="hero-slider">
-          <img id="hero-img" src="https://images.unsplash.com/photo-1556909276-1ab58ead832e?w=700&h=560&fit=crop&crop=center&q=85&auto=format" alt="Luxury designer kitchen by Millwood Kitchens" loading="eager" onerror="this.src='https://images.unsplash.com/photo-1556040220-4096d522378d?w=700&h=560&fit=crop&q=80'" style="background:#1a1a18"/>
+          <img id="hero-img" src="https://images.unsplash.com/photo-1556909276-1ab58ead832e?w=700&h=560&fit=crop&crop=center&q=85&auto=format" alt="Luxury designer kitchen by Millwood Kitchens" loading="eager" fetchpriority="high" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1556040220-4096d522378d?w=700&h=560&fit=crop&q=80'" style="background:#1a1a18"/>
           <div class="hero-img-overlay"></div>
           <div class="hero-img-badge">
             <div>
@@ -739,8 +739,8 @@ button:focus-visible,a:focus-visible,select:focus-visible,textarea:focus-visible
           <p class="footer-tagline">Factory-direct kitchens manufactured by P&amp;A Contracts in Northern Ireland. Designer quality at genuine trade prices, delivered across the UK.</p>
           <p style="font-size:.78rem;color:rgba(255,255,255,.35)">&#128222; <a href="tel:02890123456" style="color:rgba(255,255,255,.55)">028 9012 3456</a> &nbsp;&#183;&nbsp; <a href="mailto:hello@millwoodkitchens.com" style="color:rgba(255,255,255,.55)">hello@millwoodkitchens.com</a></p>
         </div>
-        <div class="footer-col"><h4>Browse</h4><a onclick="go('catalogue')">Door Ranges</a><a onclick="go('catalogue')">Handles</a><a onclick="go('catalogue')">Worktops</a></div>
-        <div class="footer-col"><h4>Get a Quote</h4><a onclick="go('design')">Free Online Estimate</a><a onclick="go('plans')">Free Estimate from Plans</a><a onclick="go('estimate')">Live Cost Calculator</a><a onclick="go('book')">Home Survey &#8212; &#163;200</a></div>
+        <div class="footer-col"><h4>Browse</h4><a href="javascript:void(0)" onclick="go('catalogue')">Door Ranges</a><a href="javascript:void(0)" onclick="go('catalogue')">Handles</a><a href="javascript:void(0)" onclick="go('catalogue')">Worktops</a></div>
+        <div class="footer-col"><h4>Get a Quote</h4><a href="javascript:void(0)" onclick="go('design')">Free Online Estimate</a><a href="javascript:void(0)" onclick="go('plans')">Free Estimate from Plans</a><a href="javascript:void(0)" onclick="go('estimate')">Live Cost Calculator</a><a href="javascript:void(0)" onclick="go('book')">Home Survey &#8212; &#163;200</a></div>
         <div class="footer-col"><h4>Info</h4><a onclick="go('home');setTimeout(()=>document.getElementById('about-section')?.scrollIntoView({behavior:'smooth'}),100)" style="cursor:pointer">About Us</a><a onclick="go('home');setTimeout(()=>document.getElementById('factory-section')?.scrollIntoView({behavior:'smooth'}),100)" style="cursor:pointer">Our Factory</a><a onclick="go('catalogue')" style="cursor:pointer">Gallery</a><a onclick="go('home');setTimeout(()=>document.getElementById('faq-section')?.scrollIntoView({behavior:'smooth'}),100)" style="cursor:pointer">FAQ</a><a onclick="go('privacy')" style="cursor:pointer">Privacy Policy</a><a onclick="go('terms')" style="cursor:pointer">Terms &amp; Conditions</a></div>
       </div>
       <div class="footer-bottom">
