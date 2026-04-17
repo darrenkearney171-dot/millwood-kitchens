@@ -458,6 +458,7 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
 </style>
 </head>
 <body>
+<noscript><div style="background:#1A1A18;color:#fff;text-align:center;padding:40px 20px;font-family:sans-serif"><h1 style="color:#D4A843;margin-bottom:16px">Millwood Kitchens</h1><p>This website requires JavaScript to run. Please enable JavaScript in your browser settings, or call us on <strong>028 9012 3456</strong> for a free kitchen estimate.</p></div></noscript>
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <nav role="navigation" aria-label="Main navigation">
@@ -1020,452 +1021,648 @@ footer{background:#0F0F0D;padding:60px 28px 28px}
               <p style="font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--mid);margin:16px 0 8px">Tall &amp; Special Units</p>
               <div class="unit-row" id="u-tall300"><span class="unit-lbl">300mm Tall / Larder Unit<span class="unit-price">&#163;145</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('tall300',-1)">&#8722;</button><span class="unit-qty" id="q-tall300">0</span><button type="button" class="unit-btn" onclick="adjUnit('tall300',1)">+</button></div></div>
               <div class="unit-row" id="u-tall600"><span class="unit-lbl">600mm Tall / Larder Unit<span class="unit-price">&#163;185</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('tall600',-1)">&#8722;</button><span class="unit-qty" id="q-tall600">0</span><button type="button" class="unit-btn" onclick="adjUnit('tall600',1)">+</button></div></div>
-              <div class="unit-row" id="u-island"><span class="unit-lbl">Island Unit<span class="unit-price">&#163;280</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('e">&#1Nfy-content:center;fC<l  <p stylutton type="nl"><button type="buttm6u="u="blick="adjUnit('wall600',-1)Eland 0163;92</span onclick="adjUnit(row" iaa       </div>
+              <div class="unit-row" id="u-island"><span class="unit-lbl">Island Unit<span class="unit-price">&#163;280</span></span><div class="unit-ctrl"><button type="button" class="unit-btn" onclick="adjUnit('island',-1)">&#8722;</button><span class="unit-qty" id="q-island">0</span><button type="button" class="unit-btn" onclick="adjUnit('island',1)">+</button></div></div>
+            </div>
 
-        <div    </div>
+            <!-- 3. Door range picker -->
+            <div class="est-block">
+              <div class="est-block-title">&#128682; Step 3 &#8212; Choose a Door Range</div>
+              <div class="est-block-sub">Tap a range to select it. Images and colours are from our suppliers &#8212; <span style="background:#1B4F72;color:#fff;padding:1px 6px;border-radius:3px;font-size:.72rem">Uform</span> and <span style="background:#2D5A1B;color:#fff;padding:1px 6px;border-radius:3px;font-size:.72rem">OS Doors</span>.</div>
+              <div class="door-picker-est" id="est-door-picker"></div>
+            </div>
 
-            <!-- 2. st-bar;fC<l     wer inst. Ilick>
-     s</lablock-eFaq(t    k="tieCalculator<wFiles(this,'ketch-body">1B4F72ype="bu#fffype="text"n" 6e steps on the ri31 1AA" style="7274,.0U" idass="un
-    wFiles(this,'ketch-body">2D5A1Bype="bu#fffype="text"n" 6e steps on the ri31 1AA" style="7274,.0OStion vals="unclass="est-block-title">&#128207; ab" o <p st    " full breab" o <p st""unit-btn" onclick="adjUnit('e">&#1Nfy-conten4.r leave blutton type="nl"><button type="buttm6u="u="blick="adjUnit('wall600',-1)Eland 0163;92<9646onclick4lculator< leave bMa0</100v>
+            <!-- 4. Worktop -->
+            <div class="est-block">
+              <div class="est-block-title">&#9646; Step 4 &#8212; Worktop Material</div>
+              <div class="est-block-sub">Price is per linear metre of run. We&#8217;ll measure precisely at design stage.</div>
+              <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:12px" id="est-wt-picker">
+                <button type="button" class="est-wt-btn" onclick="selEstWT(this,'laminate',45)" data-key="laminate">Laminate &#183; &#163;45/m</button>
+                <button type="button" class="est-wt-btn" onclick="selEstWT(this,'solidwood',120)" data-key="solidwood">Solid Wood &#183; &#163;120/m</button>
+                <button type="button" class="est-wt-btn" onclick="selEstWT(this,'quartz',180)" data-key="quartz">Quartz &#183; &#163;180/m</button>
+                <button type="button" class="est-wt-btn" onclick="selEstWT(this,'granite',220)" data-key="granite">Granite &#183; &#163;220/m</button>
+                <button type="button" class="est-wt-btn" onclick="selEstWT(this,'corian',250)" data-key="corian">Corian &#183; &#163;250/m</button>
+              </div>
+            </div>
 
-        <div    </div>
+            <!-- 5. Extras -->
+            <div class="est-block">
+              <div class="est-block-title">&#10133; Step 5 &#8212; Extras</div>
+              <div class="est-block-sub">Tick anything you&#8217;d like included. Prices are ballpark &#8212; exact cost confirmed at design stage.</div>
+              <div class="extras-grid" id="est-extras">
+                <div class="extra-item" onclick="togExtra(this,'sink',280)"><div class="extra-lbl">&#128683; Undermount Sink &amp; Tap</div><div class="extra-price">&#163;280</div></div>
+                <div class="extra-item" onclick="togExtra(this,'softclose',45)"><div class="extra-lbl">&#128274; Soft-Close Hinges (all doors)</div><div class="extra-price">&#163;45</div></div>
+                <div class="extra-item" onclick="togExtra(this,'drawers',85)"><div class="extra-lbl">&#128218; Pan Drawer Set (per base unit)</div><div class="extra-price">&#163;85 / unit</div></div>
+                <div class="extra-item" onclick="togExtra(this,'lighting',95)"><div class="extra-lbl">&#128161; Under-Cabinet LED Lighting</div><div class="extra-price">&#163;95</div></div>
+                <div class="extra-item" onclick="togExtra(this,'pelmet',65)"><div class="extra-lbl">&#127968; Cornice &amp; Pelmet</div><div class="extra-price">&#163;65</div></div>
+                <div class="extra-item" onclick="togExtra(this,'plinth',18)"><div class="extra-lbl">&#9644; Plinth (per metre)</div><div class="extra-price">&#163;18/m</div></div>
+                <div class="extra-item" onclick="togExtra(this,'inthandles',42)"><div class="extra-lbl">&#128295; Integrated Handles</div><div class="extra-price">&#163;42</div></div>
+                <div class="extra-item" onclick="togExtra(this,'glassuppers',120)"><div class="extra-lbl">&#127981; Glass Upper Doors</div><div class="extra-price">&#163;120</div></div>
+              </div>
+            </div>
 
-            <!-- 2. "est-iv inter;mara="matr pantrug style="font-s       ree estily           <div class="est-block-title">&#12>See What Your Kitc
-    <p>Factorer">
- margin:0 a     2;&#9 full brewto <p st""argin-bottom:0">
- t-price">&#163;280</span></s brewtodiv class="unitilEstWTdiv><sttoggleFa', D &om oa-key="toggleFa">LoggleFa <div clutton"45/mls and will be in tom:0">
- t-price">&#163;280</span></s brewtodiv class="unitilEstWTdiv><stlass=r:po ty20 &om oa-key="lass=r:po <ress="Wdiv><div clutton"y20/mls and will be in tom:0">
- t-price">&#163;280</span></s brewtodiv class="unitilEstWTdiv><stquartz ty80 &om oa-key="quartz">Quartz><div clutton"y80/mls and will be in tom:0">
- t-price">&#163;280</span></s brewtodiv class="unitilEstWTdiv><stg;fCiFa',220 &om oa-key="g;fCiFa">G;fCiFa><div clutton"220/mls and will be in tom:0">
- t-price">&#163;280</span></s brewtodiv class="unitilEstWTdiv><stco/10n',250 &om oa-key="co/10n="q-bian><div clutton"250/mls and will be in tom:0"unit-btn" onclick="adjUnit('e">&#1Nfy-conten5. 'd likylutton type="nl"><button type="buttm6u="u="blick="adjUnit('wall600',-1)Eland 0163;92</0133onclick5lculator<'d likv>
+            <!-- 6. Photos upload -->
+            <div class="est-block">
+              <div class="est-block-title">&#128247; Step 6 &#8212; Upload Photos (optional)</div>
+              <div class="est-block-sub">Photos of your existing kitchen really help us give a more accurate estimate and spot any quirks.</div>
+              <div class="upload-zone" onclick="document.getElementById('eP').click()" style="margin-bottom:12px">
+                <div class="uz-icon">&#128247;</div><strong>Click to upload photos</strong><p>JPG or PNG &#8212; optional but helpful</p>
+              </div>
+              <input type="file" id="eP" accept="image/*" multiple style="display:none" onchange="showFiles(this,'ePL')">
+              <ul class="file-list" id="ePL"></ul>
+            </div>
 
-        <div    </div>
+            <!-- 7. Notes -->
+            <div class="est-block">
+              <div class="est-block-title">&#128172; Step 7 &#8212; Any Extra Notes?</div>
+              <div class="est-block-sub">Chimney breast, angled ceiling, specific appliances, special requests &#8212; anything at all.</div>
+              <textarea id="eNO" rows="4" placeholder="e.g. We have a chimney breast on the back wall, would like a range cooker with extractor, open shelving above the breakfast bar&#8230;" style="margin-top:12px"></textarea>
+            </div>
 
-            <!-- 2. sr ha which wa      <div   </dipply wors="est-block-btonp   <culator<ionaln></d">
-     v cl         <div class="est-block-title">&#128207;  fridsom:28px">
-      fridsns</div>
-              <div cla frid recommend trusted 'd lidiv><stlink',280 &>    <div cla frid y" id2</span3on>
-   b, ov S    Unit('st-;&#9552;&#9552;&#9 frid type="button" clas"unit-btn" onclick="adjUn      <div cla frid recommend trusted 'd lidiv><stloft<text', D &>    <div cla frid y" id2</sp27ut="    CtextaHi&#955(300"; Spe);&#9552;&#9552;&#9 frid type="button"45as"unit-btn" onclick="adjUn      <div cla frid recommend trusted 'd lidiv><stts, sos',8D &>    <div cla frid y" id2</sp218; Pan>Ds, sofS, winterc.</p>
-  );&#9552;&#9552;&#9 frid type="button"85">0>
-  as"unit-btn" onclick="adjUn      <div cla frid recommend trusted 'd lidiv><st clasi&#',9D &>    <div cla frid y" id2</sp161on>
-   -Cuarant LED Lclasi&#;&#9552;&#9552;&#9 frid type="button"95as"unit-btn" onclick="adjUn      <div cla frid recommend trusted 'd lidiv><stpelmat',6D &>    <div cla frid y" id2</s7968iew(rnst-iUnit('Pelmat;&#9552;&#9552;&#9 frid type="button"65as"unit-btn" onclick="adjUn      <div cla frid recommend trusted 'd lidiv><stp;math ty8 &>    <div cla frid y" id2<964ut=P;mathwintermatr );&#9552;&#9552;&#9 frid type="button"18/mls"unit-btn" onclick="adjUn      <div cla frid recommend trusted 'd lidiv><stmathlass="c,42 &>    <div cla frid y" id2</sp270mmIgin-bottom55,255,25#9552;&#9552;&#9 frid type="button"42ls"unit-btn" onclick="adjUn      <div cla frid recommend trusted 'd lidiv><sts &am"q-was ty20 &>    <div cla frid y" id2</s7981onG &ampUq-wation value="2;&#9552;&#9 frid type="button"12las"unit-btn" onclick="adjUnunit-btn" onclick="adjUnit('e">&#1Nfy-conten6.ipe locadrawn f completely free and there&#8217;s no obligation.</p>
-        <div class="est-layout">
+            <!-- 8. Contact -->
+            <div class="est-block">
+              <div class="est-block-title">&#128100; Step 8 &#8212; Your Details</div>
+              <div class="est-block-sub">We&#8217;ll send your full cost breakdown by email within 48 hours. Completely free, no obligation.</div>
+              <div class="frow" style="margin-top:16px">
+                <div class="fg"><label>First Name *</label><input type="text" id="eFN" placeholder="e.g. Sarah" required></div>
+                <div class="fg"><label>Last Name *</label><input type="text" id="eLN" placeholder="e.g. Murphy" required></div>
+              </div>
+              <div class="fg"><label>Email Address *</label><input type="email" id="eEM" placeholder="sarah@example.com" required></div>
+              <div class="fg"><label>Phone Number</label><input type="tel" id="ePH" placeholder="07700 000000"></div>
+              <div class="fg"><label>Postcode</label><input type="text" id="ePC" placeholder="BT1 1AA" style="max-width:200px"></div>
+              <div style="background:var(--cream);border-radius:9px;padding:14px 18px;margin:20px 0 8px;font-size:.82rem;color:var(--mid)">
+                &#127381; <strong>Completely free</strong> &#8212; this is a no-obligation estimate. We&#8217;ll email you a detailed breakdown within 48 hours and you can take it from there at your own pace.
+              </div>
+              <button type="button" class="btn btn-gold btn-lg btn-block" onclick="submitEst()">Send My Free Estimate &#10003;</button>
+            </div>
 
- 4        6<culator<le="dispe locaine rack in 
+          </div><!-- end left column -->
 
-        <div    </div>
+          <!-- RIGHT COLUMN: sticky price summary -->
+          <div class="est-summary">
+            <div class="est-sum-inner">
+              <div style="font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5);margin-bottom:16px">Live Price Estimate</div>
+              <div id="est-sum-lines" style="margin-bottom:16px;font-size:.88rem">
+                <div style="color:rgba(255,255,255,.5);font-style:italic">Start adding units above to see your estimate build up here in real time.</div>
+              </div>
+              <div class="est-sum-total">
+                <span>Total estimate</span>
+                <span id="est-total">&#163;0</span>
+              </div>
+              <div style="font-size:.74rem;color:rgba(255,255,255,.4);margin-top:10px;line-height:1.5">Trade P&amp;A pricing. Final quote may vary depending on exact specification, installation &amp; delivery. Supply only &#8212; fitting quoted separately.</div>
+              <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1)">
+                <div style="font-size:.78rem;color:rgba(255,255,255,.6);margin-bottom:10px">Want a full itemised estimate sent to your inbox?</div>
+                <button type="button" class="btn btn-outline-gold btn-block" onclick="go('design')" style="font-size:.85rem">Get a Free Estimate &#8594;</button>
+              </div>
+            </div>
+          </div><!-- end right column -->
 
-            <!-- 2. "e locast" id="rner"></dstyle="mre300y help dim4rem;abottom:6px">Getnk and we&#82spot/h2>
-  irksclass="est-block-title">&#128207;          <label>&#9999;&#65039; Upload Your MeaePt Sketch <sTE &#9552;&#9552;&#9552;&#95 onclick="adjUn      <div cla wall, ceiling, 7t)">(photo of your hand-drawn fin. 4 photos)</span></label>
-  28px 0"e rack   an helpful>+</button></div></dass="est-block-title"ck="document.getElemeneP()">
-            <div class="uz-icon">&#128248;</div><strong>Click to add pePL') obligation.</p>
- </strong><p>JPG, PNG or PePL      </div>
-   ck="adjUnit('e">&#1Nfy-conten7 Rectton completely free and there&#8217;s no obligation.</p>
-        <div class="est-layout">
+        </div><!-- end est-layout -->
+      </div><!-- end est-form -->
 
-17 onclick7
-  28px 0A2>
-'d liRectto?n 
+    </div>
+  </section>
+</div>
 
-        <div    </div>
-
-            <!-- 2. Chimneystimasty wig <h1m from coal Requesh wall measusall1000r Americ> &#8212; which wales" simple r"203" font-size="9" g else yoeNOceholder4f"><label>Number of de haem;abchimneystimasts and swp</sp, 600mwoul   </dia<p class="hintbotto       <lab open shelving, glass doors, specificas" placeE &#9552;&#955    2;&#9e.g. Tall larder unitck="adjUnit('e">&#1Nfy-conten8.        < completely free and there&#8217;s no obligation.</p>
-        <div class="est-layout">
-
-100onclick8> &#8212;     /select>
-
-
-        <div    </div>
-
-            <!-- 2. W&#183; No sign-um:10px">Es></d"timate Senompletely free.</strong>
-quired</span></div>
- align:center;ss="est-block-title">&#128207; Step 1 &#8212; Room     26&#95 onclick="adjUn      <div claround:var(--border);margin:28px 0"></div>
-        <p seyle="font-weight:700;font-size:.92rem;margin-bottom:20pom:20px">Your Contact Details</p>
+<!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; BOOK &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
+<div id="page-book" class="page">
+  <div class="page-hdr"><div class="page-hdr-bg"></div><div class="page-hdr-inner">
+    <div style="margin-bottom:12px"><span class="tag tag-gold">Optional premium service</span></div>
+    <h1>Home Survey &amp; Full Design</h1>
+    <p>Want us to come to you, measure everything, and create a full 3D design? Book a home survey. This is completely optional &#8212; you can get a free estimate online anytime, no visit needed.</p>
+  </div></div>
+  <section class="section">
+    <div class="section-inner">
+      <div class="book-options">
+        <div class="book-card featured">
+          <div class="book-icon">&#127968;</div>
+          <h3>Call Out &amp; Design</h3>
+          <p>A Millwood designer visits your home, measures every wall, window and door, photographs the space, then creates a full 3D design and itemised quote &#8212; all in a single visit.</p>
+          <p style="font-size:.82rem;color:var(--mid);margin-bottom:20px">Everything included: survey, measurement, design and quote.</p>
+          <div class="book-price">&#163;200</div>
+          <span class="book-credit">&#10003; Fully credited back against your kitchen order</span>
+          <button type="button" class="btn btn-gold btn-block" onclick="showBookForm()">Book My Visit</button>
+        </div>
+        <div class="book-card">
+          <div class="book-icon">&#128187;</div>
+          <h3>Prefer a free estimate first?</h3>
+          <p>Not ready for a home visit yet? Submit your measurements and photos online and we&#8217;ll send back a full, itemised estimate within 48 hours &#8212; completely free.</p>
+          <p style="font-size:.82rem;color:var(--mid);margin-bottom:20px">Ideal if you&#8217;re at the early planning stage, or outside our travel area.</p>
+          <div class="book-price" style="font-size:1.4rem;padding:8px 0;color:var(--green)">Free</div>
+          <span class="book-credit" style="color:var(--green)">&#10003; No payment required &#183; No obligation</span>
+          <button type="button" class="btn btn-outline-gold btn-block" style="margin-top:20px" onclick="go('design')">Get My Free Estimate</button>
+        </div>
+      </div>
+      <div class="form-card" id="book-form" style="display:none;max-width:600px;margin:0 auto" aria-live="polite">
+        <h3 style="font-size:1.2rem;margin-bottom:6px">Book Your Home Survey &amp; Full Design &#8212; &#163;200</h3>
+        <p style="font-size:.84rem;color:var(--mid);margin-bottom:24px">We&#8217;ll be in touch within one working day to confirm your appointment time. The &#163;200 is taken on the day of the visit and credited in full against your order.</p>
+        <div class="frow"><div class="fg"><label>First Name *</label><input type="text" id="bFN" required></div><div class="fg"><label>Last Name *</label><input type="text" id="bLN" required></div></div>
+        <div class="frow"><div class="fg"><label>Email *</label><input type="email" id="bEM" required></div><div class="fg"><label>Phone *</label><input type="tel" id="bPH" required></div></div>
+        <div class="fg"><label>Full Address *</label><textarea rows="2" id="bAD" placeholder="Including postcode" required></textarea></div>
         <div class="frow">
-          ediv class="fg"><label>First Name *</label><input type=div></dass="est-block-title"ired></div>
-          <div class="fg"><label>Last Name *</label><inpue type="text" id="dLN" placeholder="e.g. Murphy" required></div/div>
+          <div class="fg"><label>Preferred Date</label><input type="date" id="bDT"></div>
+          <div class="fg"><label>Preferred Time</label><select id="bTI"><option>Morning (8am&#8211;12pm)</option><option>Afternoon (12pm&#8211;5pm)</option><option>Evening (5pm&#8211;7pm)</option></select></div>
         </div>
-        <div classfrow">
-          <div class="fe"><label>Email Address *</labehy" required></div/div>
-        </div>
-       equired  <div class="frow">
-          e<label>Phone Number *</label><input type="tel" id>lass="est-block-title">&#12>See W,000</option>
-   cimamde *</label><inp9 type="text" id="dPC" place/opti oncli1AA" style="max-width:200px" required></div>
-  iv>
-     27381onoto of yoired</span></dr</strong> &#8212;t <div iav>
--="page">
-  g tag-gold"&#183; No sletely-->
-av>
-    <h1timate Sene:1.6rem;margin-an-um:1   <htsurei</strong> r     m:10p Senp>Ph.put type=div></dass="est-block-title"t required.</strong> We&#8217;ll review your details and send a tailored, .2" onid estimaro obligation &#;border: and will be in tom:adjUnit('e">&#1Nfy)">(phonten estan>
-  s<umn< comgin-bottom:32px"RIGHices shownigackyass="tasum plyamp;A estimates &#8>
-
-         sum ply"ompletely free and there&#8217sum &#8212; we&#82ck-title">&#12>See WAA" style="7;</bu="unit-qty" id="q-wall1000">0</span><butto8-width:20fg"><l55,l55,l55,.5ign:center">Exampeight:1las"est-i          ss="est-block-title">&#1">
-     sum ;marssTE &#9552;&#9552;&#95526li1AA" style="m874,.0-bottom:20pom:20px">Yon form-card" fg"><l55,l55,l55,.5igAA" st for:itaa tilingrt e="texuilder , glassox"><s Your Free Kites)</d:va> r  i"mre30 ree class="est-block-title"
-
-
-        <div    </div>
-
-         sum totaa.0-bottom:20pom:20pxs="unTotaar Free Ki>
-      <div id="e screen (hid">
-     totaa.0utton"0>
-      <div id="e scrlass="est-block-title">&#12>See W5" stroke="#CC8800" strfg"><l55,l55,l55,.41"/>
-         marg;mar-1; &#163.5">Te the Catalogss="tex.blan
-      </div>
-
-  v>
-ope"texu
-  gonalnal Reque    <p insttone">
-  <nit('ns to sy;fok="tts atts &#8212;fit"></d    <px">pa">Gelyclass="est-block-title">&#12>See W/>
-        2t type="tex     26&#e *</lab    2v class="fg"><l55,l55,l55,.1).0-bottom:20pom:20px">Yon form-AA" style="7;</bu0" strfg"><l55,l55,l55,.6) aria-live="polite">
-Warke or leave it blank and wesrder you.</p></di?margin-bottom:20pom:20pxt required.</strong> We&#8217;ll revrk);marview your  and send a tailks &      '<sTE &#955      </div>
-
-  ">rs. Zero obligation &#8212; you decide whatk="adjUnunit-btn" onclick="adjUnit'e">&#1Nfy)">(phonten estlass=  s<umn< comgin-botto)">(phonten estize:.9rem; 48 hours &#">(phonten estize: are  comgin-brs. No payment, no obligation, no hassle.</p>
-          <button type="button" classBOOKn-gold" onclick="go('catalogue')">Browse the Catalogue</button>
-     botely      </div>
-    </div>
-  </section>
-</div>
-
-<!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; ESTIMATE &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; --Oe rack  p
-  iue trrvicehdr"><div class="page-Ho   Surveys<nit('F leaD     ge-hdr-inner"Warked.</p>co    you.<,s       r id="dExtry windcima we&or lea3D       ? Botee&oho   survey    <div id="est-form"e rack           &#1  <hgs. Ze">
-  nk and we at     whiee iv>
- visi</p></ Free Kitckitchen unit by unit and see a live price estimate. When you&#8217;re rtrong>Photograph thebote-gin-botlass="section">
-    <dibote-er" ows and dg. Sarah" required></div>bote-ll, ceilin7968iadjUnit'e">&#1Nfy)h3>C300"Om; n><opti     ge-3="success-scre>A Millr:po       er visi<s" id="doe iv       sv class= 600mw      "dds-ste,ns-serif">Ss<li><dp>Phrgin-ndcima wse&or lea3D        "ddsve it bla    </ &#8212; -card"  argile visi< <p style="color:all1000',-1)">&#8722;2
-      <!-- FORM -->
-      <div claoptionEid="dExtripply wor: survey,
-           ,        "dds    < <p style="color:ired></div>bote-type="button" 00adjUnit'e">&#1Nfy)2;&#9552;&#9bote-ed dit-->
-<div id=u00y ed dite-up</spagainst <div style="m*</la>
-      <div id="est required.</strong> We&#8217;ll review your  and send a tailohowBoteFare oniBoteeimaVisi<ls and will be in touch within tion">
-    <dibote-er" g. Sarah" required></div>bote-ll, ceilin8187iadjUnit'e">&#1Nfy)h3>xtarea>Ze">
-  nk and wefbord?ge-3="success-scre>Noto use n are&oho   visi</yet? Sued,  <div             <,sans-serse at     won &#183; No sign-up</span></divn-bottom:24px;font-size:.82rem;colculator</h1>
-    <p>Build your e="color:all1000',-1)">&#8722;2
-      <!-- FORM -->
-      <div claoptionIde30 if10003; Free to   li><ockets
-   nile="bagiv>
-  em;ts, paiv t-qvellocka <p style="color:ired></div>bote-type="load it below with your rpe="text>&#16;ound:rgba(22,163,74,F</dr<jUnit'e">&#1Nfy)2;&#9552;&#9bote-ed dit-="background:rgba(22,163,74,>
-<div id.07);border:1px solmate" class="page">
- >
-      <div id="est required.</strong> We&#8217;ll revrk);marview your  and se2>See W/>
-        2t tsend a tailks &      '<s>rs. imaro obligationed estimate will be with you within 48 houPhotograph the sketch</strongbote-akdow="uz-icon">&#128248;-width:560p60px">
-
-      <!-- S/div>
-  <section class="sectioh3load it below with y2ur room photos.</div></Botee     Ho   Surveys<nit('F leaD     lculator<utton" 00ad-3="success-:all1000',-1)">&#8722;4
-      <!-- FORM -->
-      <div clao4class="si">&#style="font-size:1.6re<div    </striv>/p>co      <div appointorderree c   e<utton" 00iv itsurns and swriv>antry, visi</windcimdite-u6rer leaagainst <div *</la.>
-        </div>
-
-        <div     <div claround:var(--border);margin:28px 0"></div>
-        <p sbyle=.g. Murphy" reqx">Your Contact Details</p>
-        <div class="frow">
-          bLle=.g. Murphy" reqxtext" id="dFN" placeholder="e.g."ired></div>
-          <div c"><label>Last Name *</label><inpub typ.g. Murphy" reqx">Your Contact Details  <div"frow">
-          <div class="fb"><l.g. Murphy" reqxtext" id="dFN" placeholder=ound:var(-- lealass="fg"><label>L"9" g elsholder2ass="fbADabel>Phone Numb id="d</stpequired<l.g. Murphy". Tall la"text" id="dFN" placeholder="e.g. Sarah" required></div>
-          "></ul>
-   ionedow">
-          <divddiv>
-s="fbDT"hy" required></div>
-        </div>
-       ></ul>
-  Tee iv>
-            <divbTIss="mf"><>M(rnsgin:8amn>Under2;&"e.g. 2400" id="dC>Af    o an(2;&"n>Under5&"e.g. 2400" id="dC>Eidnsgin:5&"n>Under7pv class="mf"><label>Worktop height xtext" id="dFN" placeholder=ound:var(-></textaruser ln ared.</p>know?><label>L"9" g elsholder3>
-s="fbNOceel>Phone NumbPa  </stnctto,)">
- s"></fo, keysws and s>antry, dp>Phas" plachy". Tall la"text" id="dFN" plac2>See W,000</option>
-   cimamde *</label><inp9 type="text" id="dPC" place<div claopti1AA" style="m1x-width:200px" requireiling,22onoto of yNoto use n/p>bote/yet?r</strong>Y&#1  <hgs. Ze">
-  nk and we at    fbordlculator<     <aend a tailks &      '<sTE &#955ound:rgba(22,ne )u="unidecore">
- :u
-   t   ;c;cod:rpointe rtfm-card"pan>
-        > r </a>.lass="page">
-  der uniwayclass="est-block"t required.</strong> We&#8217;ll review your details and send a tailboteSued,  onidiv clasimaHo   Surveys<#8212; you decide what happenin-brs. No payment, no obligation, no hassle.</p>
-          <button type="button" classUPLOAD PLANSn-gold" onclick="go('catalogue')">Browse the Catalogue</button>
-     
-   s>
+        <div class="fg"><label>Anything useful for us to know?</label><textarea rows="3" id="bNO" placeholder="Parking notes, access info, key features of the space&#8230;"></textarea></div>
+        <div style="background:var(--cream);border-radius:9px;padding:14px 18px;margin-bottom:20px;font-size:.81rem;color:var(--mid)">&#128222; <strong>Not ready to book yet?</strong> You can get a free estimate online first &#8212; just <a onclick="go('design')" style="color:var(--gold);text-decoration:underline;cursor:pointer">fill in your details here</a>. No obligation either way.</div>
+        <button type="button" class="btn btn-gold btn-lg btn-block" onclick="bookSubmit()">Request My Home Survey &#8594;</button>
       </div>
     </div>
   </section>
 </div>
 
-<!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; ESTIMATE &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
-<div id="pagate" class="page">
-  <div class);border:1px solhdr"><div class="page-le="display:P   sn are&oro obligationed-hdr-inner"Haem;archite   arees)</labon plais?<le="disr um  won &#183; No sign-up</span></divn-bottom:style="m24px;font-size:.82rem;colculator</h1>
-    <p>Build your kitchen unit by unit and see a live price estimate. When you&#8217;re rtrong>Photogr00" required></div>
+<!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; UPLOAD PLANS &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#9552; -->
+<div id="page-plans" class="page">
+  <div class="page-hdr"><div class="page-hdr-bg"></div><div class="page-hdr-inner">
+    <div style="margin-bottom:12px"><span class="tag tag-gold">&#10003; Free &#183; No obligation &#183; No payment required</span></div>
+    <h1>Upload Your Plans for a Free Estimate</h1>
+    <p>Have architect or builder drawings? Upload them and we&#8217;ll send back a full, itemised kitchen estimate within 48 hours &#8212; completely free.</p>
+  </div></div>
+  <section class="section">
+    <div class="section-inner">
+      <div style="background:rgba(22,163,74,.07);border:1px solid rgba(22,163,74,.2);border-radius:var(--radius);padding:16px 24px;max-width:820px;margin:0 auto 36px;display:flex;align-items:center;gap:14px">
+        <span style="font-size:1.5rem">&#10003;</span>
+        <div>
+          <strong style="font-size:.95rem;color:var(--green)">Upload your plans and get a free estimate &#8212; no payment, no obligation.</strong>
+          <span style="font-size:.85rem;color:var(--mid);margin-left:6px">We&#8217;ll review your drawings and send an itemised kitchen estimate within 48 hours.</span>
         </div>
-        <div class="fg"><label>Postcode *</label><inpgba(22el><in)ype="text"tn" BT1 1width:560p82margin:0 auto">
-  36&#ehat Your Kitc      recos     <bur">
- 4&#95 onclick=wFiles(this,'dPhot with y
-
-  ">&#;border:      <div id=<jUnit'e">&#1Nfy)2style="backgr" class="btn
-
-      <!-- FORM,163,74,le="dispan>
-
-   s  wongs. Ze">
-  nk and weculator<nceived!</h2>
-          <id rgba(22t'e">&#1Nfy)2;&#9</div>
       </div>
-
-      <!-- FORM -->
-      <an>
-div></163,74,.2);border-radius:n plaisadding:14pxnvn-bottom:style="m24px;font-size:.82rem;co.r:      <div id=< with you within 48 houPhotograph the
-   s-tieCasTE &#9552;&#9552;&#9554on everything&otograph thetieC-er" ows and dg. Sarah" required></div>tieC-badiv>
-ingrt > r  culator<itstyle="tef</dr<jUnit'e">&#1Nfy)-3=ro obligation stronP   sad-3=uired></div>tieC-type="load it    <!-- FORM,163,71AA" style=2your 4,F</dr<jUniotograph thetieC-ed dit-="background:rgba(22,163,74,>
-<div id.07);borderate" class="page">
-  stroso clar<jUnit'e">&#1Nfy)</strong><tieC-ws asns</div>
-      fixeI-bottom:24px;fontstronadius:n plais it clearly on the t ctrl" .9rem; m stydr you.</pp   sadt clearly on the t cResponsnt-size:.82rem;coadt clearly on the t cPDF, CAD, n></labile-list"on plain">
-   olhdt clearly on t    </div>
-   ckst required.</strong> We&#8217;ll review your  and send a tailohowP   sFare 'sng heig'74,le="disP   snn 48 hours. imaro obligationed estimate will be with you wig&otograph thetieC-er" g. Sarah" required></div>tieC-badiv>
-Oe rack  upge thr<jUnit'e">&#1Nfy)-3=r lea3D D     lSrrvicehd-3=uired></div>tieC-type="load it e="display:none""button" 50r<jUniotograph thetieC-ed dit-->
-<div id=u00y ed dite-up</spagainst <div *</la>
-jUnit'e">&#1Nfy)</strong><tieC-ws asns</div>
-      fixeEid="dExtrippng> in>
-  nk and w,pp inpadt clearly on the t cr lea3D ile-lre30er">cbor
-   s via Ar">cadadt clearly on the t cTwo        ordehis ispply woradt clearly on the t cuit you<nit('abel walrecomordde">
- oadt clearly on the t cD dicottom:     er th></gem;tadt clearly on the t cPriorit n/urna></dit-size:.82rem;coadt clearly on t    </div>
-   ckst required.</strong> We&#8217;ll revrk);marview your  and send a tailohowP   sFare '></d'74,Enpx so Abem; F leaD     lSrrvicehd estimate will be with you within 48 houPhotograph the sketch</strong
-   s-akdow="uz-icon">&#128248;-width:560p60px">
-
-      <!-- S/div>
-  <section class="sectioh3lrong
-   s-akdost-layoload it e="display:n15ur room photos.</div></le="display:P   sad-3="success-:all1000',-1)">&#8722;4
-      <!-- FORM -->
-      <div clao4class=n">
-    PDF, DWG, n></labPNG. Max 5 cla-watp>JP.>
+      <div class="plans-tiers" style="margin-bottom:40px">
+        <div class="tier-card featured">
+          <div class="tier-badge">Start here &#8212; it&#8217;s free</div>
+          <h3>Free Estimate from Plans</h3><div class="tier-price" style="color:var(--green);font-size:2.4rem">Free</div><div class="tier-credit" style="color:var(--green)">&#10003; No payment &#183; No obligation whatsoever</div>
+          <ul class="tier-feats">
+            <li>Itemised estimate from your drawings</li>
+            <li>Unit layout mapped to your plans</li>
+            <li>Response within 48 hours</li>
+            <li>PDF, CAD, JPG or photo of drawing accepted</li>
+          </ul>
+          <button type="button" class="btn btn-gold btn-block" onclick="showPlansForm('standard')">Upload Plans &#8212; Get My Free Estimate</button>
         </div>
-
-                <label>&#9999;&#65039; Upload Your Meapick t Sketch <sTE &#9552;&#9552;&#95524         <div class="sel-su;color:var(--lig6t)">(photo of your hand-drawn fu.</pp   sadotos)</spaPDFrate" clDWGrate" cln></ate" clPNG>
-        </di with you wig&ock="document.getElemenpick <div class=">
-     >
-  ,.dwg,.jpg,.jpeg,.png          <div class="uz-icon">&#128203;</div><stpFL') obligation </strong><p>JPG, PNG or PpFL      </div>
-    >&#128207; Step 1 &#8212; Room     26&#95    <div claround:var(--border);margin:28px 0"></div>
-        <p spyle=.g. Murphy" reqx">Your Contact Details</p>
-        <div class="frow">
-          pLle=.g. Murphy" reqxtext" id="dFN" placeholder="e.g."ired></div>
-          <div c"><label>Last Name *</label><inpup typ.g. Murphy" reqx">Your Contact Details  <difrow">
-          <div class="fpP (mm)</laxtext" id="dFN" placeholder=ound:var(-ectto><label>L"9" g elsholder3>
-s="fpNOceel>Phone Numbr styd="dWD"></ds, keysry. This i,sh wall measua</textarea>
-as" plachy". Tall la"text" id="dFN" plac2>See W,000</optio>
+        <div class="tier-card">
+          <div class="tier-badge">Optional upgrade</div>
+          <h3>Full 3D Design Service</h3><div class="tier-price" style="font-size:1.6rem">&#163;250</div><div class="tier-credit">&#10003; Fully credited back against your order</div>
+          <ul class="tier-feats">
+            <li>Everything in the free estimate, plus:</li>
+            <li>Full 3D photorealistic renders via Articad</li>
+            <li>Two design revisions included</li>
+            <li>Handle &amp; worktop recommendations</li>
+            <li>Dedicated designer throughout</li>
+            <li>Priority turnaround within 48 hours</li>
+          </ul>
+          <button type="button" class="btn btn-outline-gold btn-block" onclick="showPlansForm('full')">Enquire About Full Design Service</button>
         </div>
-        <div class="fg"><label>Postcode *</label><inp9 type="text"2id="6x">
-
-     btn" o1AA" style="max-width:200px" required></div>
-        <div style="background:rgba(22,163,74,.07);border:1px soln are Your Free Kiid rgba(22,163,74,.2);border-radius
-   s  wong:14pxnvn-bottom:24px;font-size:.82rem;co.      </di with you wig&ock="documentetaile"lrong
-   s-akdostume"s="5"></teest-block"t required.</strong> We&#8217;ll review your details and se &#8212; Room     8 tsend a tail
-   sSued,  onile="disP   snn 48 hours. imaro obligations<#8212; you decide what happenin-brs. No payment, no obligation, noPRkVACY POLICY PAGEogue</button>
-     
-rivacy>
+      </div>
+      <div class="form-card" id="plans-form" style="display:none;max-width:600px;margin:0 auto" aria-live="polite">
+        <h3 id="plans-form-title" style="font-size:1.15rem;margin-bottom:6px">Upload Your Plans</h3>
+        <p style="font-size:.84rem;color:var(--mid);margin-bottom:24px">We accept PDF, DWG, JPG or PNG. Max 50MB per file.</p>
+        <div class="upload-zone" onclick="document.getElementById('pFile').click()" style="margin-bottom:14px">
+          <div class="uz-icon">&#128206;</div><strong>Click to upload your plans</strong><p>PDF &#183; DWG &#183; JPG &#183; PNG</p>
+        </div>
+        <input type="file" id="pFile" multiple accept=".pdf,.dwg,.jpg,.jpeg,.png" style="display:none" onchange="showFiles(this,'pFL')">
+        <ul class="file-list" id="pFL"></ul>
+        <div class="frow" style="margin-top:16px"><div class="fg"><label>First Name *</label><input type="text" id="pFN" required></div><div class="fg"><label>Last Name *</label><input type="text" id="pLN" required></div></div>
+        <div class="frow"><div class="fg"><label>Email *</label><input type="email" id="pEM" required></div><div class="fg"><label>Phone</label><input type="tel" id="pPH"></div></div>
+        <div class="fg"><label>Notes</label><textarea rows="3" id="pNO" placeholder="Style preferences, key dimensions, appliances, anything else&#8230;"></textarea></div>
+        <div style="background:rgba(22,163,74,.07);border:1px solid rgba(22,163,74,.2);border-radius:9px;padding:12px 16px;margin:16px 0;font-size:.82rem;color:var(--mid)">
+          &#10003; <strong style="color:var(--green)">No payment required for your estimate.</strong> We&#8217;ll review your plans and send an itemised estimate within 48 hours.
+        </div>
+        <input type="hidden" id="plans-form-type" value="">
+        <button type="button" class="btn btn-gold btn-lg btn-block" style="margin-top:8px" onclick="plansSubmit()">Upload Plans &#8212; Get My Free Estimate &#8594;</button>
       </div>
     </div>
   </section>
 </div>
 
-<!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#955age-Privacy Passcyed-hder"How we hlass=nadius:ata>
-  kitchen unit by unit and see a live price estimate. When you&#8217;re ready, send it to u78on everythin plac2>See W,000</option>
-   white       <div class="n>
-            *</label><inpgba(22el><in de)ype="text4on everything&oeen form-card" style="max-      </div>
-
-         <div clao4clasoto of y</p>
-upddivd:d rgba(22,A
-ril 2026>
-        </dih3load it 2;&#9552;&#9552;&#95Who we aread-3="success-:all1000',card" style="max-      </div>;</bu;mar-1; &#163.75       <div clao4clasMillr:po g"></didiv iavtitl</stn    st"P&#38;A         s Ltd,rc.</-u6reNorr unn Irettonf de manuf      r wongk="ttsfit"om:style="ssryre   /p>co s650in-across<li><UK.>
-        </dih3load it 2;&#9552;&#9552;&#95Whl   ata we carabelad-3="success-:all1000',card" style="max-      </div>;</bu;mar-1; &#163.75       <div clao4clas">&#1000e withipxnv24px;fontr Ameri, we carabel:nadiusn   ,sletelyaass="f,ns-sne bel><i,tpequiredy wind         bem; <div style="m:1px so     <iid="d</strOLUM            <,sans-serse &#1 ow" iand-drawn f de ue goti"></forme">
-  las  <pnd-="dpa  r wonns to s <div style="m Free Kiid         </dih3load it 2;&#9552;&#9552;&#95How we us=nadius:ata>
--3="success-:all1000',card" style="max-      </div>;</bu;mar-1; &#163.75       <div clao4clas"e us=nadius-wasack   ata to:-="dpa  r<div style="m Free Ki,>co     <-->
-abem; <div enpx syy windimprglast    rrvicesf de do>
-   se/divr!</h2aresha  r<div -wasack   ata bottootiransarclasn are   ke"></dpurpeqesid         </dih3load it 2;&#9552;&#9552;&#95Data storagead-3="success-:all1000',card" style="max-      </div>;</bu;mar-1; &#163.75       <div clao4clasYdius:ataiv istor<px">c   ly  estl    n<px atts are&s lyle=ae="c
- s"
-  vnd-></p>J<li><purpeqesm:  cribv class=. Fare twithshis isa  reeo
- s"ydr h></ge Netlifystyle="te">c   n are hlassile="rrviceid         </dih3load it 2;&#9552;&#9552;&#95Ydiuslass=sad-3="success-:all1000',card" style="max-      </div>;</bu;mar-1; &#163.75       <div clao4clas>
-    UK GDPR,<-->
-haem;ry, iass=     >
- s",>corre  h2arens et r<div -wasack   ata adds-hanee c  o exeresti;ry,s, iass=s,>co     <dimen hello@millr:postyle="sder=id         </dih3load it 2;&#9552;&#9552;&#95Cookiesad-3="success-:all1000',card" style="max-      </div>;</bu;mar-1; &#163.75       <div clao4clas  <diwebsiFa>doar(-ot ue gos, iile=cookies2areotira-sarcy  ealyticsf de ue g atts s"ynt1000cookies2:1px soln arery, websiFa>nd-><nccenter;color:var(--h3load it 2;&#9552;&#9552;&#95Co     ad-3="success-:all1000',card" style="max-      </div>;</bu;mar-1; &#163.75">If<-->
-haem;h2>
-         
-abem; oti">
-rivacy passcy,pp e.</pletelydimen <a h"dWt 2;ilto:hello@millr:postyle="sder=sTE &#955ound:rgba(22,ne )u="unidecore">
- :u
-   t   ">hello@millr:postyle="sder=</a>2arec -ca<a h"dWt  cl:02890123456sTE &#955ound:rgba(22,ne )u="unidecore">
- :u
-   t   ">028 9012 3456</a>.r;color:varthin 48 houPhotogrstions.</p>
-          <bu; Room     ="go(':var(--mid);max-width:440px;margin:0 auto 28px">Thanks &ho  ' id="u59assBa hand-Ho  button" class="nin-brs. No payment, no obligation, noTERMS & CONDITIONS PAGEogue</button>
-      <bms>
+<!-- PRIVACY POLICY PAGE -->
+<div id="page-privacy" class="page">
+  <div class="page-hdr"><div class="page-hdr-bg"></div><div class="page-hdr-inner"><h1>Privacy Policy</h1><p>How we handle your data</p></div></div>
+  <section class="section">
+    <div class="section-inner" style="max-width:780px">
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px">
+        <p style="color:var(--mid);font-size:.85rem;margin-bottom:24px"><strong>Last updated:</strong> April 2026</p>
+        <h3 style="margin-bottom:12px">Who we are</h3>
+        <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">Millwood Kitchens is a trading name of P&#38;A Contracts Ltd, based in Northern Ireland. We manufacture and supply fitted kitchens direct to consumers across the UK.</p>
+        <h3 style="margin-bottom:12px">What data we collect</h3>
+        <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">When you submit an estimate request, we collect: your name, email address, phone number, postcode, and details about your kitchen requirements including room measurements and photos you choose to upload. We use this information solely to prepare and deliver your kitchen estimate.</p>
+        <h3 style="margin-bottom:12px">How we use your data</h3>
+        <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">We use your personal data to: prepare your kitchen estimate, contact you about your enquiry, and improve our services. We do not sell, rent, or share your personal data with third parties for marketing purposes.</p>
+        <h3 style="margin-bottom:12px">Data storage</h3>
+        <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">Your data is stored securely and retained only for as long as necessary to fulfil the purposes described above. Form submissions are processed through Netlify&#8217;s secure form handling service.</p>
+        <h3 style="margin-bottom:12px">Your rights</h3>
+        <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">Under UK GDPR, you have the right to access, correct, or delete your personal data at any time. To exercise these rights, contact us at hello@millwoodkitchens.com.</p>
+        <h3 style="margin-bottom:12px">Cookies</h3>
+        <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">This website does not use tracking cookies or third-party analytics. We use only essential cookies required for the website to function.</p>
+        <h3 style="margin-bottom:12px">Contact</h3>
+        <p style="color:var(--mid);font-size:.88rem;line-height:1.75">If you have any questions about this privacy policy, please email us at <a href="mailto:hello@millwoodkitchens.com" style="color:var(--gold);text-decoration:underline">hello@millwoodkitchens.com</a> or call <a href="tel:02890123456" style="color:var(--gold);text-decoration:underline">028 9012 3456</a>.</p>
       </div>
+      <div style="text-align:center;margin-top:32px"><button type="button" class="btn btn-gold" onclick="go('home')">&#8592; Back to Home</button></div>
     </div>
   </section>
 </div>
 
-<!-- &#9552;&#9552;&#9552;&#9552;&#9552;&#9552;&#955age-T<bms &#38;    Wall Ased-hder"Oiv t<bms st"trrvicehd  kitchen unit by unit and see a live price estimate. When you&#8217;re ready, send it to u78on everythin plac2>See W,000</option>
-   white       <div class="n>
-            *</label><inpgba(22el><in de)ype="text4on everything&oeen form-card" style="max-      </div>
+<!-- TERMS & CONDITIONS PAGE -->
+<div id="page-terms" class="page">
+  <div class="page-hdr"><div class="page-hdr-bg"></div><div class="page-hdr-inner"><h1>Terms &#38; Conditions</h1><p>Our terms of service</p></div></div>
+  <section class="section">
+    <div class="section-inner" style="max-width:780px">
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px">
+        <p style="color:var(--mid);font-size:.85rem;margin-bottom:24px"><strong>Last updated:</strong> April 2026</p>
+        <h3 style="margin-bottom:12px">Overview</h3>
+        <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">These terms govern your use of the Millwood Kitchens website and our estimate services. By submitting an estimate request, you agree to these terms.</p>
+        <h3 style="margin-bottom:12px">Free estimates</h3>
+        <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">All online estimates and estimates from plans are provided free of charge with no obligation. Estimates are valid for 30 days from the date of issue. Prices may vary based on final specifications confirmed at point of order.</p>
+        <h3 style="margin-bottom:12px">Paid services</h3>
+        <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">Our Home Survey (&#163;200) and Full 3D Design Service (&#163;250) are optional premium services. Both fees are fully redeemable against a kitchen order. Payment is taken at time of booking.</p>
+        <h3 style="margin-bottom:12px">Orders and payment</h3>
+        <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">A 50% deposit is required to confirm your kitchen order, with the balance due before delivery. All prices include VAT. Standard delivery is 3&#8211;4 weeks from order confirmation.</p>
+        <h3 style="margin-bottom:12px">Guarantee</h3>
+        <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">All Millwood kitchens are covered by a 10-year manufacturer&#8217;s guarantee against defects in materials and workmanship on cabinets, doors, and hardware. This guarantee does not cover normal wear and tear, misuse, or damage caused during installation by third parties.</p>
+        <h3 style="margin-bottom:12px">Delivery</h3>
+        <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">We deliver across the UK. Delivery dates are agreed in advance. We will contact you to arrange a convenient delivery slot. Access to the delivery address is the customer&#8217;s responsibility.</p>
+        <h3 style="margin-bottom:12px">Cancellations</h3>
+        <p style="color:var(--mid);font-size:.88rem;line-height:1.75;margin-bottom:24px">As kitchens are made to order, cancellations after production has commenced may not be eligible for a full refund. Please contact us as soon as possible if you need to make changes to your order.</p>
+        <h3 style="margin-bottom:12px">Contact</h3>
+        <p style="color:var(--mid);font-size:.88rem;line-height:1.75">For questions about these terms, contact us at <a href="mailto:hello@millwoodkitchens.com" style="color:var(--gold);text-decoration:underline">hello@millwoodkitchens.com</a> or call <a href="tel:02890123456" style="color:var(--gold);text-decoration:underline">028 9012 3456</a>.</p>
+      </div>
+      <div style="text-align:center;margin-top:32px"><button type="button" class="btn btn-gold" onclick="go('home')">&#8592; Back to Home</button></div>
+    </div>
+  </section>
+</div>
 
-         <div clao4clasoto of y</p>
-upddivd:d rgba(22,A
-ril 2026>
-        </dih3load it 2;&#9552;&#9552;&#95Ovrrviewad-3="success-:all1000',card" style="max-      </div>;</bu;mar-1; &#163.75       <div clao4clas  ,s, t<bms gss=rd"pan>
-ue g ntry, Millr:po g"></didiwebsiFa> estYour Free Kit rrvicesf Bye withi"></dxnv24px;fontr Ameri, -->
-ag"page-et ,s, t<bmser;color:var(--h3load it 2;&#9552;&#9552;&#95F>
-  nk and wsad-3="success-:all1000',card" style="max-      </div>;</bu;mar-1; &#163.75       <div clao4clasA-ca at    ue</buttonand ue</buttonstron
-   s    reeovidoln >
-   ntcha gtom:10p>
-          <ibligations    rvass=" are30wrivs/strong>   at   nthshues="est-bldiv>
+</main>
+<div class="toast" id="toast"></div>
+<button type="button" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top" style="position:fixed;bottom:24px;right:24px;width:48px;height:48px;border-radius:50%;background:var(--dark);color:var(--gold3);border:1px solid var(--gold);font-size:1.4rem;display:none;align-items:center;justify-content:center;z-index:999;box-shadow:var(--shadow);transition:all .3s ease;cursor:pointer" onmouseenter="this.style.background='var(--gold)';this.style.color='var(--white)'" onmouseleave="this.style.background='var(--dark)';this.style.color='var(--gold3)'">&uarr;</button>
 
-  vc.</-uandiv>
-  al Reque    <s">
-     v cl  point  nt*</la.>
-        </dih3load it 2;&#9552;&#9552;&#95Paidt rrvicesad-3="success-:all1000',card" style="max-      </div>;</bu;mar-1; &#163.75       <div clao4clasO   Ho   Surveys(utton" 00)nand r lea3D D     lSrrvices(utton" 50)nar pae rack  p
-  iue trrvicesf Bo10pfens    rfu00y soleletbss="gainst a style="m*</las=";borderv itsurnsaerree   ntbotetex.>
-        </dih3load it 2;&#9552;&#9552;&#95Or   s ,sans;bordead-3="success-:all1000',card" style="max-      </div>;</bu;mar-1; &#163.75       <div clao4clasA 50%v>
-oosi</is2:1px soln/p>co      <div style="m*</la, bottootk-btol me duk-befttomns to sy;fA-capest-blpply wo VAT. Sng heigmns to sy/is23n>Under4iweeks/stron*</la>co     acenter;color:var(--h3load it 2;&#9552;&#9552;&#95Guara  <ead-3="success-:all1000',card" style="max-      </div>;</bu;mar-1; &#163.75       <div clao4clasA-caMillr:po style="ss   rcss=re-upy   10-yra="manuf      rstyle="teguara  <e="gainst defec  <ii ma0</100    <h2orkmanshipuandcuarants,>; Spey windha dw       <diguara  <e=doar(-ot css=r(-o  aliwea="     ea=, thsue h2arena    dcuu</-udurxtrippsttone">
-  py otiransarclasid         </dih3load it 2;&#9552;&#9552;&#95Ds to sy>
--3="success-:all1000',card" style="max-      </div>;</bu;mar-1; &#163.75       <div clao4clas"e ns to s across<li><UK. Ds to sy  at ss   rag"pa-u6readvl mef de 2 styco     <-->
-    rp clasayco idnsrderns to sy/slot;fA>
- s">e-et ,rns to sy/aass="frv it ,rcustom rstyle="teresponsibilityer;color:var(--h3load it 2;&#9552;&#9552;&#95Cl meone">
- sad-3="success-:all1000',card" style="max-      </div>;</bu;mar-1; &#163.75       <div clao4clasAs style="ss   rm the-lis</la, cl meone">
- s af   reeoduit andha id="m></ddldiv>-ot b  u   ibss= are&or lea"dWuonf P e.</pco     <dimesclaandescoossibss=if1000/p></e-limsureicon">sr you.</p*</la.>
-        </dih3load it 2;&#9552;&#9552;&#95Co     ad-3="success-:all1000',card" style="max-      </div>;</bu;mar-1; &#163.75">Fare         
-abem; ot,s, t<bms,>co     <dimen <a h"dWt 2;ilto:hello@millr:postyle="sder=sTE &#955ound:rgba(22,ne )u="unidecore">
- :u
-   t   ">hello@millr:postyle="sder=</a>2arec -ca<a h"dWt  cl:02890123456sTE &#955ound:rgba(22,ne )u="unidecore">
- :u
-   t   ">028 9012 3456</a>.r;color:varthin 48 houPhotogrstions.</p>
-          <bu; Room     ="go(':var(--mid);max-width:440px;margin:0 auto 28px">Thanks &ho  ' id="u59assBa hand-Ho  button" class="nin-brs. No payment, no obligation/2;ine</butttrong><toaPNG or PtoaPNGclass="n:var(--mid);max-width:or PscrollTop 28px">Thanw     .scrollTo({    0,behavid:r'smoo10'})S/div>
- abel="Scroll>e-etop 2stions.oosi<>
- :fixed;div clao4cl;iass=ao4cl;h:560pxdPC"1; &#16xdPC" *</label><inp50%;,000</option>
-   heik);ound:rgba(22,ne 3       <div class="n>
-   ,ne )ubelow with your rn">&#128248;-      recos     <bu    ify-co          <buz17;dex:999   x-sha   rgba(22sha   )u=-qtyi<>
- : -ca.3s e.</;c;cod:rpointe r28pmou</   <b Pt <d.stion.,000</opti='n>
-   ,ne )';t <d.stion.ound:='n>
-   white 'r28pmou</ e.<sect <d.stion.,000</opti='n>
-   heik)';t <d.stion.ound:='n>
-   ,ne 3 'id=uarr; you decid
-< cript>
+<script>
 // DATA
 
-// Dnter;fC<l  -sersestronU" id"    OStion v
-co st DOOR_PHOTOS={ pa"Ellesm re":"https://www.u" id.ou.uk/wp-co     /drawn s/ellesm re-d   2,16y-crongic-titl< rack -style="-u" id.jpg", pa"Pembridiv>:"https://www.u" id.ou.uk/wp-co     /drawn s/u" id-mo  <0 a -c6y-style="-pembridiv17;digo.jpg", pa"Clifile":"https://www.u" id.ou.uk/wp-co     /drawn s/clifile-vint    
-ink- clas2,16y-crongic-titl< rack -style="-u" id.jpg", pa"GeoRooa":"https://www.u" id.ou.uk/wp-co     /drawn s/geoRooa-; Rmar-mo  <0 co   mporery-style="-u" id.jpg", pa"Ferro":"https://www.u" id.ou.uk/wp-co     /drawn s//ul>o-oxidwitd-coq-wa-rezana-esps="fo-oak-mo  <0 co   mporery-style="-u" id.jpg", pa"V  sa>:"https://www.u" id.ou.uk/wp-co     /drawn s/u" id-v  sa-style="-weag> r dw wlv  -1.jpg", pa"Stitla>:"https://www.u" id.ou.uk/wp-co     /drawn s/stitla-mus</ -hlass=less-mo  <0 co   mporery-style="-u" id.jpg", pa"Rockport>:"https://www.u" id.ou.uk/wp-co     /drawn s/rockport-stoarvi16y-crongic-sha st style="-u" id.jpg", pa"Aldana>:"https://www.u" id.ou.uk/wp-co     /drawn s/aldana white-gloss-mo  <0 style="-u" id.jpg", pa"Soho":"https://www.u" id.ou.uk/wp-co     /drawn s/soho-if">Site-mo  <0 hlass=less-style="-u" id.jpg", pa"Harlem":"https://os; Speder=/wp-co     /drawn s/2022/12/Harlem.png , pa"BaPNille":"https://os; Speder=/wp-co     /drawn s/2022/12/BaPNille.png , pa"Ella":"https://os; Speder=/wp-co     /drawn s/2023/08/Ella-1.png , pa"Mila":"https://os; Speder=/wp-co     /drawn s/2023/08/Mila-1.png , pa"MoRoan":"https://os; Speder=/wp-co     /drawn s/2025/01/MORGAN.jpg", pa"Brooklyn":"https://os; Speder=/wp-co     /drawn s/2025/01/Brooklyn.png , pa"Tribvca":"https://os; Speder=/wp-co     /drawn s/2022/12/Tribvca.png , pa"Nola":"https://os; Speder=/wp-co     /drawn s/2022/12/Nola.png , pa"Henc6y":"https://os; Speder=/wp-co     /drawn s/2022/12/Henc6y.png , pa"Eloom":"https://os; Speder=/wp-co     /drawn s/2022/12/Eloom.png 
+// Door range photos from Uform and OS Doors
+const DOOR_PHOTOS={
+  "Ellesmere":"https://www.uform.co.uk/wp-content/uploads/ellesmere-dust-grey-classic-traditional-kitchen-uform.jpg",
+  "Pembridge":"https://www.uform.co.uk/wp-content/uploads/uform-modern-galley-kitchen-pembridge-indigo.jpg",
+  "Clifden":"https://www.uform.co.uk/wp-content/uploads/clifden-vintage-pink-light-grey-classic-traditional-kitchen-uform.jpg",
+  "Georgia":"https://www.uform.co.uk/wp-content/uploads/georgia-marine-modern-contemporary-kitchen-uform.jpg",
+  "Ferro":"https://www.uform.co.uk/wp-content/uploads/ferro-oxidized-copper-rezana-espresso-oak-modern-contemporary-kitchen-uform.jpg",
+  "Versa":"https://www.uform.co.uk/wp-content/uploads/uform-versa-kitchen-weathered-silver-1.jpg",
+  "Strada":"https://www.uform.co.uk/wp-content/uploads/strada-mussel-handleless-modern-contemporary-kitchen-uform.jpg",
+  "Rockport":"https://www.uform.co.uk/wp-content/uploads/rockport-stone-grey-classic-shaker-kitchen-uform.jpg",
+  "Aldana":"https://www.uform.co.uk/wp-content/uploads/aldana-white-gloss-modern-kitchen-uform.jpg",
+  "Soho":"https://www.uform.co.uk/wp-content/uploads/soho-graphite-modern-handleless-kitchen-uform.jpg",
+  "Harlem":"https://osdoors.com/wp-content/uploads/2022/12/Harlem.png",
+  "Bastille":"https://osdoors.com/wp-content/uploads/2022/12/Bastille.png",
+  "Ella":"https://osdoors.com/wp-content/uploads/2023/08/Ella-1.png",
+  "Mila":"https://osdoors.com/wp-content/uploads/2023/08/Mila-1.png",
+  "Morgan":"https://osdoors.com/wp-content/uploads/2025/01/MORGAN.jpg",
+  "Brooklyn":"https://osdoors.com/wp-content/uploads/2025/01/Brooklyn.png",
+  "Tribeca":"https://osdoors.com/wp-content/uploads/2022/12/Tribeca.png",
+  "Nola":"https://osdoors.com/wp-content/uploads/2022/12/Nola.png",
+  "Henley":"https://osdoors.com/wp-content/uploads/2022/12/Henley.png",
+  "Elgin":"https://osdoors.com/wp-content/uploads/2022/12/Elgin.png"
 };
 
-co st DOORS=[ pa// U" id";fC<ls pa{n   :"Ellesm re",oun:"Sha st",t for:"Titl< rack ",tk="tieC:"U" id",tw:["#9BA0A5","#F5F0E8","#7C9C6C","#C4B8A8"],pto:true}, pa{n   :"Pembridiv>,oun:"Sha st",t for:"Crongic",tk="tieC:"U" id",tw:["#3A3F8F","#F5F0E8","#1A1A18","#C4B8A8"],pto:true}, pa{n   :"Clifile",oun:"Sha st",t for:"Titl< rack ",tk="tieC:"U" id",tw:["#E8C8C0","#D0D4C8","#F5F0E8","#9BA0A5"],pto:true}, pa{n   :"GeoRooa",oun:"S ab",t for:"Mo  <0",tk="tieC:"U" id",tw:["#1B4F72","#1A1A18","#FFFFFF","#708090"],pto:true}, pa{n   :"Ferro",oun:"Hlass=less",t for:"Mo  <0",tk="tieC:"U" id",tw:["#B87333","#3C2010","#FFFFFF","#2D2D28"],pto:true}, pa{n   :"V  sa>,oun:"Hlass=less",t for:"Scl dinavia0",tk="tieC:"U" id",tw:["#A8A8A0","#FFFFFF","#1A1A18","#D0CCBC"],pto:true}, pa{n   :"Stitla>,oun:"Hlass=less",t for:"Mo  <0",tk="tieC:"U" id",tw:["#C4B8A8","#FFFFFF","#1A1A18","#9BA0A5"],pto:true}, pa{n   :"Rockport>,oun:"Sha st",t for:"Crongic",tk="tieC:"U" id",tw:["#9BA0A5","#F5F0E8","#C4B8A8","#1A1A18"],pto:true}, pa{n   :"Aldana>,oun:"Gloss",t for:"Mo  <0",tk="tieC:"U" id",tw:["#FFFFFF","#1A1A18","#C0C0C0","#4A4A45"],pto:false}, pa{n   :"Soho",oun:"Hlass=less",t for:"Mo  <0",tk="tieC:"U" id",tw:["#2D2D28","#1A1A18","#4A4A45","#FFFFFF"],pto:false}, pa// OStion v";fC<ls pa{n   :"Harlem",oun:"Sha st",t for:"Mo  <0",tk="tieC:"OStion v",tw:["#FFFFFF","#1A1A18","#9BA0A5","#4A4A45"],pto:false}, pa{n   :"BaPNille",oun:"S ab",t for:"Mo  <0",tk="tieC:"OStion v",tw:["#FFFFFF","#1A1A18","#708090","#E8E8E8"],pto:false}, pa{n   :"Ella",oun:"Sha st",t for:"Crongic",tk="tieC:"OStion v",tw:["#F5F0E8","#FFFFFF","#E0D9CC","#C8BFA8"],pto:false}, pa{n   :"Mila",oun:"S ab",t for:"Mo  <0",tk="tieC:"OStion v",tw:["#FFFFFF","#1A1A18","#2D2D28","#A0A095"],pto:false}, pa{n   :"MoRoan",oun:"Sha st",t for:"Titl< rack ",tk="tieC:"OStion v",tw:["#C4B8A8","#F5F0E8","#8B7D6B","#1A1A18"],pto:false}, pa{n   :"Brooklyn",oun:"S ab",t for:"Mo  <0",tk="tieC:"OStion v",tw:["#1A1A18","#FFFFFF","#4A4A45","#708090"],pto:false}, pa{n   :"Tribvca",oun:"Hlass=less",t for:"Mo  <0",tk="tieC:"OStion v",tw:["#FFFFFF","#1A1A18","#9BA0A5","#C0C0C0"],pto:false}, pa{n   :"Nola",oun:"Sha st",t for:"Crongic",tk="tieC:"OStion v",tw:["#7C9C6C","#F5F0E8","#FFFFFF","#5C7C4C"],pto:false}, pa{n   :"Henc6y",oun:"In-Fr   ",t for:"Crongic",tk="tieC:"OStion v",tw:["#F5F0E8","#FFFFFF","#E0D9CC","#8B7D6B"],pto:false}, pa{n   :"Eloom",oun:"Wdivif"om",t for:"N andk ",tk="tieC:"OStion v",tw:["#C49A60","#8B6914","#A07840","#6B4A20"],pto:false}
+const DOORS=[
+  // Uform ranges
+  {name:"Ellesmere",col:"Shaker",style:"Traditional",supplier:"Uform",sw:["#9BA0A5","#F5F0E8","#7C9C6C","#C4B8A8"],pto:true},
+  {name:"Pembridge",col:"Shaker",style:"Classic",supplier:"Uform",sw:["#3A3F8F","#F5F0E8","#1A1A18","#C4B8A8"],pto:true},
+  {name:"Clifden",col:"Shaker",style:"Traditional",supplier:"Uform",sw:["#E8C8C0","#D0D4C8","#F5F0E8","#9BA0A5"],pto:true},
+  {name:"Georgia",col:"Slab",style:"Modern",supplier:"Uform",sw:["#1B4F72","#1A1A18","#FFFFFF","#708090"],pto:true},
+  {name:"Ferro",col:"Handleless",style:"Modern",supplier:"Uform",sw:["#B87333","#3C2010","#FFFFFF","#2D2D28"],pto:true},
+  {name:"Versa",col:"Handleless",style:"Scandinavian",supplier:"Uform",sw:["#A8A8A0","#FFFFFF","#1A1A18","#D0CCBC"],pto:true},
+  {name:"Strada",col:"Handleless",style:"Modern",supplier:"Uform",sw:["#C4B8A8","#FFFFFF","#1A1A18","#9BA0A5"],pto:true},
+  {name:"Rockport",col:"Shaker",style:"Classic",supplier:"Uform",sw:["#9BA0A5","#F5F0E8","#C4B8A8","#1A1A18"],pto:true},
+  {name:"Aldana",col:"Gloss",style:"Modern",supplier:"Uform",sw:["#FFFFFF","#1A1A18","#C0C0C0","#4A4A45"],pto:false},
+  {name:"Soho",col:"Handleless",style:"Modern",supplier:"Uform",sw:["#2D2D28","#1A1A18","#4A4A45","#FFFFFF"],pto:false},
+  // OS Doors ranges
+  {name:"Harlem",col:"Shaker",style:"Modern",supplier:"OS Doors",sw:["#FFFFFF","#1A1A18","#9BA0A5","#4A4A45"],pto:false},
+  {name:"Bastille",col:"Slab",style:"Modern",supplier:"OS Doors",sw:["#FFFFFF","#1A1A18","#708090","#E8E8E8"],pto:false},
+  {name:"Ella",col:"Shaker",style:"Classic",supplier:"OS Doors",sw:["#F5F0E8","#FFFFFF","#E0D9CC","#C8BFA8"],pto:false},
+  {name:"Mila",col:"Slab",style:"Modern",supplier:"OS Doors",sw:["#FFFFFF","#1A1A18","#2D2D28","#A0A095"],pto:false},
+  {name:"Morgan",col:"Shaker",style:"Traditional",supplier:"OS Doors",sw:["#C4B8A8","#F5F0E8","#8B7D6B","#1A1A18"],pto:false},
+  {name:"Brooklyn",col:"Slab",style:"Modern",supplier:"OS Doors",sw:["#1A1A18","#FFFFFF","#4A4A45","#708090"],pto:false},
+  {name:"Tribeca",col:"Handleless",style:"Modern",supplier:"OS Doors",sw:["#FFFFFF","#1A1A18","#9BA0A5","#C0C0C0"],pto:false},
+  {name:"Nola",col:"Shaker",style:"Classic",supplier:"OS Doors",sw:["#7C9C6C","#F5F0E8","#FFFFFF","#5C7C4C"],pto:false},
+  {name:"Henley",col:"In-Frame",style:"Classic",supplier:"OS Doors",sw:["#F5F0E8","#FFFFFF","#E0D9CC","#8B7D6B"],pto:false},
+  {name:"Elgin",col:"Woodgrain",style:"Natural",supplier:"OS Doors",sw:["#C49A60","#8B6914","#A07840","#6B4A20"],pto:false}
 ];
-co st HANDLES=[ pa{ired:"H001",n   :"Bar 128mm",t for:"Bar",finish:"Brushed N<p s ",m552;8,p:520}, pa{ired:"H002",n   :"Bar 160mm",t for:"Bar",finish:"Brushed N<p s ",m55260,p:650}, pa{ired:"H003",n   :"Bar 192mm",t for:"Bar",finish:"Brushed N<p s ",m55292,p:780}, pa{ired:"H004",n   :"Bar 128mm",t for:"Bar",finish:"Chro  ",m552;8,p:480}, pa{ired:"H005",n   :"Bar 160mm",t for:"Bar",finish:"Chro  ",m55260,p:620}, pa{ired:"H006",n   :"D-P lea128mm",t for:"D-P le",finish:"Matt Black",m552;8,p:720}, pa{ired:"H007",n   :"D-P lea160mm",t for:"D-P le",finish:"Matt Black",m55260,p:890}, pa{ired:"H008",n   :"D-P lea192mm",t for:"D-P le",finish:"Matt Black",m55292,p:1040}, pa{ired:"H009",n   :"D-P leaBr&amp128mm",t for:"D-P le",finish:"Brushed Br&am",m552;8,p:950}, pa{ired:"H010",n   :"D-P leaBr&amp160mm",t for:"D-P le",finish:"Brushed Br&am",m55260,p:1150}, pa{ired:"H011",n   :"Cup Smale",t for:"Cup",finish:"Antique Br&am",m5564,p:380}, pa{ired:"H012",n   :"Cup La gt",t for:"Cup",finish:"Antique Br&am",m5596,p:480}, pa{ired:"H013",n   :"Cup Chro  ",t for:"Cup",finish:"Chro  ",m5564,p:340}, pa{ired:"H014",n   :"T-Bar 128mm",t for:"T-Bar",finish:"Brushed Guto ,m552;8,p:880}, pa{ired:"H015",n   :"T-Bar 160mm",t for:"T-Bar",finish:"Brushed Guto ,m55260,p:1080}, pa{ired:"H016",n   :"T-Bar 192mm",t for:"T-Bar",finish:"Matt Black",m55292,p:960}, pa{ired:"H017",n   :"Knob Ropti",t for:"Knob",finish:"Chro  ",m5532,p:290}, pa{ired:"H018",n   :"Knob Square",t for:"Knob",finish:"Matt Black",m5532,p:350}, pa{ired:"H019",n   :"Knob Ropti",t for:"Knob",finish:"Brushed N<p s ",m5532,p:310}, pa{ired:"H020",n   :"Arch 128mm",t for:"Arch",finish:"Brushed Coq-wa ,m552;8,p:840}, pa{ired:"H021",n   :"Arch 160mm",t for:"Arch",finish:"Brushed Coq-wa ,m55260,p:1020}, pa{ired:"H022",n   :"Slimt    256mm",t for:"Bar",finish:"Matt Black",m55256,p:1180}, pa{ired:"H023",n   :"Slimt    320mm",t for:"Bar",finish:"Matt Black",m55320,p:1380}, pa{ired:"H024",n   :"Igin-bottomRbel>,t for:"Rbel>,finish:"Brushed Stes ",m55600,p:2200}, pa{ired:"H025",n   :"Edge P le",t for:"Edge P le",finish:"Matt Black",m550,p:420}
+const HANDLES=[
+  {code:"H001",name:"Bar 128mm",style:"Bar",finish:"Brushed Nickel",mm:128,p:520},
+  {code:"H002",name:"Bar 160mm",style:"Bar",finish:"Brushed Nickel",mm:160,p:650},
+  {code:"H003",name:"Bar 192mm",style:"Bar",finish:"Brushed Nickel",mm:192,p:780},
+  {code:"H004",name:"Bar 128mm",style:"Bar",finish:"Chrome",mm:128,p:480},
+  {code:"H005",name:"Bar 160mm",style:"Bar",finish:"Chrome",mm:160,p:620},
+  {code:"H006",name:"D-Pull 128mm",style:"D-Pull",finish:"Matt Black",mm:128,p:720},
+  {code:"H007",name:"D-Pull 160mm",style:"D-Pull",finish:"Matt Black",mm:160,p:890},
+  {code:"H008",name:"D-Pull 192mm",style:"D-Pull",finish:"Matt Black",mm:192,p:1040},
+  {code:"H009",name:"D-Pull Brass 128mm",style:"D-Pull",finish:"Brushed Brass",mm:128,p:950},
+  {code:"H010",name:"D-Pull Brass 160mm",style:"D-Pull",finish:"Brushed Brass",mm:160,p:1150},
+  {code:"H011",name:"Cup Small",style:"Cup",finish:"Antique Brass",mm:64,p:380},
+  {code:"H012",name:"Cup Large",style:"Cup",finish:"Antique Brass",mm:96,p:480},
+  {code:"H013",name:"Cup Chrome",style:"Cup",finish:"Chrome",mm:64,p:340},
+  {code:"H014",name:"T-Bar 128mm",style:"T-Bar",finish:"Brushed Gold",mm:128,p:880},
+  {code:"H015",name:"T-Bar 160mm",style:"T-Bar",finish:"Brushed Gold",mm:160,p:1080},
+  {code:"H016",name:"T-Bar 192mm",style:"T-Bar",finish:"Matt Black",mm:192,p:960},
+  {code:"H017",name:"Knob Round",style:"Knob",finish:"Chrome",mm:32,p:290},
+  {code:"H018",name:"Knob Square",style:"Knob",finish:"Matt Black",mm:32,p:350},
+  {code:"H019",name:"Knob Round",style:"Knob",finish:"Brushed Nickel",mm:32,p:310},
+  {code:"H020",name:"Arch 128mm",style:"Arch",finish:"Brushed Copper",mm:128,p:840},
+  {code:"H021",name:"Arch 160mm",style:"Arch",finish:"Brushed Copper",mm:160,p:1020},
+  {code:"H022",name:"Slimline 256mm",style:"Bar",finish:"Matt Black",mm:256,p:1180},
+  {code:"H023",name:"Slimline 320mm",style:"Bar",finish:"Matt Black",mm:320,p:1380},
+  {code:"H024",name:"Integrated Rail",style:"Rail",finish:"Brushed Steel",mm:600,p:2200},
+  {code:"H025",name:"Edge Pull",style:"Edge Pull",finish:"Matt Black",mm:0,p:420}
 ];
-co st FC={"Brushed N<p s ":"#B0A898","Chro  ":"#D4D4D4","Matt Black":"#1A1A18","Brushed Br&am":"#B8922A","Antique Br&am":"#8B6914","Brushed Guto :"#D4A843","Brushed Coq-wa :"#B87333","Brushed Stes ":"#A8A8A8"};
-co st WORKTOPS=[ pa{n   :"Calacatta Marble",id);:"Quartz",bg:";mara=-if"dsrde(135deg,#F8F4F0,#EDE8E2,#E0D8D0)"}, pa{n   :"C rp ra WSite",id);:"Quartz",bg:";mara=-if"dsrde(135deg,#F5F5F5,#EBEBEB,#E0E0E0)"}, pa{n   :"Concret rGr6y",id);:"Quartz",bg:";mara=-if"dsrde(135deg,#9A9898,#888686,#767474)"}, pa{n   :"Jet Black",id);:"Quartz",bg:";mara=-if"dsrde(135deg,#1A1A1A,#222,#1A1A1A)"}, pa{n   :"Midnass= Black",id);:"Quartz",bg:";mara=-if"dsrde(135deg,#0D0D0D,#141414,#1A1A1A)"}, pa{n   :"N andk  Oak",id);:"ress="Wdiv",bg:";mara=-if"dsrde(135deg,#C4902A,#B07820,#9A68y8 &}, pa{n   :"Walnut",id);:"ress="Wdiv",bg:";mara=-if"dsrde(135deg,#6B4010,#5A3408,#4A2808 &}, pa{n   :"WSite Gloss",id);:"LoggleFa",bg:";mara=-if"dsrde(135deg,#FFF,#F5F5F5,#EEE &}, pa{n   :"Anthracite Matt",id);:"LoggleFa",bg:";mara=-if"dsrde(135deg,#3A3A3A,#2A2A2A,#1A1A1A)"}, pa{n   :"Stes  Effec ",id);:"r   nless Stes ",bg:";mara=-if"dsrde(135deg,#B8B8B8,#A8A8A8,#989898)"}
+const FC={"Brushed Nickel":"#B0A898","Chrome":"#D4D4D4","Matt Black":"#1A1A18","Brushed Brass":"#B8922A","Antique Brass":"#8B6914","Brushed Gold":"#D4A843","Brushed Copper":"#B87333","Brushed Steel":"#A8A8A8"};
+const WORKTOPS=[
+  {name:"Calacatta Marble",type:"Quartz",bg:"linear-gradient(135deg,#F8F4F0,#EDE8E2,#E0D8D0)"},
+  {name:"Carrara White",type:"Quartz",bg:"linear-gradient(135deg,#F5F5F5,#EBEBEB,#E0E0E0)"},
+  {name:"Concrete Grey",type:"Quartz",bg:"linear-gradient(135deg,#9A9898,#888686,#767474)"},
+  {name:"Jet Black",type:"Quartz",bg:"linear-gradient(135deg,#1A1A1A,#222,#1A1A1A)"},
+  {name:"Midnight Black",type:"Quartz",bg:"linear-gradient(135deg,#0D0D0D,#141414,#1A1A1A)"},
+  {name:"Natural Oak",type:"Solid Wood",bg:"linear-gradient(135deg,#C4902A,#B07820,#9A6818)"},
+  {name:"Walnut",type:"Solid Wood",bg:"linear-gradient(135deg,#6B4010,#5A3408,#4A2808)"},
+  {name:"White Gloss",type:"Laminate",bg:"linear-gradient(135deg,#FFF,#F5F5F5,#EEE)"},
+  {name:"Anthracite Matt",type:"Laminate",bg:"linear-gradient(135deg,#3A3A3A,#2A2A2A,#1A1A1A)"},
+  {name:"Steel Effect",type:"Stainless Steel",bg:"linear-gradient(135deg,#B8B8B8,#A8A8A8,#989898)"}
 ];
 
 // ROUTER
-><nccent go(p){ pa;&#65039;querySlabelorAll('.552;').forEach(x=>x.crongList.remove('accev;')); pa;&#65039;querySlabelorAll('.nav ;maks a').forEach(x=>x.crongList.remove('accev;')); paco st pg=;&#65039; Upload Your Meap    '+p); paco st nl=;&#65039; Upload Your Meanl '+p); paif(pg){pg.crongList.add('accev;');w     .scrollTo({    0,behavid:r'smoo10'})} paif(nl)nl.crongList.add('accev;'); pa;&#65039; Upload Your Meamob>JPGd Yut SkeongList.remove(' ope'); pareturn false;
+function go(p){
+  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(x=>x.classList.remove('active'));
+  const pg=document.getElementById('page-'+p);
+  const nl=document.getElementById('nl-'+p);
+  if(pg){pg.classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
+  if(nl)nl.classList.add('active');
+  document.getElementById('mobile-menu').classList.remove('open');
+  return false;
 }
-><nccent navigeFa(p){go(p)}
-><nccent toggleM Yu(){co st m=;&#65039; Upload Your Meamob>JPGd Yut ;mSkeongList.toggle(' ope');co st btn=;&#65039;querySlabelor('.nav hambu gtr');if(btn)btn.setAttribute('aiv>
-expanded',mSkeongList.co   ins(' ope'))}
-;&#65039;querySlabelorAll('.nav ;maks a,.mob>JPGd Yu a').forEach(a=>a.addEidntListener('x">Th',e=>e.preidntDefault())); 
+function navigate(p){go(p)}
+function toggleMenu(){const m=document.getElementById('mobile-menu');m.classList.toggle('open');const btn=document.querySelector('.nav-hamburger');if(btn)btn.setAttribute('aria-expanded',m.classList.contains('open'))}
+document.querySelectorAll('.nav-links a,.mobile-menu a').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
+
 // CATALOGUE
 let dF='All',hF='All';
-><nccent initCat(){ paco st dCols=['All',...newfS, (DOORS.map(d=>d.oun))]; pa;&#65039; Upload Your Mea; Sp-filtwas ).7;re HTML=dCols.map(c=>`:var(--mid);max-width:440px;mfiltwa-p sty${c===dF?'accev;':''} 28px">ThanfD('${c}' id${c} you deci`).join(''); paco st dl=;F==='All'?DOORS:DOORS.filtwa(d=>d.oun===dF); pa;&#65039; Upload Your Mea; Sp-m:28 ).7;re HTML=dl.map(d=>`e estimate. When ; Sp-er" g. Sarah"imate. When ; Sp-swayle=asTE &#955pe="text0;oosi<>
- :rettcev;;ss=rflow:etaile"d${DOOR_PHOTOS[d.n   ]?`<img src="${DOOR_PHOTOS[d.n   ]} 2alt="${d.n   }sTE &#955h:560p100%"1; &#1613px">objbel-fit:css=rrn">&#128 and seawn tex="lazy 28perrob Pt <d.stion.n">&#12='248;';t <d.nextSibsile.stion.n">&#12=' Kit'"/>otogrstions.n">&#128248;-1; &#1613px">r">
-3 type="text"on ev${d.sw.map(c=>`:mate. When ywayle"c2>See W,000</optio${c}Gclass="`).join('')}lass="`:`otogrstions.n">&#128 Kitc1; &#1613px">r">
-3 type="text"on ev${d.sw.map(c=>`:mate. When ywayle"c2>See W,000</optio${c}Gclass="`).join('')}lass="`}thin 48 houPhotograph the; Sp-body
-</div>
-
-<!-- ; Sp-n   ev${d.n   };&#9552;&#9552;&#9; Sp-metaev${d.oun}/ate" cl${d.s>See};&#9552;&#9 &#8212; Room     4&#9552;&#9552;&#9sup-badiv>c2>See W,000</optio${d.sk="tieC==='U" id'?'#1B4F72':'#2D5A1B'} >${d.sk="tieC}r:     ${d.pto?'52;&#9552;&#9; Sp-p- S/ &#8212; Room an>
-d4&#95Pain  to-O</la>
-     ':''}m)</laxtext" id="lass="`).join(''); paco st hFins=['All',...newfS, (HANDLES.map(h=>h.finish))]; pa;&#65039; Upload Your Meahlass=-filtwas ).7;re HTML=hFins.map(f=>`:var(--mid);max-width:440px;mfiltwa-p sty${f===hF?'accev;':''} 28px">ThanfH('${f}' id${f} you deci`).join(''); paco st hl=hF==='All'?HANDLES:HANDLES.filtwa(h=>h.finish===hF); pa;&#65039; Upload Your Meahlass=-m:28 ).7;re HTML=hl.map(h=>`e estimate. When hlass=-er" g. Sarah"imatestions.n">&#128 Kitc      recos     <bur">
-dPC" place<div cla8n everything&otogrE &#955h:560p26PC"1; &#1626PC" *</label><inp50%;,000</optio${FC[h.finish]||'#999'}      <div class="fg"><0,0,0,.1); Kit-shrmak:behy" required></dimate. When hlass=-n   ev${h.n   };&#955 you within 48 houPhotograph thehlass=-metaev${h.s>See}/ate" cl${h.finish}${h.mm>0?'/ate" cl'+h.mm+'mm':''}m)</la8 houPhotograph thehlass=-type="button"${(h.p/100).toFixed(2)}y)2;&#9</div>
-      </div7ax-wi     w; &#16x06;ound:rgba(22 clas id-watildehdr"><div class="paass="`).join(''); pa;&#65039; Upload Your Meaabel wa-m:28 ).7;re HTML=WORKTOPS.map(w=>`e estimate. When abel wa-er" g. Sarah"imate. When abel wa-ywayle"c2>See W,000</optio${w.bg}ehy" required><imate. When abel wa-body
-</div>
-
-<!-- abel wa-n   ev${w.n   };&#9552;&#9552;&#9abel wa-tume"v${w.tume}m)</laxtext" id="lass="`).join(''); }
-><nccent fD(c){;F=c;initCat()}
-><nccent fH(f){hF=f;initCat()}
-><nccent swtyleCat(t){ pa;&#65039;querySlabelorAll('.ca  tab').forEach((x,i)=>x.crongList.toggle('accev;',[a; Sps',ahlass=s',aabel was'][i]===t)); pa;&#65039;querySlabelorAll('.ca  "><el').forEach(p=>p.crongList.remove('accev;')); pa;&#65039; Upload Your Meaca  '+t).crongList.add('accev;'); }
+function initCat(){
+  const dCols=['All',...new Set(DOORS.map(d=>d.col))];
+  document.getElementById('door-filters').innerHTML=dCols.map(c=>`<button type="button" class="filter-pill ${c===dF?'active':''}" onclick="fD('${c}')">${c}</button>`).join('');
+  const dl=dF==='All'?DOORS:DOORS.filter(d=>d.col===dF);
+  document.getElementById('door-grid').innerHTML=dl.map(d=>`
+    <div class="door-card">
+      <div class="door-swatches" style="padding:0;position:relative;overflow:hidden">${DOOR_PHOTOS[d.name]?`<img src="${DOOR_PHOTOS[d.name]}" alt="${d.name}" style="width:100%;height:130px;object-fit:cover;display:block" loading="lazy" onerror="this.style.display='none';this.nextSibling.style.display='flex'"/><div style="display:none;height:130px;gap:3px;padding:10px">${d.sw.map(c=>`<div class="swatch" style="background:${c}"></div>`).join('')}</div>`:`<div style="display:flex;height:130px;gap:3px;padding:10px">${d.sw.map(c=>`<div class="swatch" style="background:${c}"></div>`).join('')}</div>`}</div>
+      <div class="door-body"><div class="door-name">${d.name}</div><div class="door-meta">${d.col} &#183; ${d.style}</div><div style="margin-top:4px"><span class="sup-badge" style="background:${d.supplier==='Uform'?'#1B4F72':'#2D5A1B'}">${d.supplier}</span>${d.pto?'<span class="door-pto" style="margin-left:4px">Paint-to-Order</span>':''}</div></div>
+    </div>`).join('');
+  const hFins=['All',...new Set(HANDLES.map(h=>h.finish))];
+  document.getElementById('handle-filters').innerHTML=hFins.map(f=>`<button type="button" class="filter-pill ${f===hF?'active':''}" onclick="fH('${f}')">${f}</button>`).join('');
+  const hl=hF==='All'?HANDLES:HANDLES.filter(h=>h.finish===hF);
+  document.getElementById('handle-grid').innerHTML=hl.map(h=>`
+    <div class="handle-card">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <div style="width:26px;height:26px;border-radius:50%;background:${FC[h.finish]||'#999'};border:1px solid rgba(0,0,0,.1);flex-shrink:0"></div>
+        <div class="handle-name">${h.name}</div>
+      </div>
+      <div class="handle-meta">${h.style} &#183; ${h.finish}${h.mm>0?' &#183; '+h.mm+'mm':''}</div>
+      <div class="handle-price">&#163;${(h.p/100).toFixed(2)} <span style="font-size:.72rem;font-weight:400;color:var(--light)">per unit</span></div>
+    </div>`).join('');
+  document.getElementById('worktop-grid').innerHTML=WORKTOPS.map(w=>`
+    <div class="worktop-card">
+      <div class="worktop-swatch" style="background:${w.bg}"></div>
+      <div class="worktop-body"><div class="worktop-name">${w.name}</div><div class="worktop-type">${w.type}</div></div>
+    </div>`).join('');
+}
+function fD(c){dF=c;initCat()}
+function fH(f){hF=f;initCat()}
+function switchCat(t){
+  document.querySelectorAll('.cat-tab').forEach((x,i)=>x.classList.toggle('active',['doors','handles','worktops'][i]===t));
+  document.querySelectorAll('.cat-panel').forEach(p=>p.classList.remove('active'));
+  document.getElementById('cat-'+t).classList.add('active');
+}
 
 // DDS MINI SELECTORS
-co st selD=newfS, (),selH=newfS, (),selW=newfS, ();
-><nccent initDDS(){ pa;&#65039; Upload Your Mea;ds-; Sps').7;re HTML=DOORS.map((d,i)=>`e estimate. When mini-; Sph:or Pmd${i} 28px">ThantD(${i})g. Sarah"imate. When mini-swayle=asv${d.sw.map(c=>`:mate. When ywayle"c2>See W,000</optio${c}Gclass="`).join('')}lass=" Sarah"imate. When mini-; Sp-lblev${d.n   };&#955ss="paass="`).join(''); pa;&#65039; Upload Your Mea;ds-hlass=s').7;re HTML=HANDLES.map((h,i)=>`e estimate. When mini-hlass=h:or Pmh${i} 28px">ThantH(${i})g. Sarah"imatestions.n">&#128 Kitc      recos     <bur">
-5PC" place<div claon everything&otogrE &#955h:560p11PC"1; &#1611PC" *</label><inp50%;,000</optio${FC[h.finish]||'#999'}      <div class="fg"><0,0,0,.1)ehy" required></dimate. When mini-hlass=-n   ev${h.n   };&#955 you within 48 houPhotograph themini-hlass=-- 2. ${h.finish}thin 48 houPhotograph themini-hlass=-type="button"${(h.p/100).toFixed(2)};&#955ss="paass="`).join(''); pa;&#65039; Upload Your Mea;ds-abel was').7;re HTML=WORKTOPS.map((w,i)=>`e estimate. When mini-wNG or Pmw${i} 28px">ThantW(${i})g. Sarah"imate. When mini-wt-ywayle"c2>See W,000</optio${w.bg}ehy" required><imateE &#955pe="text5PC 7PC" 000</option>
-   white 
-</div>
-
-<!-- mini-wt-lblev${w.n   };&#9552;&#9552;&#9mini-wt-tume"v${w.tume}m)</laxtext" id="lass="`).join(''); }
-><nccent tD(i){co st e=;&#65039; Upload Your Meamd'+i);if(selD.has(i)){selD.ns et (i);e.crongList.remove('sel')}ea>
- if(selD. </d<3){selD.add(i);e.crongList.add('sel')}ea>
- 1282ToaPN('Max 3>; Sp";fC<ls')}
-><nccent tH(i){co st e=;&#65039; Upload Your Meamh'+i);e.crongList.toggle('sel');selH.has(i)?selH.ns et (i):selH.add(i)}
-><nccent tW(i){co st e=;&#65039; Upload Your Meamw'+i);e.crongList.toggle('sel');selW.has(i)?selW.ns et (i):selW.add(i)}
+const selD=new Set(),selH=new Set(),selW=new Set();
+function initDDS(){
+  document.getElementById('dds-doors').innerHTML=DOORS.map((d,i)=>`
+    <div class="mini-door" id="md${i}" onclick="tD(${i})">
+      <div class="mini-swatches">${d.sw.map(c=>`<div class="swatch" style="background:${c}"></div>`).join('')}</div>
+      <div class="mini-door-lbl">${d.name}</div>
+    </div>`).join('');
+  document.getElementById('dds-handles').innerHTML=HANDLES.map((h,i)=>`
+    <div class="mini-handle" id="mh${i}" onclick="tH(${i})">
+      <div style="display:flex;align-items:center;gap:5px;margin-bottom:2px">
+        <div style="width:11px;height:11px;border-radius:50%;background:${FC[h.finish]||'#999'};border:1px solid rgba(0,0,0,.1)"></div>
+        <div class="mini-handle-name">${h.name}</div>
+      </div>
+      <div class="mini-handle-sub">${h.finish}</div>
+      <div class="mini-handle-price">&#163;${(h.p/100).toFixed(2)}</div>
+    </div>`).join('');
+  document.getElementById('dds-worktops').innerHTML=WORKTOPS.map((w,i)=>`
+    <div class="mini-wt" id="mw${i}" onclick="tW(${i})">
+      <div class="mini-wt-swatch" style="background:${w.bg}"></div>
+      <div style="padding:5px 7px;background:var(--white)"><div class="mini-wt-lbl">${w.name}</div><div class="mini-wt-type">${w.type}</div></div>
+    </div>`).join('');
+}
+function tD(i){const e=document.getElementById('md'+i);if(selD.has(i)){selD.delete(i);e.classList.remove('sel')}else if(selD.size<3){selD.add(i);e.classList.add('sel')}else showToast('Max 3 door ranges')}
+function tH(i){const e=document.getElementById('mh'+i);e.classList.toggle('sel');selH.has(i)?selH.delete(i):selH.add(i)}
+function tW(i){const e=document.getElementById('mw'+i);e.classList.toggle('sel');selW.has(i)?selW.delete(i):selW.add(i)}
 
 // ESTIMATE CALCULATOR
-// P&Avtitlegss="tex (in £ whole)
-co st UNIT_PRICES={ pac.</300:58,c.</x06:68,c.</506:75,c.</606:85,c.</806:110,c.</    6135, pacorn <di60,= 60300:38,= 60600:58,= 60    692,t 60300:145,t 60600:185,istton:280
+// P&A trade pricing (in £ whole)
+const UNIT_PRICES={
+  base300:58,base400:68,base500:75,base600:85,base800:110,base1000:135,
+  corner:160,wall300:38,wall600:58,wall1000:92,tall300:145,tall600:185,island:280
 };
-co st estQty={};Objbel.keys(UNIT_PRICES).forEach(k=>estQty[k]=0); let estion =n</diestWT=n</diestWTtype==0;
-co st estExtits={};
+const estQty={};Object.keys(UNIT_PRICES).forEach(k=>estQty[k]=0);
+let estDoor=null,estWT=null,estWTprice=0;
+const estExtras={};
 
-><nccent adjtrl"(k,d){ paestQty[k]=Math.max<0,estQty[k]+d); pa;&#65039; Upload Your Meaq '+k).textCo     =estQty[k]; pacalc.2" o; }
-><nccent selEstion (el,n   ){ pa;&#65039;querySlabelorAll('#ize:; Sp-p<p sr .da-er" ').forEach(c=>c.crongList.remove('sel')); pael.crongList.add('sel');estion =n   ;calc.2" o; }
-><nccent selEstWT(el,key,type=){ pa;&#65039;querySlabelorAll('#ize:wt-p<p sr .ize:wt-btn').forEach(b=>b.crongList.remove('sel')); pael.crongList.add('sel');estWT=key;estWTtype==type=;calc.2" o; }
-><nccent togExtit(el,key,type=){ pael.crongList.toggle('sel'); paestExtits[key]=el.crongList.co   ins('sel')?type=:0; pacalc.2" o; }
-><nccent calc.2" o{ paco st ;mars=[];let totaa=0; pa// Ulder palet ildeTotaa=0; paObjbel.039ries(estQty).forEach(([k,q])=>{if(q>0){co st p=UNIT_PRICES[k]*q;ildeTotaa+=pu;mars.push({ abel:q+'xl'+k.reel>Ph(/([a-z])(\d)/,'$1 $2').reel>Ph(/^(\D+)(\d+)$/,'$2mm $1').reel>Ph('c.</',aB.</p').reel>Ph('= 60',aW -ca').reel>Ph('t 60',aT -ca').reel>Ph('corn <',aCorn <').reel>Ph('istton',aIstton'),val:p});}}); paif(ildeTotaa>0){totaa+=ildeTotaa;} pa// Dnter   kup (; Sps/aas ~30%and-drl" cost  arefro  s) paif(estion &&ildeTotaa>0){co st dCost=Math./opti(ildeTotaa*0.32);totaa+=dCostu;mars.push({ abel:'Dnterfro  snn 48 hou'+estion ,val:dCost});} pa// Wbel wal(c.</-uandrOLUMlength=if1   <bed,rea>
- 4m default) paif(estWTo{ papaco st ;en=parseFloat(;&#65039; Upload Your MeaeLpe').="5">)||4; papaco st wCost=Math./opti(;en*estWTtype=);totaa+=wCost; papa;mars.push({ abel:estWT.cha At(0).toUq-waC.</()+estWT.s">Te(1)+''abel wal('+;en.toFixed(1)+'m)',val:wCost}); pa} pa// Extits paObjbel.039ries(estExtits).forEach(([k,p])=>{if(p>0){totaa+=p;co st  abels={smak:'Smaku<nit('tap',softclose:'Soft-close exta=s',on pers:'Pan on pers', clastext'LED  clastex',pelmet:aCornices<nit('pelmet',p;ma60p'P;ma60',ma60lass=s:'Igin-bottomhlass=s',gronguq-was:'Grong uq-wa>; Spe'} ;mars.push({ abel: abels[k]||k,val:p});}}); pa// Rr
-   a;mars paco st ;marsEl=;&#65039; Upload Your Meaize:sum-;mars'); paif(;mars.length===0){;marsEl.7;re HTML='imateE &#955ound:rfg"><l55,l55,l55,.5)ubelow  for:itaaic>
-ingrt e="tex-drl"sclass=and-seee Your Free Kiees)</ uq > r  i"m:1alanee class="';} paea>
-{;marsEl.7;re HTML=;mars.map(l=>`:matestions.n">&#128 Kitc    ify-co      dp>Ph-between;pe="text5PC 0" *</lab2;&#9552v class="fg"><l55,l55,l55,.08 &>)2;&#9</div>
-ound:rfg"><l55,l55,l55,.8 id${l. abel}r:     )2;&#9</div>
-ound:rgba(22,ne 3       w; &#16600"button"${l.="5.toLocaleStrxtr()}hdr"><div cla`).join('');} pa;&#65039; Upload Your Meaize:totaa').textCo     ='utton"'+totaa.toLocaleStrxtr(); }
-><nccent init.2" o{ pa// Bs)</ ; Sp"p<p sr pa;&#65039; Upload Your Meaize:; Sp-p<p sr').7;re HTML=DOORS.map(d=>`e estimate. When ;a-er" gend a tailoelEstion (iv><st${d.n   }') obligati${DOOR_PHOTOS[d.n   ]?`<img . When ;a-img" src="${DOOR_PHOTOS[d.n   ]} 2alt="${d.n   }sTawn tex="lazy 28perrob Pt <d.stion.n">&#12='248;'""`:`otogr. When ;a-ass="v${d.sw.map(c=>`:mate</div>
- Kit:1;,000</optio${c}Gclass="`).join('')}lass="`}8 houPhotograph the;p-lblev${d.n   };&#955ss="pPhotograph the;p-guq>c2>See W,000</optio${d.sk="tieC==='U" id'?'#1B4F72':'#2D5A1B'} >${d.sk="tieC}r:ext" id="lass="`).join(''); pacalc.2" o; }
-><nccent swithi.2" o{ paif(!vass= KiR1px sol(['eFN',aeEM'])){s282ToaPN('P e.</pfm-card"t ,rh &# clasoln ields');return} paco st btn=eidnt.ta gtt;btnLwn tex(btn,'Se ding...'); paco st fn=;&#65039; Upload Your MeaiFN').="5">.trxm(),em=;&#65039; Upload Your MeaeEM').="5">.trxm(); paco st totaaEl=;&#65039; Upload Your Meaize:totaa').textCo     ; papequToNetlifyeaizeee Ki',{ papa'fbord-n   ':fn,'ph d-n   ':;&#65039; Upload Your MeaeLN').="5">.trxm(), papa'letel':em,'s-sne':;&#65039; Upload Your MeaePH').="5">.trxm(), papa'pequired':;&#65039; Upload Your MeaePC').="5">.trxm(), papa'; Sp-;fC<l':estion ||'N   se/beled',aabel wa':estWT||'N   se/beled', papa'lzeee Ki:totaa':totaaEl,'nctto':;&#65039; Upload Your MeaeNO').="5">.trxm() pa}); pasetTee out(()=>{;&#65039; Upload Your Meaize:" id').stion.n">&#12='248;'; pa;&#65039; Upload Your Meaize:ok').stion.n">&#12=' and '; paw     .scrollTo({    0,behavid:r'smoo10'});},600o; }
+function adjUnit(k,d){
+  estQty[k]=Math.max(0,estQty[k]+d);
+  document.getElementById('q-'+k).textContent=estQty[k];
+  calcEst();
+}
+function selEstDoor(el,name){
+  document.querySelectorAll('#est-door-picker .dp-card').forEach(c=>c.classList.remove('sel'));
+  el.classList.add('sel');estDoor=name;calcEst();
+}
+function selEstWT(el,key,price){
+  document.querySelectorAll('#est-wt-picker .est-wt-btn').forEach(b=>b.classList.remove('sel'));
+  el.classList.add('sel');estWT=key;estWTprice=price;calcEst();
+}
+function togExtra(el,key,price){
+  el.classList.toggle('sel');
+  estExtras[key]=el.classList.contains('sel')?price:0;
+  calcEst();
+}
+function calcEst(){
+  const lines=[];let total=0;
+  // Units
+  let unitTotal=0;
+  Object.entries(estQty).forEach(([k,q])=>{if(q>0){const p=UNIT_PRICES[k]*q;unitTotal+=p;lines.push({label:q+'x '+k.replace(/([a-z])(\d)/,'$1 $2').replace(/^(\D+)(\d+)$/,'$2mm $1').replace('base','Base ').replace('wall','Wall ').replace('tall','Tall ').replace('corner','Corner').replace('island','Island'),val:p});}});
+  if(unitTotal>0){total+=unitTotal;}
+  // Door markup (doors add ~30% to unit cost for fronts)
+  if(estDoor&&unitTotal>0){const dCost=Math.round(unitTotal*0.32);total+=dCost;lines.push({label:'Door fronts &#8212; '+estDoor,val:dCost});}
+  // Worktop (based on room length if entered, else 4m default)
+  if(estWT){
+    const len=parseFloat(document.getElementById('eLen').value)||4;
+    const wCost=Math.round(len*estWTprice);total+=wCost;
+    lines.push({label:estWT.charAt(0).toUpperCase()+estWT.slice(1)+' worktop ('+len.toFixed(1)+'m)',val:wCost});
+  }
+  // Extras
+  Object.entries(estExtras).forEach(([k,p])=>{if(p>0){total+=p;const labels={sink:'Sink &amp; tap',softclose:'Soft-close hinges',drawers:'Pan drawers',lighting:'LED lighting',pelmet:'Cornice &amp; pelmet',plinth:'Plinth',inthandles:'Integrated handles',glassuppers:'Glass upper doors'};lines.push({label:labels[k]||k,val:p});}});
+  // Render lines
+  const linesEl=document.getElementById('est-sum-lines');
+  if(lines.length===0){linesEl.innerHTML='<div style="color:rgba(255,255,255,.5);font-style:italic">Start adding units above to see your estimate build up here in real time.</div>';}
+  else{linesEl.innerHTML=lines.map(l=>`<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.08)"><span style="color:rgba(255,255,255,.8)">${l.label}</span><span style="color:var(--gold3);font-weight:600">&#163;${l.val.toLocaleString()}</span></div>`).join('');}
+  document.getElementById('est-total').textContent='&#163;'+total.toLocaleString();
+}
+function initEst(){
+  // Build door picker
+  document.getElementById('est-door-picker').innerHTML=DOORS.map(d=>`
+    <div class="dp-card" onclick="selEstDoor(this,'${d.name}')">
+      ${DOOR_PHOTOS[d.name]?`<img class="dp-img" src="${DOOR_PHOTOS[d.name]}" alt="${d.name}" loading="lazy" onerror="this.style.display='none'">`:`<div class="dp-none">${d.sw.map(c=>`<div style="flex:1;background:${c}"></div>`).join('')}</div>`}
+      <div class="dp-lbl">${d.name}</div>
+      <div class="dp-sup" style="background:${d.supplier==='Uform'?'#1B4F72':'#2D5A1B'}">${d.supplier}</div>
+    </div>`).join('');
+  calcEst();
+}
+function submitEst(){
+  if(!validateRequired(['eFN','eEM'])){showToast('Please fill in the highlighted fields');return}
+  const btn=event.target;btnLoading(btn,'Sending...');
+  const fn=document.getElementById('eFN').value.trim(),em=document.getElementById('eEM').value.trim();
+  const totalEl=document.getElementById('est-total').textContent;
+  postForm('estimate',{
+    'first-name':fn,'last-name':document.getElementById('eLN').value.trim(),
+    'email':em,'phone':document.getElementById('ePH').value.trim(),
+    'postcode':document.getElementById('ePC').value.trim(),
+    'door-range':estDoor||'Not selected','worktop':estWT||'Not selected',
+    'estimate-total':totalEl,'notes':document.getElementById('eNO').value.trim()
+  });
+  setTimeout(()=>{document.getElementById('est-form').style.display='none';
+  document.getElementById('est-ok').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});},600);
+}
 // FILE LIST
-><nccent s28203;</dinp, cdo{ paco st ul=;&#65039; Upload Your Me cdo;ul.7;re HTML=''; paArray.strodinp.files).forEach(f=>{co st ;m=;&#65039;cimateload Yo('li');li.textCo     =f.n   +''('+Math./opti(f. </d/1024)+'KB)';ul. styndCh)</e c)}); }
+function showFiles(inp,lid){
+  const ul=document.getElementById(lid);ul.innerHTML='';
+  Array.from(inp.files).forEach(f=>{const li=document.createElement('li');li.textContent=f.name+' ('+Math.round(f.size/1024)+'KB)';ul.appendChild(li)});
+}
 
-// NETLIFY FORM SUBMIT HELPER
-async-><nccentapequToNetlifye" idN   ,s atao{ patry{ papaco st body=newfURLSearchParams({'" id-n   ':f idN   ,... ata}).toStrxtr(); papaawal" fetch('/',{methodp'POST',hea   s:{'Co     -Typ;':'h wale    </x-www-akdosurleniredd'},body}); pa}cayle(e){co soon.warn('Fare pequ errob',e)} }
+// FORM SUBMIT HELPER — uses formsubmit.co (free, no account needed)
+async function postForm(formName, data){
+  try{
+    const fd=new FormData();
+    fd.append('_subject','Millwood Kitchens: '+formName);
+    fd.append('_template','table');
+    fd.append('_captcha','false');
+    Object.entries(data).forEach(([k,v])=>fd.append(k,v));
+    await fetch('https://formsubmit.co/ajax/hello@millwoodkitchens.com',{method:'POST',body:fd});
+  }catch(e){console.warn('Form submit error:',e)}
+}
 
 // DDS SUBMIT
-><nccent swithiDDS(){ paif(!vass= KiR1px sol(['dFN',adEM',adPH'])){s282ToaPN('P e.</pfm-card"t ,rh &# clasoln ields');return} paco st btn=eidnt.ta gtt;btnLwn tex(btn,'Se ding...'); paco st fn=;&#65039; Upload Your MeadFN').="5">.trxm(),em=;&#65039; Upload Your MeadEM').="5">.trxm(); papequToNetlifyeadigitaa-      ',{ papa'fbord-n   ':fn,'ph d-n   ':;&#65039; Upload Your MeadLN').="5">.trxm(), papa'letel':em,'s-sne':;&#65039; Upload Your MeadPH').="5">.trxm(), papa'pequired':;&#65039; Upload Your MeadPC').="5">.trxm() pa}); pasetTee out(()=>{;&#65039; Upload Your Mea;ds-" id').stion.n">&#12='248;'; pa;&#65039; Upload Your Mea;ds-ok').stion.n">&#12=' and '; paw     .scrollTo({    0,behavid:r'smoo10'});},600o; }
+function submitDDS(){
+  if(!validateRequired(['dFN','dEM','dPH'])){showToast('Please fill in the highlighted fields');return}
+  const btn=event.target;btnLoading(btn,'Sending...');
+  const fn=document.getElementById('dFN').value.trim(),em=document.getElementById('dEM').value.trim();
+  postForm('digital-design',{
+    'first-name':fn,'last-name':document.getElementById('dLN').value.trim(),
+    'email':em,'phone':document.getElementById('dPH').value.trim(),
+    'postcode':document.getElementById('dPC').value.trim()
+  });
+  setTimeout(()=>{document.getElementById('dds-form').style.display='none';
+  document.getElementById('dds-ok').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});},600);
+}
 
 // BOOK
-><nccent s282BookFare o{ paco st f=;&#65039; Upload Your Meabote-" id');f.stion.n">&#12=' and '; pasetTee out(()=>f.scrollIgioView({behavid:r'smoo10', and :'sngrt'}),50o; }
-><nccent boteSued,  o{ paif(!vass= KiR1px sol(['bFN',abEM',abPH',abAD'])){s282ToaPN('P e.</pfm-card"t ,rh &# clasoln ields');return} paco st btn=eidnt.ta gtt;btnLwn tex(btn,'Se ding...'); paco st fn=;&#65039; Upload Your MeabFN').="5">.trxm(),em=;&#65039; Upload Your MeabEM').="5">.trxm(); papequToNetlifyeabote-dehit',{ papa'fbord-n   ':fn,'ph d-n   ':;&#65039; Upload Your MeabLN').="5">.trxm(), papa'letel':em,'s-sne':;&#65039; Upload Your MeabPH').="5">.trxm(), papa'aass="f':;&#65039; Upload Your MeabAD').="5">.trxm(), papa'p"dWD"r dw= Ki':;&#65039; Upload Your MeabDT').="5">, papa'p"dWD"r dwnee ':;&#65039; Upload Your MeabTI').="5">, papa'nctto':;&#65039; Upload Your MeabNO').="5">.trxm() pa}); pasetTee out(()=>{;&#65039; Upload Your Meabote-" id').7;re HTML=`:mate. When yu>
- s"-screle"d52;&#9552;&#9si"but9989er:     ih3load it below with y3
-         <div cla8n evAppointorderR Ameried!hd-3=uall1000',card" style="maxas"e'-cab  i"mtoucht-size:.sne abeltex-dayn/p>co      <div dehit.hd  kitche`;},600o; }
+function showBookForm(){
+  const f=document.getElementById('book-form');f.style.display='block';
+  setTimeout(()=>f.scrollIntoView({behavior:'smooth',block:'start'}),50);
+}
+function bookSubmit(){
+  if(!validateRequired(['bFN','bEM','bPH','bAD'])){showToast('Please fill in the highlighted fields');return}
+  const btn=event.target;btnLoading(btn,'Sending...');
+  const fn=document.getElementById('bFN').value.trim(),em=document.getElementById('bEM').value.trim();
+  postForm('book-visit',{
+    'first-name':fn,'last-name':document.getElementById('bLN').value.trim(),
+    'email':em,'phone':document.getElementById('bPH').value.trim(),
+    'address':document.getElementById('bAD').value.trim(),
+    'preferred-date':document.getElementById('bDT').value,
+    'preferred-time':document.getElementById('bTI').value,
+    'notes':document.getElementById('bNO').value.trim()
+  });
+  setTimeout(()=>{document.getElementById('book-form').innerHTML=`<div class="success-screen"><span class="si">&#9989;</span><h3 style="font-size:1.3rem;margin-bottom:8px">Appointment Requested!</h3><p style="color:var(--mid)">We'll be in touch within one working day to confirm your visit.</p></div>`;},600);
+}
 
 // PLANS
-><nccent s282P   sFare t){ pa;&#65039; Upload Your Mea
-   s-akdost-lay').textCo     =t==='></d'?'F leaD     lSrrvice':'ro obligation stronP   s'; pa;&#65039; Upload Your Mea
-   s-akdostume').="5">=t==='></d'?'F leaD     lSrrvice':'ro obligation stronP   s'; paco st f=;&#65039; Upload Your Mea
-   s-akdo');f.stion.n">&#12=' and '; pasetTee out(()=>f.scrollIgioView({behavid:r'smoo10', and :'sngrt'}),50o; }
-><nccent 
-   sSued,  o{ paif(!vass= KiR1px sol(['pFN',apEM'])){s282ToaPN('P e.</pfm-card"t ,rh &# clasoln ields');return} paco st btn=eidnt.ta gtt;btnLwn tex(btn,'Se ding...'); paco st fn=;&#65039; Upload Your MeapFN').="5">.trxm(),em=;&#65039; Upload Your MeapEM').="5">.trxm(); papequToNetlifyea       
-   s',{ papa'trrvicestume':;&#65039; Upload Your Mea
-   s-akdostume').="5">, papa'fbord-n   ':fn,'ph d-n   ':;&#65039; Upload Your MeapLN').="5">.trxm(), papa'letel':em,'s-sne':;&#65039; Upload Your MeapPH').="5">.trxm(), papa'nctto':;&#65039; Upload Your MeapNO').="5">.trxm() pa}); pasetTee out(()=>{;&#65039; Upload Your Mea
-   s-akdo').7;re HTML=`:mate. When yu>
- s"-screle"d52;&#9552;&#9si"but--li36er:     ih3load it below with y3
-         <div cla8n evP   snReceived!hd-3=uall1000',card" style="maxas"e'-cahaem;<div quoKieea ha-size:.82rem;co.hd  kitche`;},600o; }
+function showPlansForm(t){
+  document.getElementById('plans-form-title').textContent=t==='full'?'Full Design Service':'Free Estimate from Plans';
+  document.getElementById('plans-form-type').value=t==='full'?'Full Design Service':'Free Estimate from Plans';
+  const f=document.getElementById('plans-form');f.style.display='block';
+  setTimeout(()=>f.scrollIntoView({behavior:'smooth',block:'start'}),50);
+}
+function plansSubmit(){
+  if(!validateRequired(['pFN','pEM'])){showToast('Please fill in the highlighted fields');return}
+  const btn=event.target;btnLoading(btn,'Sending...');
+  const fn=document.getElementById('pFN').value.trim(),em=document.getElementById('pEM').value.trim();
+  postForm('upload-plans',{
+    'service-type':document.getElementById('plans-form-type').value,
+    'first-name':fn,'last-name':document.getElementById('pLN').value.trim(),
+    'email':em,'phone':document.getElementById('pPH').value.trim(),
+    'notes':document.getElementById('pNO').value.trim()
+  });
+  setTimeout(()=>{document.getElementById('plans-form').innerHTML=`<div class="success-screen"><span class="si">&#128236;</span><h3 style="font-size:1.3rem;margin-bottom:8px">Plans Received!</h3><p style="color:var(--mid)">We'll have your quote back within 48 hours.</p></div>`;},600);
+}
 
 // TOAST
-><nccent s282ToaPN(m){co st t=;&#65039; Upload Your MeatoaPN');t.textCo     =m;t.crongList.add('s282');setTee out(()=>t.crongList.remove('s282'),3000o}
-><nccent toggleFaq(el){el.crongList.toggle(' ope');;&#65039;querySlabelorAll('.faq reco').forEach(f=>{if(f!==el)fSkeongList.remove(' ope')})}
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000)}
+function toggleFaq(el){el.classList.toggle('open');document.querySelectorAll('.faq-item').forEach(f=>{if(f!==el)f.classList.remove('open')})}
 
 // FORM VALIDATION HELPER
-><nccent vass= KiR1px sol(idso{ palet ok=true; paids.forEach(id=>{ papaco st el=;&#65039; Upload Your Meid); papaif(!el)return; papael.stion.,*</laCund:=''; papaif(!el.="5">.trxm()){el.stion.,*</laCund:='gba(22ee )';el.stion.,*xSha   ='0 0 0 3px"fg"><la0,38,38,.12)';ok=false;
-s="pPhel.addEidntListener('ck="d',><nccent fix(){el.stion.,*</laCund:='';el.stion.,*xSha   ='';el.removeEidntListener('ck="d',>ix)},{once:true}); papa} pa}); pareturn ok; }
+function validateRequired(ids){
+  let ok=true;
+  ids.forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el)return;
+    el.style.borderColor='';
+    if(!el.value.trim()){el.style.borderColor='var(--red)';el.style.boxShadow='0 0 0 3px rgba(220,38,38,.12)';ok=false;
+      el.addEventListener('input',function fix(){el.style.borderColor='';el.style.boxShadow='';el.removeEventListener('input',fix)},{once:true});
+    }
+  });
+  return ok;
+}
 
 // SUBMIT BUTTON SPINNER
-><nccent btnLwn tex(btn,texto{ pabtn.n">tbssd=true;btn.nat.</t.origText=btn.textCo     ; pabtn.7;re HTML='i2;&#9</div>
-n">&#128iat   - Kitc      recos     <bur">
-dPC"d52vg h:560="18" 1; &#1="18" viewBox="0 0 24 24>c2>See Wani acent:spe:..8s ;mara=></finite"d5circle cx="12" cy="12" r="10>c2>rok0',curr!</Cund:>c2>rok0-h:560="3"pfm-c="ass="u2>rok0-dasha r12="30 70>c2>rok0-;marcap="/opti"/>o/2vg>'+text+'>
-     '; }
-><nccent btnRe</t(btn){btn.n">tbssd=false;btn.textCo     =btn.nat.</t.origText||'Sued, '}
+function btnLoading(btn,text){
+  btn.disabled=true;btn.dataset.origText=btn.textContent;
+  btn.innerHTML='<span style="display:inline-flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" style="animation:spin .8s linear infinite"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="30 70" stroke-linecap="round"/></svg>'+text+'</span>';
+}
+function btnReset(btn){btn.disabled=false;btn.textContent=btn.dataset.origText||'Submit'}
 
 // INIT
 
-// Hero sss=er
-co st HERO_SLIDES=[ pa{img:'https://i    s.un>&#1shder=/ -ser-1556909276-1ab58ead832e?w=700&h=560&fit=crop&q=85&auto=forme"',n   :'Hgrt ield Ivory',:  c:'Sha st &"madot; 3.4m style="',type=:'&popti;8,400'}, pa{img:'https://i    s.un>&#1shder=/ -ser-1565538810643-b5bdb714032a?w=700&h=560&fit=crop&q=85&auto=forme"',n   :'Lincarn Gf">Site',:  c:'Hlass=less &"madot; 4.1m style="',type=:'&popti;11,200'}, pa{img:'https://i    s.un>&#1shder=/ -ser-1570545843370-1c9e6e2e6ced?w=700&h=560&fit=crop&q=85&auto=forme"',n   :'Dust Gr6y Sha st',:  c:'Titl< rack  &"madot; 3.8m style="',type=:'&popti;9,600'}
+// Hero slider
+const HERO_SLIDES=[
+  {img:'https://images.unsplash.com/photo-1556909276-1ab58ead832e?w=700&h=560&fit=crop&q=85&auto=format',name:'Hartfield Ivory',desc:'Shaker &middot; 3.4m kitchen',price:'&pound;8,400'},
+  {img:'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=700&h=560&fit=crop&q=85&auto=format',name:'Lincoln Graphite',desc:'Handleless &middot; 4.1m kitchen',price:'&pound;11,200'},
+  {img:'https://images.unsplash.com/photo-1570545843370-1c9e6e2e6ced?w=700&h=560&fit=crop&q=85&auto=format',name:'Dust Grey Shaker',desc:'Traditional &middot; 3.8m kitchen',price:'&pound;9,600'}
 ];
-let heroIdx=0; ><nccent heroSss=e(i){ paheroIdx=i; paco st s=HERO_SLIDES[i]; paco st img=;&#65039; Upload Your Meahero-img'); paif(img){img.src=s.img;} pa;&#65039;querySlabelorAll('.hero-img-dot').forEach((d,j)=>d.orongList.toggle('accev;',j===i)); paco st badiv=;&#65039;querySlabelor('.hero-img-badiv'); paif(badiv){badiv;querySlabelor('.hero-img-badiv-2;in').7;re HTML=s.n   ;badiv;querySlabelor('.hero-img-badiv-sub').7;re HTML=s.:  c;badiv;querySlabelor('.hero-img-badiv-num').7;re HTML=s.type=;} }
-</tIginr="5(()=>heroSss=e((heroIdx+1)%HERO_SLIDES.length),5000o; 
-;&#65039;addEidntListener('DOMCo     Lwn ed',()=>{initCat();init.2" o;initDDS()}); // Scroll to- waldehibility
-w     .addEidntListener('scroll',()=>{co st btn=;&#65039; Upload Your MeascrollTop');if(btn)btn.stion.n">&#12=w     .scrollY>400?' Kit':'248;'}); >
- cript>
-on, noHtaile Netlify Fares (:1px soln areNetlify tod   e   fare twithshis i)ogue</fare n   ="lzeee Ki" netlify netlify--sneypo1="div- ield" 1taileo payck="documenttext" n   ="rOLU-tume"vyck="documenttext" n   ="rOLU- wit"vyck="documenttext" n   ="stion"o payck="documenttext" n   ="fbord-n   "vyck="documenttext" n   ="ph d-n   "o payck="documentletel" n   ="letel"vyck="documenttel" n   ="s-sne"o payck="documenttext" n   ="pequired"vytextarea n   ="ncttoGclatextarea oblfaree</fare n   ="digitaa-      " netlify netlify--sneypo1="div- ield" 1taileo payck="documenttext" n   ="fbord-n   "vyck="documenttext" n   ="ph d-n   "o payck="documentletel" n   ="letel"vyck="documenttel" n   ="s-sne"oyck="documenttext" n   ="pequired"voblfaree</fare n   ="bote-dehit" netlify netlify--sneypo1="div- ield" 1taileo payck="documenttext" n   ="fbord-n   "vyck="documenttext" n   ="ph d-n   "o payck="documentletel" n   ="letel"vyck="documenttel" n   ="s-sne"o paytextarea n   ="aass="fGclatextarea yck="documentd Ki" n   ="s"dWD"r dw= Ki"o payck="documenttext" n   ="p"dWD"r dwnee "vytextarea n   ="ncttoGclatextarea oblfaree</fare n   ="       
-   s" netlify netlify--sneypo1="div- ield" 1taileo payck="documenttext" n   ="trrvicestume"o payck="documenttext" n   ="fbord-n   "vyck="documenttext" n   ="ph d-n   "o payck="documentletel" n   ="letel"vyck="documenttel" n   ="s-sne"oytextarea n   ="ncttoGclatextarea oblfaree<//bodye<//html>
+let heroIdx=0;
+function heroSlide(i){
+  heroIdx=i;
+  const s=HERO_SLIDES[i];
+  const img=document.getElementById('hero-img');
+  if(img){img.src=s.img;}
+  document.querySelectorAll('.hero-img-dot').forEach((d,j)=>d.classList.toggle('active',j===i));
+  const badge=document.querySelector('.hero-img-badge');
+  if(badge){badge.querySelector('.hero-img-badge-main').innerHTML=s.name;badge.querySelector('.hero-img-badge-sub').innerHTML=s.desc;badge.querySelector('.hero-img-badge-num').innerHTML=s.price;}
+}
+setInterval(()=>heroSlide((heroIdx+1)%HERO_SLIDES.length),5000);
+
+document.addEventListener('DOMContentLoaded',()=>{initCat();initEst();initDDS()});
+// Scroll-to-top visibility
+window.addEventListener('scroll',()=>{const btn=document.getElementById('scrollTop');if(btn)btn.style.display=window.scrollY>400?'flex':'none'});
+</script>
+
+<!-- Form submissions handled by formsubmit.co — update hello@millwoodkitchens.com with your real email -->
+</body>
+</html>
