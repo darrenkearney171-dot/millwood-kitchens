@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://millwoodkitchens.uk/book-a-design-visit.html" />
   <title>Book a Kitchen Design Visit | £150 | Millwood Kitchens NI</title>
   <meta name="description" content="Book your in-home kitchen design visit with Millwood Kitchens. £150 paid online — fully redeemable against your kitchen order." />
   <meta property="og:type" content="website" />
@@ -10,10 +11,14 @@
   <meta property="og:title" content="Book a Kitchen Design Visit | £150 | Millwood Kitchens NI" />
   <meta property="og:description" content="£150 paid online when you book. Darren visits your home, designs your kitchen live and gives you a full quote before he leaves." />
   <meta property="og:image" content="https://images.unsplash.com/photo-1639405069836-f82aa6dcb900?w=1200&q=80" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <div class="announcement-bar">
   Free estimate within 48 hours &nbsp;&bull;&nbsp; Design visit £150 — redeemable against your order &nbsp;&bull;&nbsp; Covering all of Northern Ireland
@@ -52,7 +57,7 @@
   </div>
 </header>
 
-<section class="page-hero">
+<section id="main-content" tabindex="-1" class="page-hero">
   <div class="container">
     <h1>Book Your Design Visit</h1>
     <p>£150 paid online when you book — fully redeemable against your kitchen order if you proceed.</p>
@@ -79,19 +84,39 @@
       </div>
 
       <div class="booking-panel">
-        <h2>Choose your date and time</h2>
+        <h2>Pay, then choose your slot</h2>
         <p class="subtitle">Secure payment online — £150 charged when you book</p>
 
-        <div class="calendly-embed-placeholder">
+        <div class="booking-flow">
+          <div class="booking-step-card">
+            <span class="booking-step-label">Step 1</span>
+            <h3>Pay the £150 design visit fee</h3>
+            <p>Payment is handled securely by Stripe. Once paid, Stripe sends you straight to the Millwood Kitchens diary to choose your visit time.</p>
+            <a class="btn btn-primary booking-payment-link" href="STRIPE_PAYMENT_LINK">Pay £150 Securely</a>
+            <p class="booking-placeholder-note">Stripe Payment Link not connected yet. Replace <code>STRIPE_PAYMENT_LINK</code> with the live Stripe URL to activate this button.</p>
+          </div>
+
+          <div class="booking-step-card">
+            <span class="booking-step-label">Step 2</span>
+            <h3>Choose your date and time in Calendly</h3>
+            <p>After payment, you will be redirected to Calendly to pick the appointment slot that suits you. The diary link is kept behind payment so the visit fee is collected first.</p>
+            <p class="booking-placeholder-note">Set the Stripe Payment Link success URL to <code>CALENDLY_URL</code>.</p>
+          </div>
+        </div>
+
+        <div class="calendly-embed-placeholder" hidden>
           <p style="font-size:2rem; color:#ccc; margin-bottom:16px;">📅</p>
-          <p style="font-weight:500; color:#888; margin-bottom:8px;">Online booking coming soon</p>
-          <p>To book a design visit in the meantime, email us at:</p>
-          <p style="font-weight:500; color:var(--charcoal); margin:12px 0;"><a href="mailto:info@millwoodkitchens.uk" style="color:var(--charcoal); text-decoration:none;">info@millwoodkitchens.uk</a></p>
-          <p class="note">Online booking will be active once Calendly + Stripe are connected.<br>See setup instructions in COWORK_INSTRUCTIONS.md</p>
+          <p style="font-weight:500; color:#888; margin-bottom:8px;">Online booking is nearly ready</p>
+          <p>To book a design visit now, email your preferred dates and Darren will confirm your slot and send the £150 payment link.</p>
+          <div class="booking-actions">
+            <a class="btn btn-primary" href="mailto:info@millwoodkitchens.uk?subject=Design%20visit%20booking%20request">Email to book</a>
+            <a class="btn btn-outline-dark" href="free-estimate.html">Get a free estimate first</a>
+          </div>
+          <p class="note">Calendly and Stripe can be embedded here as soon as those account links are available.</p>
         </div>
 
         <div class="below-booking">
-          <p>To book now, email <strong><a href="mailto:info@millwoodkitchens.uk" style="color:inherit;">info@millwoodkitchens.uk</a></strong> with your preferred dates and we'll confirm your slot and send a payment link.</p>
+          <p>If the online booking link is not active yet, email <strong><a href="mailto:info@millwoodkitchens.uk?subject=Design%20visit%20booking%20request" style="color:inherit;">info@millwoodkitchens.uk</a></strong> with your preferred dates and we'll confirm your slot manually.</p>
         </div>
       </div>
 
@@ -136,7 +161,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Millwood Kitchens. All rights reserved.</span>
-      <span><a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms &amp; Conditions</a></span>
+      <span><a href="privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html">Terms &amp; Conditions</a></span>
     </div>
   </div>
 </footer>

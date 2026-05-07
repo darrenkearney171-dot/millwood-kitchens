@@ -41,6 +41,25 @@ p { margin-bottom: 1rem; }
 p:last-child { margin-bottom: 0; }
 a { color: inherit; text-decoration: none; }
 
+.skip-link {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 500;
+  transform: translateY(-160%);
+  background: var(--charcoal);
+  color: var(--white);
+  padding: 10px 14px;
+  font-size: 13px;
+  transition: transform 0.2s ease;
+}
+.skip-link:focus { transform: translateY(0); }
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 4px;
+}
+#main-content:focus { outline: none; }
+
 /* ── Buttons ── */
 .btn {
   display: inline-block;
@@ -286,6 +305,56 @@ a { color: inherit; text-decoration: none; }
 }
 .calendly-embed-placeholder p { font-size: 14px; color: #aaa; margin-bottom: 6px; }
 .calendly-embed-placeholder .note { font-size: 12.5px; color: #ccc; margin-top: 12px; }
+.booking-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 22px 0 10px;
+}
+.booking-flow {
+  display: grid;
+  gap: 18px;
+}
+.booking-step-card {
+  background: var(--white);
+  border-left: 3px solid var(--brass);
+  padding: 28px;
+}
+.booking-step-label {
+  color: var(--brass);
+  display: block;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.booking-step-card h3 {
+  font-size: 1.45rem;
+  margin-bottom: 12px;
+}
+.booking-step-card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+.booking-payment-link {
+  margin: 12px 0;
+}
+.booking-payment-link[href="STRIPE_PAYMENT_LINK"] {
+  opacity: 0.6;
+  pointer-events: none;
+}
+.booking-placeholder-note {
+  color: #aaa;
+  font-size: 12.5px;
+}
+.booking-placeholder-note code {
+  color: var(--charcoal);
+  font-family: var(--sans);
+  font-size: 12px;
+}
 .below-booking { margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--border); font-size: 14px; color: var(--muted); line-height: 1.8; }
 
 /* ── Forms ── */
@@ -314,6 +383,17 @@ a { color: inherit; text-decoration: none; }
 .form-group textarea { height: 120px; resize: vertical; }
 .form-submit { margin-top: 36px; }
 .form-note { font-size: 13px; color: #aaa; margin-top: 12px; }
+.form-fallback {
+  background: var(--cream);
+  border-left: 3px solid var(--brass);
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.75;
+  margin-bottom: 28px;
+  max-width: 680px;
+  padding: 18px 22px;
+}
+.form-fallback a { color: var(--charcoal); font-weight: 500; }
 
 /* ── About ── */
 .about-section { padding: 100px 0; }
@@ -339,6 +419,26 @@ a { color: inherit; text-decoration: none; }
 .contact-value { font-size: 16px; }
 .contact-value a { color: var(--charcoal); }
 .no-showroom { margin-top: 40px; padding: 24px; border: 1px solid var(--border); font-size: 14px; color: var(--muted); font-style: italic; line-height: 1.75; }
+
+/* ── Legal pages ── */
+.legal-page { padding: 72px 0 90px; }
+.legal-content {
+  max-width: 760px;
+}
+.legal-content h2 {
+  font-size: 1.7rem;
+  margin: 36px 0 14px;
+}
+.legal-content h2:first-child { margin-top: 0; }
+.legal-content p {
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.9;
+}
+.legal-content a {
+  color: var(--brass);
+  border-bottom: 1px solid currentColor;
+}
 
 /* ── Mobile Nav / Hamburger ── */
 .mobile-menu-btn {

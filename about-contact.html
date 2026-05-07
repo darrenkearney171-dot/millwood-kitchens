@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://millwoodkitchens.uk/about-contact.html" />
   <title>About Millwood Kitchens | Northern Ireland</title>
   <meta name="description" content="Millwood Kitchens — mobile kitchen design, supply and installation across Northern Ireland. In partnership with P&A Contracts." />
   <meta property="og:type" content="website" />
@@ -10,10 +11,14 @@
   <meta property="og:title" content="About Millwood Kitchens | Northern Ireland" />
   <meta property="og:description" content="Mobile kitchen design, supply and full installation across Northern Ireland. No showroom. No pressure." />
   <meta property="og:image" content="https://images.unsplash.com/photo-1639405069836-f82aa6dcb900?w=1200&q=80" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <div class="announcement-bar">
   Free estimate within 48 hours &nbsp;&bull;&nbsp; Design visit £150 — redeemable against your order &nbsp;&bull;&nbsp; Covering all of Northern Ireland
@@ -53,7 +58,7 @@
 </header>
 
 <!-- About -->
-<section class="about-section">
+<section id="main-content" tabindex="-1" class="about-section">
   <div class="container">
     <div class="about-inner">
       <div class="about-photo">
@@ -143,6 +148,7 @@
       <div>
         <h2 style="margin-bottom:32px;">Send a message</h2>
         <form class="estimate-form" action="https://formspree.io/f/CONTACT_FORM_ID" method="POST">
+          <p class="form-fallback">This form is ready for Formspree. Until the live form ID is connected, pressing submit opens an email to <a href="mailto:info@millwoodkitchens.uk">info@millwoodkitchens.uk</a> with your message filled in.</p>
           <input type="hidden" name="_subject" value="New contact message — Millwood Kitchens" />
           <input type="hidden" name="_next" value="thanks.html" />
 
@@ -214,7 +220,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Millwood Kitchens. All rights reserved.</span>
-      <span><a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms &amp; Conditions</a></span>
+      <span><a href="privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html">Terms &amp; Conditions</a></span>
     </div>
   </div>
 </footer>

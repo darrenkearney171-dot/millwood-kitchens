@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://millwoodkitchens.uk/free-estimate.html" />
   <title>Free Kitchen Estimate | Submit Your Plans | Millwood Kitchens</title>
   <meta name="description" content="Send us your kitchen plans or measurements and we'll come back with a realistic cost within 48 hours. Free, no obligation." />
   <meta property="og:type" content="website" />
@@ -10,10 +11,14 @@
   <meta property="og:title" content="Free Kitchen Estimate | Millwood Kitchens NI" />
   <meta property="og:description" content="Send us your plans and get a realistic cost back within 48 hours. Completely free, no obligation." />
   <meta property="og:image" content="https://images.unsplash.com/photo-1639405069836-f82aa6dcb900?w=1200&q=80" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <div class="announcement-bar">
   Free estimate within 48 hours &nbsp;&bull;&nbsp; Design visit £150 — redeemable against your order &nbsp;&bull;&nbsp; Covering all of Northern Ireland
@@ -52,7 +57,7 @@
   </div>
 </header>
 
-<section class="page-hero">
+<section id="main-content" tabindex="-1" class="page-hero">
   <div class="container">
     <h1>Get a Free Estimate</h1>
     <p>Send us your plans and we'll come back with a realistic cost within 48 hours. Completely free, no obligation.</p>
@@ -78,6 +83,7 @@
     </div>
 
     <form class="estimate-form" action="https://formspree.io/f/ESTIMATE_FORM_ID" method="POST" enctype="multipart/form-data">
+      <p class="form-fallback">This form is ready for Formspree. Until the live form ID is connected, pressing submit opens an email to <a href="mailto:info@millwoodkitchens.uk">info@millwoodkitchens.uk</a> with your details filled in.</p>
       <input type="hidden" name="_subject" value="New free estimate request — Millwood Kitchens" />
       <input type="hidden" name="_next" value="thanks.html" />
 
@@ -199,7 +205,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Millwood Kitchens. All rights reserved.</span>
-      <span><a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms &amp; Conditions</a></span>
+      <span><a href="privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html">Terms &amp; Conditions</a></span>
     </div>
   </div>
 </footer>

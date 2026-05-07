@@ -20,3 +20,29 @@ document.addEventListener('click', function(e) {
     }
   }
 });
+
+document.addEventListener('submit', function(e) {
+  var form = e.target;
+  if (!form || !form.action || form.action.indexOf('_FORM_ID') === -1) {
+    return;
+  }
+
+  e.preventDefault();
+
+  var formData = new FormData(form);
+  var subject = formData.get('_subject') || 'Millwood Kitchens enquiry';
+  var lines = [];
+
+  formData.forEach(function(value, key) {
+    if (key.charAt(0) === '_' || value instanceof File) {
+      return;
+    }
+    if (String(value).trim()) {
+      lines.push(key + ': ' + value);
+    }
+  });
+
+  var body = lines.join('\n');
+  window.location.href = 'mailto:info@millwoodkitchens.uk?subject=' +
+    encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+});
