@@ -21,7 +21,7 @@
 <a class="skip-link" href="#main-content">Skip to content</a>
 
 <div class="announcement-bar">
-  Free estimate within 48 hours &nbsp;&bull;&nbsp; Design visit £150 — redeemable against your order &nbsp;&bull;&nbsp; Covering all of Northern Ireland
+  Free estimate within 48 hours &nbsp;&bull;&nbsp; Design visit from £150 / €250 &nbsp;&bull;&nbsp; Northern Ireland &amp; Dublin
 </div>
 
 <header class="site-header">
@@ -31,8 +31,10 @@
       <ul class="site-nav">
         <li><a href="index.html">Home</a></li>
         <li><a href="how-it-works.html">How It Works</a></li>
-        <li><a href="our-kitchens.html">Our Kitchens</a></li>
-        <li><a href="book-a-design-visit.html">Book a Visit</a></li>
+        <li><a href="our-kitchens.html">Kitchens</a></li>
+        <li><a href="bedrooms.html">Bedrooms</a></li>
+        <li><a href="home-studies.html">Home Studies</a></li>
+        <li><a href="living-rooms.html">Living Rooms</a></li>
         <li><a href="free-estimate.html" class="active">Free Estimate</a></li>
         <li><a href="about-contact.html">About</a></li>
       </ul>
@@ -48,7 +50,10 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="how-it-works.html">How It Works</a></li>
-      <li><a href="our-kitchens.html">Our Kitchens</a></li>
+      <li><a href="our-kitchens.html">Kitchens</a></li>
+      <li><a href="bedrooms.html">Bedrooms</a></li>
+      <li><a href="home-studies.html">Home Studies</a></li>
+      <li><a href="living-rooms.html">Living Rooms</a></li>
       <li><a href="book-a-design-visit.html">Book a Visit</a></li>
       <li><a href="free-estimate.html">Free Estimate</a></li>
       <li><a href="about-contact.html">About</a></li>
@@ -68,16 +73,16 @@
   <div class="container">
 
     <div class="form-intro">
-      <p>Not ready to book a design visit yet? That's fine. Send us your kitchen measurements or plans and we'll give you a realistic ballpark cost within 48 hours — completely free.</p>
+      <p>Not ready to book a design visit yet? That's fine. Send us your measurements or plans and we'll give you a realistic ballpark cost within 48 hours — completely free.</p>
       <p>This isn't a full quote — that comes after an in-home design visit — but it gives you a clear idea of what's possible before you commit to anything.</p>
       <div class="what-to-include">
         <h4>What to include</h4>
         <ul>
-          <li>A floor plan, sketch or photograph of your kitchen space</li>
+          <li>A floor plan, sketch or photograph of your space</li>
           <li>The approximate dimensions (length and width in metres)</li>
           <li>Any ideas on style (shaker / modern / handleless)</li>
           <li>Your rough budget — helps us tailor the estimate</li>
-          <li>When you're hoping to have the kitchen done</li>
+          <li>When you're hoping to have the work done</li>
         </ul>
       </div>
     </div>
@@ -104,13 +109,60 @@
           <input type="tel" id="phone" name="phone" required placeholder="07xxx xxxxxx" />
         </div>
         <div class="form-group">
-          <label for="area">Town / area *</label>
-          <input type="text" id="area" name="area" required placeholder="e.g. Coleraine, Ballymena…" />
+          <label for="area">Your area *</label>
+          <select id="area" name="area" required>
+            <option value="">— Select your area —</option>
+            <optgroup label="Northern Ireland">
+              <option>Antrim</option>
+              <option>Armagh</option>
+              <option>Ballymena</option>
+              <option>Bangor</option>
+              <option>Belfast</option>
+              <option>Coleraine</option>
+              <option>Cookstown</option>
+              <option>Craigavon</option>
+              <option>Derry / Londonderry</option>
+              <option>Downpatrick</option>
+              <option>Dungannon</option>
+              <option>Enniskillen</option>
+              <option>Larne</option>
+              <option>Lisburn</option>
+              <option>Magherafelt</option>
+              <option>Newry</option>
+              <option>Newtownabbey</option>
+              <option>Omagh</option>
+              <option>Strabane</option>
+              <option>Other (Northern Ireland)</option>
+            </optgroup>
+            <optgroup label="Republic of Ireland">
+              <option>Dublin — South</option>
+              <option>Dublin — North</option>
+              <option>Dublin — West</option>
+              <option>Dublin — City Centre</option>
+              <option>Wicklow</option>
+              <option>Kildare</option>
+              <option>Meath</option>
+              <option>Louth</option>
+              <option>Other (Republic of Ireland)</option>
+            </optgroup>
+          </select>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="dimensions">Kitchen dimensions — approx length × width *</label>
+        <label for="service">What are you looking for? *</label>
+        <select id="service" name="service" required>
+          <option value="">— Select —</option>
+          <option>Kitchen</option>
+          <option>Bedroom</option>
+          <option>Home Study</option>
+          <option>Living Room</option>
+          <option>Multiple rooms</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="dimensions">Room dimensions — approx length × width *</label>
         <input type="text" id="dimensions" name="dimensions" required placeholder="e.g. 4m × 3.5m" />
       </div>
 
@@ -170,7 +222,7 @@
 
 <div class="trust-bar">
   <div class="trust-bar-inner">
-    <span class="trust-bar-item">Northern Ireland based</span>
+    <span class="trust-bar-item">Northern Ireland &amp; Dublin</span>
     <span class="trust-bar-item">Fully insured</span>
     <span class="trust-bar-item">10+ years experience</span>
     <span class="trust-bar-item">Supply &amp; installation included</span>
@@ -182,7 +234,7 @@
     <div class="footer-grid">
       <div>
         <a href="index.html" class="footer-logo">Millwood Kitchens</a>
-        <p class="footer-tagline">Kitchen design, supply and installation. Northern Ireland.</p>
+        <p class="footer-tagline">Kitchens, bedrooms, home studies and living rooms. Northern Ireland &amp; Dublin.</p>
         <div class="footer-contact">
           <span style="display:block; font-size:14px; color:rgba(255,255,255,0.7); margin-bottom:4px;"><a href="mailto:info@millwoodkitchens.uk" style="color:inherit; text-decoration:none;">info@millwoodkitchens.uk</a></span>
         </div>
@@ -191,7 +243,10 @@
         <p class="footer-heading">Quick Links</p>
         <ul class="footer-nav">
           <li><a href="how-it-works.html">How It Works</a></li>
-          <li><a href="our-kitchens.html">Our Kitchens</a></li>
+          <li><a href="our-kitchens.html">Kitchens</a></li>
+          <li><a href="bedrooms.html">Bedrooms</a></li>
+          <li><a href="home-studies.html">Home Studies</a></li>
+          <li><a href="living-rooms.html">Living Rooms</a></li>
           <li><a href="book-a-design-visit.html">Book a Design Visit</a></li>
           <li><a href="free-estimate.html">Free Estimate</a></li>
           <li><a href="about-contact.html">About &amp; Contact</a></li>

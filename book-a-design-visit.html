@@ -21,7 +21,7 @@
 <a class="skip-link" href="#main-content">Skip to content</a>
 
 <div class="announcement-bar">
-  Free estimate within 48 hours &nbsp;&bull;&nbsp; Design visit £150 — redeemable against your order &nbsp;&bull;&nbsp; Covering all of Northern Ireland
+  Free estimate within 48 hours &nbsp;&bull;&nbsp; Design visit from £150 / €250 &nbsp;&bull;&nbsp; Northern Ireland &amp; Dublin
 </div>
 
 <header class="site-header">
@@ -31,8 +31,10 @@
       <ul class="site-nav">
         <li><a href="index.html">Home</a></li>
         <li><a href="how-it-works.html">How It Works</a></li>
-        <li><a href="our-kitchens.html">Our Kitchens</a></li>
-        <li><a href="book-a-design-visit.html" class="active">Book a Visit</a></li>
+        <li><a href="our-kitchens.html">Kitchens</a></li>
+        <li><a href="bedrooms.html">Bedrooms</a></li>
+        <li><a href="home-studies.html">Home Studies</a></li>
+        <li><a href="living-rooms.html">Living Rooms</a></li>
         <li><a href="free-estimate.html">Free Estimate</a></li>
         <li><a href="about-contact.html">About</a></li>
       </ul>
@@ -48,7 +50,10 @@
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="how-it-works.html">How It Works</a></li>
-      <li><a href="our-kitchens.html">Our Kitchens</a></li>
+      <li><a href="our-kitchens.html">Kitchens</a></li>
+      <li><a href="bedrooms.html">Bedrooms</a></li>
+      <li><a href="home-studies.html">Home Studies</a></li>
+      <li><a href="living-rooms.html">Living Rooms</a></li>
       <li><a href="book-a-design-visit.html">Book a Visit</a></li>
       <li><a href="free-estimate.html">Free Estimate</a></li>
       <li><a href="about-contact.html">About</a></li>
@@ -60,7 +65,7 @@
 <section id="main-content" tabindex="-1" class="page-hero">
   <div class="container">
     <h1>Book Your Design Visit</h1>
-    <p>£150 paid online when you book — fully redeemable against your kitchen order if you proceed.</p>
+    <p><span class="price-display" data-ni="£150" data-roi="€250">£150</span> paid online when you book — fully redeemable against your kitchen order if you proceed.</p>
   </div>
 </section>
 
@@ -69,6 +74,14 @@
     <div class="booking-grid">
 
       <div class="what-you-get">
+        <div class="form-group" style="margin-bottom:32px;">
+          <label for="location-select">Where is your kitchen?</label>
+          <select id="location-select" onchange="updateBookingPrice(this.value)">
+            <option value="ni">Northern Ireland</option>
+            <option value="roi">Republic of Ireland</option>
+          </select>
+        </div>
+
         <h2>What you get</h2>
         <ul class="benefit-list">
           <li>On-site measurement of your kitchen space</li>
@@ -76,23 +89,23 @@
           <li>Unlimited changes during your 2–3 hour visit</li>
           <li>Complete itemised quote before we leave</li>
           <li>Your kitchen plans — printed and emailed</li>
-          <li>£150 fully deducted from your deposit if you proceed</li>
+          <li><span class="price-display" data-ni="£150" data-roi="€250">£150</span> fully deducted from your deposit if you proceed</li>
         </ul>
         <div class="reassurance-box">
-          <p>There is no pressure to proceed after your design visit. Many customers use it to get a realistic idea of cost and what's possible before committing. The £150 fee ensures we're both serious about the process — and if you go ahead, it costs you nothing.</p>
+          <p>There is no pressure to proceed after your design visit. Many customers use it to get a realistic idea of cost and what's possible before committing. The <span class="price-display" data-ni="£150" data-roi="€250">£150</span> fee ensures we're both serious about the process — and if you go ahead, it costs you nothing.</p>
         </div>
       </div>
 
       <div class="booking-panel">
         <h2>Pay, then choose your slot</h2>
-        <p class="subtitle">Secure payment online — £150 charged when you book</p>
+        <p class="subtitle">Secure payment online — <span class="price-display" data-ni="£150" data-roi="€250">£150</span> charged when you book</p>
 
         <div class="booking-flow">
           <div class="booking-step-card">
             <span class="booking-step-label">Step 1</span>
-            <h3>Pay the £150 design visit fee</h3>
+            <h3>Pay the <span class="price-display" data-ni="£150" data-roi="€250">£150</span> design visit fee</h3>
             <p>Payment is handled securely by Stripe. Once paid, Stripe sends you straight to the Millwood Kitchens diary to choose your visit time.</p>
-            <a class="btn btn-primary booking-payment-link" href="STRIPE_PAYMENT_LINK">Pay £150 Securely</a>
+            <a class="btn btn-primary booking-payment-link" href="STRIPE_PAYMENT_LINK">Pay <span class="price-display" data-ni="£150" data-roi="€250">£150</span> Securely</a>
             <p class="booking-placeholder-note">Stripe Payment Link not connected yet. Replace <code>STRIPE_PAYMENT_LINK</code> with the live Stripe URL to activate this button.</p>
           </div>
 
@@ -107,7 +120,7 @@
         <div class="calendly-embed-placeholder" hidden>
           <p style="font-size:2rem; color:#ccc; margin-bottom:16px;">📅</p>
           <p style="font-weight:500; color:#888; margin-bottom:8px;">Online booking is nearly ready</p>
-          <p>To book a design visit now, email your preferred dates and Darren will confirm your slot and send the £150 payment link.</p>
+          <p>To book a design visit now, email your preferred dates and Darren will confirm your slot and send the <span class="price-display" data-ni="£150" data-roi="€250">£150</span> payment link.</p>
           <div class="booking-actions">
             <a class="btn btn-primary" href="mailto:info@millwoodkitchens.uk?subject=Design%20visit%20booking%20request">Email to book</a>
             <a class="btn btn-outline-dark" href="free-estimate.html">Get a free estimate first</a>
@@ -124,9 +137,18 @@
   </div>
 </section>
 
+<script>
+function updateBookingPrice(region) {
+  var els = document.querySelectorAll('.price-display');
+  for (var i = 0; i < els.length; i++) {
+    els[i].textContent = region === 'roi' ? els[i].getAttribute('data-roi') : els[i].getAttribute('data-ni');
+  }
+}
+</script>
+
 <div class="trust-bar">
   <div class="trust-bar-inner">
-    <span class="trust-bar-item">Northern Ireland based</span>
+    <span class="trust-bar-item">Northern Ireland &amp; Dublin</span>
     <span class="trust-bar-item">Fully insured</span>
     <span class="trust-bar-item">10+ years experience</span>
     <span class="trust-bar-item">Supply &amp; installation included</span>
@@ -138,7 +160,7 @@
     <div class="footer-grid">
       <div>
         <a href="index.html" class="footer-logo">Millwood Kitchens</a>
-        <p class="footer-tagline">Kitchen design, supply and installation. Northern Ireland.</p>
+        <p class="footer-tagline">Kitchens, bedrooms, home studies and living rooms. Northern Ireland &amp; Dublin.</p>
         <div class="footer-contact">
           <span style="display:block; font-size:14px; color:rgba(255,255,255,0.7); margin-bottom:4px;"><a href="mailto:info@millwoodkitchens.uk" style="color:inherit; text-decoration:none;">info@millwoodkitchens.uk</a></span>
         </div>
@@ -147,7 +169,10 @@
         <p class="footer-heading">Quick Links</p>
         <ul class="footer-nav">
           <li><a href="how-it-works.html">How It Works</a></li>
-          <li><a href="our-kitchens.html">Our Kitchens</a></li>
+          <li><a href="our-kitchens.html">Kitchens</a></li>
+          <li><a href="bedrooms.html">Bedrooms</a></li>
+          <li><a href="home-studies.html">Home Studies</a></li>
+          <li><a href="living-rooms.html">Living Rooms</a></li>
           <li><a href="book-a-design-visit.html">Book a Design Visit</a></li>
           <li><a href="free-estimate.html">Free Estimate</a></li>
           <li><a href="about-contact.html">About &amp; Contact</a></li>
